@@ -1,6 +1,8 @@
 @import "_var";
+@import "fonts";
 
 body {
+    font-family: $mainFont;
     background-color: $white;
 }
 .content-flex {
