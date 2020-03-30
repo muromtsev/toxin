@@ -14,10 +14,7 @@ module.exports = {
                 test: /\.pug$/,
                 use: 
                     {
-                        loader: 'pug-loader',
-                        options: {
-                            "pretty": true
-                        }
+                        loader: 'pug-loader'
                     },
             },
             {
@@ -50,7 +47,7 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: './src/pug/index.pug',
+            template: './src/pug/pages/index.pug',
             filename: 'index.html',
             inject: 'body'            
         }),

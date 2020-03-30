@@ -1,5 +1,11 @@
 @import "_var";
 
 body {
-    background-color: $port-gore;
+    background-color: $white;
+}
+.content-flex {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1920px;
+    width: 100%;
 }
