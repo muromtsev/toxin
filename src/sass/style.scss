@@ -1,16 +1,80 @@
 @import "_var";
 @import "fonts";
+@import "mixins";
 
-body {
-    font-family: $mainFont;
-    background-color: $white;
-}
 .container {
     max-width: 1440px;
     width: 100%;
-    margin: 0 auto;    
-}
-.content-flex {
-    display: flex;
-    justify-content: space-between;    
-}
+    margin: 0 auto;
+    font-family: $titleFont;
+
+    .header {
+        &__logo {
+            width: 48px;
+            height: 48px;
+            margin-top: 30px;
+            margin-left: 30px;
+        }
+    }//header
+    .content-flex {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 67px;
+        margin-left: 150px;
+        margin-right: 191px;
+        .flex-left {
+            width: 270px;
+            // @include border;
+            
+            &__item {
+                display: flex;
+                flex-wrap: wrap;
+                font-size: 19px;
+                font-style: normal;
+                line-height: 29px;
+                
+                &:not(:first-child) {
+                    margin-top: 20px;    
+                }
+
+                .colorItem {                    
+                    margin-right: 40px;
+                    @include colorItem;
+                    
+                }
+                .c1 {
+                    background-color: $dark_shade_100;
+                }
+                .c2 {
+                    background-color: $dark_shade_75;
+                }
+                .c3 {
+                    background-color: $dark_shade_50;
+                }
+                .c4 {
+                    background-color: $dark_shade_25;
+                }
+                .c5 {
+                    background-color: $dark_shade_5;
+                }
+                .c6 {
+                    background-color: $purple;
+                }
+                .c7 {
+                    background-color: $green;
+                }
+                
+                .textItem {
+                    align-self: center;
+                    span {
+                        display: block;                        
+                    }
+                }
+            }
+        }
+        .flex-right {
+            width: 403px;
+            @include border;
+        }
+    }//container-flex end
+}//container end

@@ -1,12 +1,18 @@
 //colors
-$port-gore: rgb(31, 32, 65);
-$comet: rgb(87, 88, 112);
-$manate: rgb(143, 143, 160);
-$franch-grey: rgb(199, 199, 207);
-$athens-grey: rgb(244, 244, 246);
+$dark_shade_100: rgb(31, 32, 65);
+$dark_shade_75: rgb(87, 88, 112);
+$dark_shade_50: rgb(143, 143, 160);
+$dark_shade_25: rgb(199, 199, 207);
+$dark_shade_5: rgb(244, 244, 246);
 $purple: rgb(188, 156, 255);
 $green: rgb(111, 207, 151);
 $white: rgb(255, 255, 255);
 
 // fonts
-$mainFont: 'Montserrat', OpenSans, sans-serif;
+$mainFont: 'Montserrat-Regular', OpenSans, sans-serif;
+$titleFont: 'Quicksand-Regular', OpenSans, sans-serif;
+
+//maps
+$mapColors: rgb(31, 32, 65), rgb(87, 88, 112), rgb(143, 143, 160), rgb(199, 199, 207), rgb(244, 244, 246), rgb(188, 156, 255), rgb(111, 207, 151), rgb(255, 255, 255);
+
+
