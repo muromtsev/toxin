@@ -1,5 +1,15 @@
 @import "_var";
 @import "fonts";
 @import "mixins";
-@import "normalize.scss";
-// @import "../pug/ui-kit/color_type/color_type.scss"
+@import "normalize";
+@import "../pug/includes/header-ui"; // header UI- kit
+@import "../pug/ui-kit/header_footer/header_footer.scss"; //header & footer
+
+body {
+    background-color: $main-bg;
+}
+.container {
+    max-width: 1920px;
+    width: 100%;
+    margin: 0 auto;
+}
