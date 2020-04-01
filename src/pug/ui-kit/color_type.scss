@@ -1,0 +1,143 @@
+@import "../sass/var";
+@import "../sass/fonts";
+@import "../sass/mixins";
+
+// стили сбрасываем?
+
+h1, h2, h3 {
+    padding: 0;
+    margin: 0;
+}
+.container {
+    max-width: 1440px;
+    width: 100%;
+    margin: 0 auto;
+    font-family: $titleFont;
+
+    .header {
+        &__logo {
+            width: 48px;
+            height: 48px;
+            margin-top: 30px;
+            margin-left: 30px;
+        }
+    }//header
+    .content-flex {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin-top: 67px;
+        margin-left: 150px;
+        margin-right: 191px;
+
+        .flex-left {
+            width: 270px;
+            
+            &__item {
+                display: flex;
+                flex-wrap: wrap;
+                font-size: $font-size--medium;
+                line-height: 29px;
+
+                &:not(:first-child) {
+                    margin-top: 20px;    
+                }
+
+                .colorItem {                    
+                    margin-right: 40px;
+                    @include colorItem;
+                    
+                }
+                .c1 {
+                    background-color: $dark-shade;
+                }
+                .c2 {
+                    background-color: $dark-shade--light;
+                }
+                .c3 {
+                    background-color: $dark-shade--lighten;
+                }
+                .c4 {
+                    background-color: $dark-shade--lightest;
+                }
+                .c5 {
+                    background-color: $dark-shade--white;
+                }
+                .c6 {
+                    background-color: $purple;
+                }
+                .c7 {
+                    background-color: $green;
+                }
+                
+                .textItem {
+                    align-self: center;
+                    span {
+                        display: block;                        
+                    }
+                }
+            }
+        }//flex-left end
+        .flex-right {
+            width: 403px;
+            &__item {
+                display: flex;
+                margin-bottom: 50px;
+                .title {
+                    margin-right: 30px;
+                    padding-left: 8px;
+                    font-family: $mainFont;
+                    font-size: $font-size--big;
+                    line-height: 29px;
+                    color: $dark-shade--transparent;
+                    text-transform: uppercase;
+                }
+                .title-medium {
+                    @extend .title;
+                    font-size: $font-size--medium;
+                    line-height: 23px;
+                    padding-left: 10px;
+                }
+                .title-small {
+                    @extend .title;
+                    font-size: $font-size--small;
+                    line-height: 15px;
+                    padding-left: 20px;
+                }
+                .title-body {
+                    @extend .title;
+                    font-size: $font-size--base;
+                    line-height: 24px;
+                    text-transform: none;
+                    padding-left: 0;
+                }
+                .text-large {
+                    font-family: $titleFont;
+                    font-weight: bold;
+                    font-size: $font-size--big;
+                    line-height: 30px;
+                    color: $dark-shade;
+                }
+                .text-medium {
+                    @extend .text-large;
+                    font-size: $font-size--medium;
+                    line-height: 24px;
+                }
+                .text-small {
+                    font-family: $mainFont;
+                    font-weight: bold;
+                    font-size: $font-size--small;
+                    line-height: 15px;
+                    text-transform: uppercase;                    
+                    color: $dark-shade;
+                }
+                .text-body {
+                    font-family: $mainFont;
+                    font-size: $font-size--base;
+                    line-height: 24px;
+                    color: $dark-shade--translucent;
+                }
+            }
+        }//flex-right end
+    }//container-flex end
+}//container end

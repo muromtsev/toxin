@@ -5,42 +5,4 @@ html(lang='en')
     .container
       include ../includes/header.pug
       block content
-        .content-flex
-          .flex-left 
-            .flex-left__item
-              .colorItem.c1
-              .textItem
-                b Dark Shade 100%
-                span #1F2041 
-            .flex-left__item
-              .colorItem.c2
-              .textItem
-                b Dark Shade 75%
-                span #1F2041 
-            .flex-left__item
-              .colorItem.c3
-              .textItem
-                b Dark Shade 50%
-                span #1F2041 
-            .flex-left__item
-              .colorItem.c4
-              .textItem
-                b Dark Shade 25%
-                span #1F2041 
-            .flex-left__item
-              .colorItem.c5
-              .textItem
-                b Dark Shade 5%
-                span #1F2041 
-            .flex-left__item
-              .colorItem.c6
-              .textItem
-                b Purple
-                span #BC9CFF 
-            .flex-left__item
-              .colorItem.c7
-              .textItem
-                b Green
-                span #6FCF97
-          .flex-right 321            
-          
+      include ../ui-kit/color_type.pug

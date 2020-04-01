@@ -1,18 +1,23 @@
 //colors
-$dark_shade_100: rgb(31, 32, 65);
-$dark_shade_75: rgb(87, 88, 112);
-$dark_shade_50: rgb(143, 143, 160);
-$dark_shade_25: rgb(199, 199, 207);
-$dark_shade_5: rgb(244, 244, 246);
-$purple: rgb(188, 156, 255);
-$green: rgb(111, 207, 151);
-$white: rgb(255, 255, 255);
-
+$dark-shade:                rgb(31, 32, 65);
+$dark-shade--light:         rgb(87, 88, 112);
+$dark-shade--lighten:       rgb(143, 143, 160);
+$dark-shade--lightest:      rgb(199, 199, 207);
+$dark-shade--white:         rgb(244, 244, 246);
+$purple:                    rgb(188, 156, 255);
+$green:                     rgb(111, 207, 151);
+$white:                     rgb(255, 255, 255);
+$dark-shade--transparent:   rgba(31, 32, 65, 0.25);
+$dark-shade--translucent:   rgba(31, 32, 65, 0.75);
+//font size
+$font-size--big:            24px;
+$font-size--medium:         19px;
+$font-size--small:          12px;
+$font-size--base:           14px;
 // fonts
 $mainFont: 'Montserrat-Regular', OpenSans, sans-serif;
 $titleFont: 'Quicksand-Regular', OpenSans, sans-serif;
 
-//maps
-$mapColors: rgb(31, 32, 65), rgb(87, 88, 112), rgb(143, 143, 160), rgb(199, 199, 207), rgb(244, 244, 246), rgb(188, 156, 255), rgb(111, 207, 151), rgb(255, 255, 255);
+
 
 

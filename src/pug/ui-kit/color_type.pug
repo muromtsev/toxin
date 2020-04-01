@@ -1,0 +1,29 @@
+mixin colorBlock(className, text, hex)
+    .flex-left__item
+        .colorItem(class=className)
+        .textItem
+            b #{text}
+            span #{hex}
+.content-flex
+    .flex-left
+        .flex-left 
+            +colorBlock('c1', 'Dark Shade 100%', '#1F2041')       
+            +colorBlock('c2', 'Dark Shade 75%', '#1F2041')       
+            +colorBlock('c3', 'Dark Shade 50%', '#1F2041')       
+            +colorBlock('c4', 'Dark Shade 25%', '#1F2041')       
+            +colorBlock('c5', 'Dark Shade 5%', '#1F2041')       
+            +colorBlock('c6', 'Purple', '#BC9CFF')       
+            +colorBlock('c7', 'Green', '#6FCF97')        
+    .flex-right
+        .flex-right__item
+            h1.title h1
+            .text-large This one is the sub-section or widget title
+        .flex-right__item
+            h2.title-medium h2
+            .text-medium Next one is the item title inside widgets
+        .flex-right__item
+            h3.title-small h3
+            .text-small This is a label or CTA text
+        .flex-right__item
+            span.title-body Body
+            .text-body This is the body text which is used for most of the design, like paragraphs, lists, etc.
