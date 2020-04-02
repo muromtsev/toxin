@@ -2,10 +2,13 @@
 @import "fonts";
 @import "mixins";
 @import "normalize";
+@import '~material-icons/iconfont/material-icons.scss';
 @import "../pug/includes/header-ui"; // header UI- kit
 @import "../pug/ui-kit/header_footer/header_footer.scss"; //header & footer
 // @import "../pug/ui-kit/color_type/color_type.scss";
-
+.material-icons {
+    @include material-icons();
+}
 body {
     background-color: $main-bg;
 }

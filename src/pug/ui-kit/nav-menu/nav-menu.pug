@@ -5,5 +5,11 @@ mixin menu(elements)
         ul.menu
             each elem in elements
                 li.menu__item
-                    a.menu__item-link(href="#{elem.href}") #{elem.name}
+                    if elem.name === 'Services'
+                        a.menu__item-link(href="#{elem.href}") #{elem.name}
+                            span(class="material-icons") keyboard_arrow_down
+                    else
+                        a.menu__item-link(href="#{elem.href}") #{elem.name} 
+                        
+</span>
 +menu(elements)
