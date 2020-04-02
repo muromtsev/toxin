@@ -3,7 +3,8 @@
 @import "mixins";
 @import "normalize";
 @import "../pug/includes/header-ui"; // header UI- kit
-@import "../pug/ui-kit/header_footer/header_footer.scss"; //header & footer
+// @import "../pug/ui-kit/header_footer/header_footer.scss"; //header & footer
+@import "../pug/ui-kit/color_type/color_type.scss";
 
 body {
     background-color: $main-bg;
