@@ -8,20 +8,9 @@
 body {
     background-color: $main-bg;
 }
-.wrapper {
+.container {
     max-width: 1920px;
     width: 100%;
     margin: 0 auto;
-}
-.container {
-    max-width: 1440px;
-    width: 100%;
-    margin: 0 auto;
     height: 100%;
-}
-.content {
-    @extend .container;
-    padding-left: 140px;
-    padding-right: 140px;
-    box-sizing: border-box;
 }

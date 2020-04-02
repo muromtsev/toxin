@@ -1,0 +1,9 @@
+- let elements = [{'name': 'Home', 'href': '#home'},{'name': 'About Us', 'href': '#about'},{'name': 'Services', 'href': '#services'},{'name': 'Careers', 'href': '#careers'},{'name': 'News','href': '#news'},{'name': 'Documentation', 'href': '#documentation'}]
+
+mixin menu(elements)
+    nav.header__menu
+        ul.menu
+            each elem in elements
+                li.menu__item
+                    a.menu__item-link(href="#{elem.href}") #{elem.name}
++menu(elements)

@@ -1,0 +1,25 @@
+@import "_var";
+@import "fonts";
+
+.header__menu {
+    .menu {
+        display: flex;
+        justify-content: center;
+        list-style: none;
+        &__item {
+            padding: 0 15px;
+            &-link {
+                display: block;
+                font-family: $mainFont;
+                font-size: $font-size--base;
+                color: $dark-shade--lightest;
+                text-decoration: none;                
+                transition: 0.2s linear;
+                &:hover {
+                    font-weight: bold;
+                    color: $dark-shade--lighten;
+                }
+            }
+        }
+    }
+}
