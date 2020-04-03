@@ -9,6 +9,9 @@
 .material-icons {
     @include material-icons();
 }
+a {
+    text-decoration: none;
+}
 body {
     background-color: $main-bg;
 }

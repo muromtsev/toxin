@@ -2,6 +2,7 @@
 @import "../sass/fonts";
 @import "../sass/mixins";
 @import "../logo/logo.scss";
+@import "../login/login.scss";
 @import "../nav-menu/nav-menu.scss";
 
 
@@ -14,7 +15,8 @@
     height: 70px;
     margin: 77px auto 0;
     padding-left: 140px;
-    padding-right: 140px;
+    padding-right: 140px;    
+    font-family: $mainFont;
     box-sizing: border-box;
     background-color: $white;
     box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
