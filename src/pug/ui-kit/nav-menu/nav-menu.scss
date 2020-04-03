@@ -2,12 +2,13 @@
 @import "fonts";
 
 .header__menu {
-
     .menu {
         display: flex;
-        justify-content: center;
+        justify-content: flex-end;
         list-style: none;
         align-items: center;
+        margin: 0;
+        padding: 0;
 
         &__item {
             padding: 0 15px;
