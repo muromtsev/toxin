@@ -9,9 +9,8 @@
 .material-icons {
     @include material-icons();
 }
-a {
-    text-decoration: none;
-}
+a {text-decoration: none;}
+ul {list-style: none;}
 body {
     background-color: $main-bg;
 }

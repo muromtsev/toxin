@@ -1,13 +1,17 @@
 - let elements = [{'name': 'Home', 'href': '#home'},{'name': 'About Us', 'href': '#about'},{'name': 'Services', 'href': '#services'},{'name': 'Careers', 'href': '#careers'},{'name': 'News','href': '#news'},{'name': 'Documentation', 'href': '#documentation'}]
-
+- let subelements = [{'name': 'Occultism', 'href': '#occultism'},{'name': 'Necromancy', 'href': '#necromancy'},{'name': 'Reincarnation', 'href': '#reincarnation'},]
 mixin menu(elements)
     nav.header__menu
         ul.menu
             each elem in elements
                 li.menu__item
                     if elem.name === 'Services'
-                        a.menu__item-link(href="#{elem.href}") #{elem.name}
+                        a.menu__item-link(href= elem.href) #{elem.name}
                             span(class="material-icons") keyboard_arrow_down
+                        ul.submenu
+                            each subelem in subelements
+                                li.submenu__item
+                                    a.submenu__item-link(href= subelem.href) #{subelem.name}
                     else
                         a.menu__item-link(href="#{elem.href}") #{elem.name} 
                         

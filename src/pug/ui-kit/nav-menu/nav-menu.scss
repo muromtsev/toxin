@@ -10,17 +10,17 @@
         margin: 0;
         padding: 0;
 
-        &__item {
+        &__item {            
+            position: relative;
             padding: 0 15px;
 
             &-link {
-                position: relative;
                 display: block;
                 font-size: $font-size--base;
                 line-height: 17px;
                 color: $dark-shade--lighten;
                 text-decoration: none;                
-                transition: 0.2s linear;   
+                transition: 0.1s linear;   
 
                 &:hover {
                     font-weight: bold;
@@ -30,12 +30,44 @@
                 .material-icons {
                     position: absolute;
                     top: -3px;
+                    transition: all 0.1s linear;
                 }
-            }            
-            
+                
+            }//menu__item-link      
+            .submenu {
+                position: absolute;
+                top: 15px;
+                left: -5px;
+                display: none;
+                justify-content: center;
+                flex-direction: column;
+                width: 150px;
+                margin: 0;
+                padding: 0;
+                background-color: $white;
+                
+                &__item {
+                    padding: 10px 0 10px 20px;
+                    &:first-child {
+                        padding-top: 35px;
+                    }
+                    &-link {
+                        @extend .menu__item-link;
+                    }
+                }
+            }
             &:nth-child(4) {
                 margin-left: 20px;
             }
-        }
-    }
+            
+            &:nth-child(3):hover {
+                .submenu {
+                    display: flex;
+                }
+                .material-icons {
+                    transform: rotateZ(-180deg);
+                }
+            }
+        }//menu__item
+    }//menu
 }
