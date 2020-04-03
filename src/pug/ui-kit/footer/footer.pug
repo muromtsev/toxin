@@ -1,0 +1,33 @@
+-
+    let elementsMenu = [
+            {
+                'name': 'Navigation',
+                'list': ['About Us', 'News', 'Support', 'Products']
+            },
+            {
+                'name': 'About us',
+                'list': ['Who we are', 'Our team', 'Careers', 'Investors']
+            },
+            {
+                'name': 'Support',
+                'list': ['Documentation', 'Community', 'Get in Touch']
+            }
+        ]
+
+mixin footerMenu(elements)
+    each el in elements
+        .footer-flex__col
+            .footer__title #{el.name}
+            nav
+                ul.footer__menu
+                    each item in el.list
+                        li.footer__menu-item
+                            a.footer__menu-item-link(href="#") #{item}
+
+footer.footer
+    .footer-flex
+        .footer-flex__col
+            include ../logo/logo.pug
+            .footer-text 
+                |Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.
+        +footerMenu(elementsMenu)
