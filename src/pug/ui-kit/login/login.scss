@@ -23,4 +23,13 @@
         color: $white;
         background: $main-gradient;
     }
+    .user-name {
+        padding-left: 30px;
+        padding-top: 4px;
+        padding-bottom: 4px;
+        font-size: $font-size--base;
+        line-height: 17px;
+        color: $dark-shade--lighten;
+        border-left: 1px solid rgba(31, 32, 65, 0.1)
+    }
 }

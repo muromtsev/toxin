@@ -1,3 +1,11 @@
+- let registration = false
+
+mixin login(register)
+    if register
+        a.user-name Cosmin Negoita
+    else
+        a.login(href="#") Login
+        a.register(href="#") Register
+
 .header__user-manage
-    a.login(href="#") Login
-    a.register(href="#") Register
+    +login(registration)
