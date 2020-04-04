@@ -1,0 +1,15 @@
+-
+    let images = [
+        {'name': 'twitter', 'src': '../src/img/twitter.svg'},
+        {'name': 'facebook', 'src': '../src/img/facebook.svg'},
+        {'name': 'instagramm', 'src': '../src/img/instagramm.svg'}
+    ]
+mixin copyright-bar(imgs)
+    .copyright-bar
+        .copy Copyright © 2018 Toxin UI Kit. All rights reserved.
+        .social
+            each img in imgs
+                a.social__link(href="#")
+                    img(alt= img.name src=img.src)
+
++copyright-bar(images)
