@@ -28,6 +28,14 @@ footer.footer
     .footer-flex
         .footer-flex__col
             include ../logo/logo.pug
-            .footer-text 
+            .footer__text 
                 |Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.
         +footerMenu(elementsMenu)
+        .footer-flex__col
+            .footer__title Subscribe to our newsletter
+            .footer__text
+                |Receive our latest news and promotions in your inbox!
+            form.footer__form(action="" method="get")
+                input.footer__form-input(type="text" name="name" placeholder="Your email address")                
+                a.footer__form-btn(href="#")
+                    span.material-icons arrow_forward

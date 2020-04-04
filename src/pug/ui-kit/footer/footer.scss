@@ -3,7 +3,7 @@
 .footer {    
     max-width: 1440px;
     width: 100%;
-    height: auto;
+    height: 1000px;
     margin: 77px auto 0;
     padding-left: 140px;
     padding-right: 140px;   
@@ -20,9 +20,11 @@
         font-size: $font-size--base;
 
         &__col {
-            width: 260px;
+            max-width: 260px;            
             height: auto;
-            .footer-text {
+            
+            .footer__text {
+                padding-top: 21px;
                 line-height: 24px;
                 color: $dark-shade--light;
             }
@@ -34,6 +36,7 @@
                 color: $dark-shade;
             }
             nav {
+
                 .footer__menu {
                     display: flex;
                     justify-content: flex-start;
@@ -58,9 +61,41 @@
                                 font-weight: bold;
                             }
                         }
-                    }
+                    }//footer-menu__item
+                }//footer-menu
+            }//nav
+            
+            .footer__form {
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 20px auto;
+
+                &-input {
+                    width: 100%;
+                    padding: 12px 0 8px 15px;
+                    font-size: $font-size--base;
+                    line-height: 24px;
+                    color: $dark-shade--lightest;
+                    background: $white;
+                    border: 1px solid $dark-shade--lightest;
+                    box-sizing: border-box;
+                    border-radius: 4px;
+                }
+
+                &-btn {
+                    position: absolute;
+                    top: 10px;
+                    right: 0;
+                    width: 44px;
+                    height: 44px;     
+                    font-size: $font-size--big;
+                    line-height: 24px;      
+                    text-align: center;   
+                    color: $purple;                
                 }
             }
-        }
+        }//footer-flex__col
     }
 }
