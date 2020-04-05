@@ -1,0 +1,21 @@
+@import "_var";
+
+.block-name {
+    display: flex;
+    max-width: 320px;
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    justify-content: space-between;
+    font-size: $font-size--small;
+    line-height: 15px;
+    text-transform: uppercase;
+    &__title {
+        font-family: $mainFont--bold;
+        color: $dark-shade;
+    }
+    &__state {
+        font-family: $mainFont;
+        color: $dark-shade--lighten;
+    }
+}

@@ -5,4 +5,15 @@ html(lang='en')
       include ../includes/header-ui.pug
       block content
       //- include ../ui-kit/color_type/color_type.pug
-      include ../ui-kit/header_footer/header_footer.pug
+      //- include ../ui-kit/header_footer/header_footer.pug
+      .container.wrapper
+        include ../includes/block-descr.pug
+        +block-descr('text field', 'default')
+        include ../ui-kit/text-field/text-field.pug
+        +text-field
+        +block-descr('text field', 'hover/focus')
+        +text-field('This is pretty awesome')
+        +block-descr('dropdown', 'default')
+        include ../ui-kit/dropdown/dropdown.pug
+        +dropdown('Сколько гостей')
+      

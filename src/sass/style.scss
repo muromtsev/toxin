@@ -3,9 +3,12 @@
 @import "normalize";
 @import '~material-icons/iconfont/material-icons.scss';
 @import "../pug/includes/header-ui"; // header UI- kit
-@import "../pug/ui-kit/header_footer/header_footer.scss"; //header & footer
+// @import "../pug/ui-kit/header_footer/header_footer.scss"; //header & footer
 // @import "../pug/ui-kit/color_type/color_type.scss";
 @import "media";
+@import "../pug/includes/block-descr.scss";
+@import "../pug//ui-kit/text-field/text-field.scss";
+@import "../pug//ui-kit/dropdown/dropdown.scss";
 
 .material-icons {
     @include material-icons();
@@ -13,7 +16,8 @@
 a {text-decoration: none;}
 ul {list-style: none;}
 body {
-    background-color: $main-bg;
+    background-color: $white;
+
 }
 .container {
     max-width: 1920px;
