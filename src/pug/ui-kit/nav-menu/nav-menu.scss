@@ -10,29 +10,39 @@
         margin: 0;
         padding: 0;
 
-        &__item {            
+        &__item {          
             position: relative;
             padding: 0 15px;
 
             &-link {
                 display: block;
-                font-size: $font-size--base;
+                font-size: $font-size--base;          
                 line-height: 17px;
                 color: $dark-shade--lighten;
-                text-decoration: none;                
-                transition: 0.1s linear;   
+                text-decoration: none;
+                transition: font-weight .3s;                  
 
                 &:hover {
-                    font-weight: bold;
+                    font-family: $mainFont--bold;                   
                 }
-
+                
                 .material-icons {
                     position: absolute;
                     top: -3px;
                     transition: all 0.1s linear;
                 }
-                
-            }//menu__item-link      
+                &::before {
+                    display: block;
+                    content: attr(title);
+                    font-family: $mainFont--bold;
+                    height: 0;
+                    overflow: hidden;
+                    visibility: hidden;
+                }
+            }//menu__item-link     
+            .active {
+                font-family: $mainFont--bold;
+            } 
             .submenu {
                 position: absolute;
                 top: 15px;

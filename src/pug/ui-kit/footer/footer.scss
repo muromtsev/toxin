@@ -22,7 +22,7 @@
                 color: $dark-shade--light;
             }
             .footer__title {
-                font-weight: bold;
+                font-family: $mainFont--bold;
                 font-size: $font-size--small;
                 line-height: 15px;
                 text-transform: uppercase;
@@ -51,7 +51,15 @@
                             transition: 0.3s linear; 
 
                             &:hover {
-                                font-weight: bold;
+                                font-family: $mainFont--bold;
+                            }
+                            &::before {
+                                display: block;
+                                content: attr(title);
+                                font-family: $mainFont--bold;
+                                height: 0;
+                                overflow: hidden;
+                                visibility: hidden;
                             }
                         }
                     }//footer-menu__item

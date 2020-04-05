@@ -22,7 +22,7 @@ mixin footerMenu(elements)
                 ul.footer__menu
                     each item in el.list
                         li.footer__menu-item
-                            a.footer__menu-item-link(href="#") #{item}
+                            a.footer__menu-item-link(href="#" title= item) #{item}
 
 footer.footer.wrapper
     .footer-flex

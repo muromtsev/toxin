@@ -20,7 +20,9 @@ $font-size--small:          12px;
 $font-size--base:           14px;
 // fonts
 $mainFont: 'Montserrat-Regular', OpenSans, sans-serif;
+$mainFont--bold: 'Montserrat-Bold', OpenSans, sans-serif;
 $titleFont: 'Quicksand-Regular', OpenSans, sans-serif;
+$titleFont--bold: 'Quicksand-Bold', OpenSans, sans-serif;
 //material icons
 $material-icons-font-path: '~material-icons/iconfont/';
 $material-icons-codepoints: () !default; /* Sass map of icon names and codepoints */
