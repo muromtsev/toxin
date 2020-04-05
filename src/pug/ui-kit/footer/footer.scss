@@ -1,16 +1,9 @@
 @import "_var";
 
 .footer {    
-    max-width: 1440px;
-    width: 100%;
     height: auto;
     margin: 77px auto 0;
-    padding-left: 140px;
-    padding-right: 140px;   
     padding-top: 100px; 
-    font-family: $mainFont;
-    box-sizing: border-box;
-    background-color: $white;
 
     .footer-flex {
         display: flex;

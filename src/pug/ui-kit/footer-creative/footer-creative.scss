@@ -4,16 +4,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 1440px;
-    width: 100%;
     height: auto;
     margin: 40px auto;
     padding-top: 100px;
-    padding-left: 140px;
-    padding-right: 140px;
-    padding-bottom: 100px;
-    background-color: $white;
-    box-sizing: border-box;
+    padding-bottom: 100px;  
 
     &__text {
         max-width: 560px;
@@ -21,7 +15,6 @@
         padding-top: 20px;
         padding-bottom: 25px;
         text-align: center;
-        font-family: $mainFont;
         font-size: $font-size--base;
         line-height: 24px;
         color: $dark-shade--light;

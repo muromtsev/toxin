@@ -4,16 +4,9 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1440px;
-    width: 100%;
     height: 70px;
     margin: 0 auto;
-    padding-left: 140px;
-    padding-right: 140px;
-    font-family: $mainFont;
     font-size: $font-size--base;
     line-height: 17px;
     border-top: 1px solid #E5E5E5;
-    background-color: $white;
-    box-sizing: border-box;
 }
