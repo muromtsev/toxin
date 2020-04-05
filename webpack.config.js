@@ -48,7 +48,8 @@ module.exports = {
                 test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
                 loader: 'file-loader',
                 options: {
-                    name: '[name].[ext]'
+                    name: '[name].[ext]',
+                    outputPath: 'assets/fonts'
                 }
             }
         ]
@@ -59,9 +60,9 @@ module.exports = {
             filename: 'index.html',
             inject: 'body'            
         }),
-        new MiniCssExtractPlugin(),
-        new CopyPlugin([
-            {from: 'src/fonts', to: 'assets/fonts'}
-        ])
+        new MiniCssExtractPlugin()
+        // new CopyPlugin([
+        //     {from: 'src/fonts', to: 'assets/fonts'}
+        // ])
     ]
 }

@@ -1,14 +1,30 @@
 @font-face {
     font-family: "Montserrat-Regular";
-    src: url('/assets/fonts/Montserrat-Regular/Montserrat-Regular.eot'); /* IE9 Compat Modes */
-    src: url('/assets/fonts/Montserrat-Regular/Montserrat-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-         url('/assets/fonts/Montserrat-Regular/Montserrat-Regular.woff') format('woff'), /* Pretty Modern Browsers */
-         url('/assets/fonts/Montserrat-Regular/Montserrat-Regular.ttf')  format('truetype'), /* Safari, Android, iOS */
-  }
+    src: url('../fonts/Montserrat-Regular/Montserrat-Regular.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/Montserrat-Regular/Montserrat-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../fonts/Montserrat-Regular/Montserrat-Regular.woff') format('woff'), /* Pretty Modern Browsers */
+         url('../fonts/Montserrat-Regular/Montserrat-Regular.ttf')  format('truetype'); /* Safari, Android, iOS */
+}
 @font-face {
     font-family: "Quicksand-Regular";
-    src: url('/assets/fonts/Quicksand-Regular/Quicksand-Regular.eot'); /* IE9 Compat Modes */
-    src: url('/assets/fonts/Quicksand-Regular/Quicksand-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-         url('/assets/fonts/Quicksand-Regular/Quicksand-Regular.woff') format('woff'), /* Pretty Modern Browsers */
-         url('/assets/fonts/Quicksand-Regular/Quicksand-Regular.ttf')  format('truetype'), /* Safari, Android, iOS */
+    src: url('../fonts/Quicksand-Regular/Quicksand-Regular.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/Quicksand-Regular/Quicksand-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../fonts/Quicksand-Regular/Quicksand-Regular.woff') format('woff'), /* Pretty Modern Browsers */
+         url('../fonts/Quicksand-Regular/Quicksand-Regular.ttf')  format('truetype'); /* Safari, Android, iOS */
+}
+@font-face {
+    font-family: "Montserrat-Bold";
+    src: url('../fonts/Montserrat-Bold/Montserrat-Bold.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/Montserrat-Bold/Montserrat-Bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../fonts/Montserrat-Bold/Montserrat-Bold.woff') format('woff'), /* Pretty Modern Browsers */
+         url('../fonts/Montserrat-Bold/Montserrat-Bold.ttf')  format('truetype'); /* Safari, Android, iOS */
+    font-weight: bold;
+}
+@font-face {
+    font-family: "Quicksand-Bold";
+    src: url('../fonts/Quicksand-Bold/Quicksand-Bold.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/Quicksand-Bold/Quicksand-Bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../fonts/Quicksand-Bold/Quicksand-Bold.woff') format('woff'), /* Pretty Modern Browsers */
+         url('../fonts/Quicksand-Bold/Quicksand-Bold.ttf')  format('truetype'); /* Safari, Android, iOS */
+    font-weight: bold;
 }
