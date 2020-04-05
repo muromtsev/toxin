@@ -1,0 +1,13 @@
+-
+    var images = [
+        {'name': 'twitter', 'src': '../src/img/twitter.svg'},
+        {'name': 'facebook', 'src': '../src/img/facebook.svg'},
+        {'name': 'instagramm', 'src': '../src/img/instagramm.svg'}
+    ]
+mixin social-icon(imgs)
+    .social
+        each img in imgs
+            a.social__link(href="#")
+                img(alt= img.name src=img.src)
+
++social-icon(images)

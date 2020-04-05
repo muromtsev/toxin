@@ -6,6 +6,7 @@
 @import "../nav-menu/nav-menu.scss";
 @import "../footer/footer.scss";
 @import "../copyright-bar/copyright-bar.scss";
+@import "../footer-creative/footer-creative.scss";
 
 
 .header {
@@ -22,6 +23,10 @@
     box-sizing: border-box;
     background-color: $white;
     box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+    
+    &__logotype {
+        flex-grow: 1;
+    }
 }
 
 
