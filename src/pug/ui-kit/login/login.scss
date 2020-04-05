@@ -1,8 +1,10 @@
 @import "_var";
+@import "media";
 
 .header__user-manage {
     display: flex;
     box-sizing: border-box;
+
     .login, .register {
         display: block;    
         font-weight: bold;

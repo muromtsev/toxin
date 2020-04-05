@@ -5,6 +5,8 @@
 @import "../pug/includes/header-ui"; // header UI- kit
 @import "../pug/ui-kit/header_footer/header_footer.scss"; //header & footer
 // @import "../pug/ui-kit/color_type/color_type.scss";
+@import "media";
+
 .material-icons {
     @include material-icons();
 }
@@ -27,5 +29,4 @@ body {
     font-family: $mainFont;
     box-sizing: border-box;
     background-color: $white;
-
 }
