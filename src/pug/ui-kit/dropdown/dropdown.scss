@@ -30,40 +30,73 @@
     }
     &__menu {
         position: absolute;
-        top: 50px;
-        display: flex;
+        top: 42px;
+        display: none;
         flex-direction: column;
         width: 100%;
-        height: 200px;
         font-family: $mainFont--bold;
         font-size: $font-size--small;
         line-height: 15px;
         text-transform: uppercase;
         color: $dark-shade;
         border: 1px solid $dark-shade--lightest;
-        border-radius: 4px;
+        border-bottom-left-radius: 4px;
+        border-bottom-right-radius: 4px;
+        background-color: $white;
         box-sizing: border-box;
+        z-index: 99;
+
+        &-active {
+            display: flex;
+        }
 
         &-item {
             display: flex;
             justify-content: space-between;
+            padding-left: 15px;
+            padding-bottom: 6px;
+            
+            &:first-child {
+                padding-top: 13px;
+            }
 
-            .text {
-                padding-left: 15px;
-                padding-bottom: 22px;
-                
-                &:first-child {
-                    padding-top: 13px;
-                }
-
-                &:last-child {
-                    padding-bottom: 29px;
-                }
+            &-text {              
+                align-self: center;
             }//text
-            .count-box {
+
+            &-count {
+                display: flex;
+                align-items: center;
                 
+                .btn-minus, .btn-plus {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin: 0 10px;
+                    width: 30px;
+                    height: 30px;
+                    font-size: 18px;
+                    line-height: 22px;
+                    color: $dark-shade--lighten;
+                    text-align: center;
+                    border: 1px solid $dark-shade--lightest;
+                    border-radius: 50%;
+                    cursor: pointer;
+                }
+                .count-number {
+                    font-size: $font-size--small;
+                    line-height: 15px;
+                    text-align: center;
+                    color: $dark-shade;
+                }
             }
         }//item
+        .drop__menu-btn {
+            align-self: flex-end;
+            padding: 20px 7px 13px 0;
+            font-size: $font-size--small;
+            line-height: 15px;
+            color: $purple;
+        }
     }//menu
-
 }
