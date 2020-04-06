@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
@@ -55,12 +56,17 @@ module.exports = {
         ]
     },
     plugins: [
+        new webpack.ProvidePlugin({
+            $: 'jquery',
+            jQuery: 'jquery'
+        }),
         new HtmlWebpackPlugin({
             template: './src/pug/pages/index.pug',
             filename: 'index.html',
             inject: 'body'            
         }),
-        new MiniCssExtractPlugin()
+        new MiniCssExtractPlugin(),
+        
         // new CopyPlugin([
         //     {from: 'src/fonts', to: 'assets/fonts'}
         // ])
