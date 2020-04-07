@@ -3,16 +3,10 @@
     var room =  ['Спальни', 'Кровати', 'Ванные комнаты']
 
 mixin dropdown(elems)
-    .dropdown
-        if elems === people
-            span.dropdown__text Сколько гостей
-            a.dropdown__link(href="#" data-name="people")
-                span(class="material-icons") keyboard_arrow_down
-        else
-            span.dropdown__text 2 спальни, 2 кровати...
-            a.dropdown__link(href="#" data-name="room")
-                span(class="material-icons") keyboard_arrow_down
-        
+    .dropdown.number-of-guests
+        span.dropdown__text Сколько гостей
+        a.dropdown__link(href="#")
+            span(class="material-icons") keyboard_arrow_down
         .dropdown__menu
             each elem in elems
                 .dropdown__menu-item
