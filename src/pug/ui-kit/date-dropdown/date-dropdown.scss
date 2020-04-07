@@ -1,0 +1,24 @@
+@import "_var";
+
+.date-dropdown {
+    position: relative;
+    max-width: 320px;
+    &__input {
+        @extend .text-field;
+        
+    }
+    &__link {
+        position: absolute;
+        top: 0;
+        right: 0;
+        @extend .dropdown__link;
+    }
+}
+.date-dropdown-default {
+    max-width: 150px;
+    width: 100%;
+}
+.filter-date-dropdown {
+    max-width: 266px;
+    width: 100%;
+}

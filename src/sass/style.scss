@@ -7,8 +7,11 @@
 // @import "../pug/ui-kit/color_type/color_type.scss";
 @import "media";
 @import "../pug/includes/block-descr.scss";
-@import "../pug//ui-kit/text-field/text-field.scss";
-@import "../pug//ui-kit/dropdown/dropdown.scss";
+@import "../pug/ui-kit/text-field/text-field.scss";
+@import "../pug/ui-kit/dropdown/dropdown.scss";
+@import "../pug/ui-kit/date-default/date-default.scss";
+@import "../pug/ui-kit/date-dropdown/date-dropdown.scss";
+@import "../pug/ui-kit/subscription-text-field/subscription-text-field.scss";
 
 .material-icons {
     @include material-icons();
@@ -17,7 +20,7 @@ a {text-decoration: none;}
 ul {list-style: none;}
 p {margin: 0;padding: 0;}
 body {
-    height: 1000px;
+    height: 2000px;
     background-color: $white;
 
 }

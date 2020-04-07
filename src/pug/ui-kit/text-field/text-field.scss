@@ -11,6 +11,7 @@
     border: 1px solid $dark-shade--lightest;
     border-radius: 4px;
     box-sizing: border-box;
+    outline: none;
     &:focus {
         border: 1px solid $dark-shade--lighten;
     }

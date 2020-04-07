@@ -16,5 +16,16 @@ html(lang='en')
         +block-descr('dropdown', 'default')
         include ../ui-kit/dropdown/dropdown.pug
         +dropdown(people)   
-        //- +block-descr('dropdown', 'default')   
-        //- +dropdown(room)      
+        +block-descr('masked text field', 'default')
+        include ../ui-kit/date-default/date-default.pug
+        +date-default
+        +block-descr('date dropdown')
+        include ../ui-kit/date-dropdown/date-dropdown.pug
+        +date-dropdown('date-dropdown-default','ДД.ММ.ГГГГ')
+        +block-descr('date dropdown')
+        +date-dropdown('date-dropdown-default','19.08.2019')
+        +block-descr('filter date dropdown')
+        +date-dropdown('filter-date-dropdown','19 авг - 23 авг')
+        +block-descr('subscription text field')
+        include ../ui-kit/subscription-text-field/subscription-text-field.pug
+        +subscription-text-field

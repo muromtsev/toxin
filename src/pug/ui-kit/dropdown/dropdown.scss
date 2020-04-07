@@ -25,19 +25,18 @@
         padding: 13px 0 13px 15px;        
     }
     &__link {
-        display: block;
-        width: 44px;
-        height: 44px;
         display: flex;
         justify-content: center;
         align-items: center;
+        width: 44px;
+        height: 44px;
         color: $dark-shade--lighten;
     }
     &__menu {
         position: absolute;
         top: 42px;
         left: -1px;
-        display: flex;
+        display: none;
         flex-direction: column;
         max-width: 320px;
         width: 100%;
