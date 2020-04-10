@@ -1,0 +1,22 @@
+-
+    var menuList = [
+        {name: 'Завтрак', check: false},
+        {name: 'Письменный стол', check: true},
+        {name: 'Стул для кормления', check: true},
+        {name: 'Кроватка', check: true},
+        {name: 'Телевизор', check: false},
+        {name: 'Шампунь', check: false},
+        {name: 'Телевизор', check: false},
+        {name: 'Шампунь', check: false}
+    ]
+mixin checkbox-list(classActive)
+    .checkbox-list
+        span.checkbox-list__title expandable checkbox list
+        a.checkbox-list__link(href="#")
+                span(class="material-icons") keyboard_arrow_down
+        ul.checkbox-list__menu(class= classActive)
+            each item in menuList
+                li.ckeckbox-list__item
+                    a.checkbox-list__link 
+                        input(type="checkbox" checked= item.check class= checkbox-list__inp)
+                        span(class= checkbox-list__text) #{item.name}

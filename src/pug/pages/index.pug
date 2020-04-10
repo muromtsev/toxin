@@ -15,7 +15,7 @@ html(lang='en')
         +text-field('This is pretty awesome')
         +block-descr('dropdown', 'default')
         include ../ui-kit/dropdown/dropdown.pug
-        +dropdown(people)   
+        +dropdown(people, 'dropdown-number-of-guests ')   
         +block-descr('masked text field', 'default')
         include ../ui-kit/date-default/date-default.pug
         +date-default
@@ -29,3 +29,8 @@ html(lang='en')
         +block-descr('subscription text field')
         include ../ui-kit/subscription-text-field/subscription-text-field.pug
         +subscription-text-field
+        +block-descr('dropdown', 'default')
+        +dropdown(room, 'dropdown-room-amenities')
+        include ../ui-kit/checkbox-list/checkbox-list.pug
+        +checkbox-list
+        //- +checkbox-list('ckeckbox-list__menu--active')
