@@ -8,9 +8,7 @@
     max-width: 266px;
     width: 100%;
     height: 44px;
-
-    
-
+    border: 1px solid red;
 
     &__title {
         font-family: $mainFont--bold;
@@ -18,7 +16,7 @@
         line-height: 15px;
         text-transform: uppercase;
     }
-    &__link {
+    &__arrow {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -27,12 +25,27 @@
         color: $dark-shade--lighten;
     }
     &__menu {
-        position: absolute;
         display: none;
+        
 
-    }
-    &__menu--active {
-        display: flex;
-    }
-
-}
+        &--active {
+            position: absolute;
+            top: 45px;
+            display: flex;
+            flex-direction: column;
+            max-width: 222px;
+            width: 100%;
+            border: 1px solid green;
+            
+        }
+            
+        input[type="checkbox"]:checked + label,
+        input[type="checkbox"]:not(:checked) + label {
+            background-color: red;
+            font-size: $font-size--base;
+            line-height: 18px;
+            color: $dark-shade--lighten;
+        }
+    }//menu
+    
+}//checkbox-list

@@ -18,7 +18,7 @@
     @include material-icons();
 }
 a {text-decoration: none;}
-ul {list-style: none;}
+ul {list-style: none; margin: 0; padding: 0;}
 p {margin: 0;padding: 0;}
 body {
     height: 2000px;

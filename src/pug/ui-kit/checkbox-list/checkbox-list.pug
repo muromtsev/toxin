@@ -1,22 +1,22 @@
 -
     var menuList = [
-        {name: 'Завтрак', check: false},
-        {name: 'Письменный стол', check: true},
-        {name: 'Стул для кормления', check: true},
-        {name: 'Кроватка', check: true},
-        {name: 'Телевизор', check: false},
-        {name: 'Шампунь', check: false},
-        {name: 'Телевизор', check: false},
-        {name: 'Шампунь', check: false}
+        {id: 'mi1', name: 'Завтрак', check: false},
+        {id: 'mi2', name: 'Письменный стол', check: true},
+        {id: 'mi3', name: 'Стул для кормления', check: true},
+        {id: 'mi4', name: 'Кроватка', check: true},
+        {id: 'mi5', name: 'Телевизор', check: false},
+        {id: 'mi6', name: 'Шампунь', check: false},
+        {id: 'mi7', name: 'Телевизор', check: false},
+        {id: 'mi8', name: 'Шампунь', check: false}
     ]
-mixin checkbox-list(classActive)
-    .checkbox-list
-        span.checkbox-list__title expandable checkbox list
-        a.checkbox-list__link(href="#")
-                span(class="material-icons") keyboard_arrow_down
-        ul.checkbox-list__menu(class= classActive)
-            each item in menuList
-                li.ckeckbox-list__item
-                    a.checkbox-list__link 
-                        input(type="checkbox" checked= item.check class= checkbox-list__inp)
-                        span(class= checkbox-list__text) #{item.name}
+mixin checkbox-list(classActive)    
+        .checkbox-list
+            span.checkbox-list__title expandable checkbox list
+            a.checkbox-list__arrow(href="#")
+                    span(class="material-icons") keyboard_arrow_down
+            if classActive
+                ul(class='checkbox-list__menu' + classActive) 
+                    each item in menuList
+                        input(type="checkbox" checked= item.check id= item.id)
+                        label(for= item.id) #{item.name}
+                            
