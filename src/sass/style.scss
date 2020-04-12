@@ -13,10 +13,11 @@
 @import "../pug/ui-kit/date-dropdown/date-dropdown.scss";
 @import "../pug/ui-kit/subscription-text-field/subscription-text-field.scss";
 @import "../pug/ui-kit/checkbox-list/checkbox-list.scss";
+@import "../pug/ui-kit/room-information/room-information.scss";
 
-.material-icons {
-    @include material-icons();
-}
+// .material-icons {
+//     @include material-icons();
+// }
 a {text-decoration: none;}
 ul {list-style: none; margin: 0; padding: 0;}
 p {margin: 0;padding: 0;}

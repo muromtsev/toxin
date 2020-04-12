@@ -1,0 +1,38 @@
+@import "_var";
+
+.room_information {
+    display: flex;
+    justify-content: start;
+    max-width: 291px;
+    width: 100%;
+    margin-top: 20px;
+    padding-bottom: 17px;
+    border-bottom: 1px solid rgba(31, 32, 65, 0.1);
+
+    &__icon {
+        padding-top: 5px;
+        margin-right: 10px;
+
+        .material-icons {
+            width: 48px;
+            height: 48px;
+            font-size: 48px;
+            line-height: 41px;
+            color: $purple;
+        }
+    }
+    &__right {        
+
+        .room_information__title {
+            font-family: $mainFont--bold;
+            font-size: $font-size--base;
+            line-height: 24px;
+            color: $dark-shade--light;
+            
+        }
+        .room_information__text {
+            font-family: $mainFont;
+            @extend .room_information__title;
+        }
+    }
+}
