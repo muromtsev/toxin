@@ -8,13 +8,13 @@
     max-width: 266px;
     width: 100%;
     height: 44px;
-    border: 1px solid red;
 
     &__title {
         font-family: $mainFont--bold;
         font-size: $font-size--small;
         line-height: 15px;
         text-transform: uppercase;
+        cursor: pointer;
     }
     &__arrow {
         display: flex;
@@ -23,29 +23,68 @@
         width: 44px;
         height: 44px;
         color: $dark-shade--lighten;
+        transition: 0.1s linear;                
     }
+
+    .arrow-active {
+        transform: rotateZ(-180deg);        
+    }
+
     &__menu {
         display: none;
-        
+        position: absolute;
+        top: 43px;
+        flex-direction: column;
+        max-width: 266px;
+        width: 100%;
+        height: auto;
+        z-index: 99;
+        background-color: $white;     
 
-        &--active {
-            position: absolute;
-            top: 45px;
-            display: flex;
-            flex-direction: column;
-            max-width: 222px;
-            width: 100%;
-            border: 1px solid green;
-            
-        }
-            
-        input[type="checkbox"]:checked + label,
-        input[type="checkbox"]:not(:checked) + label {
-            background-color: red;
+        .check {
+            padding-left: 30px;
+            padding-top: 15px;
             font-size: $font-size--base;
             line-height: 18px;
             color: $dark-shade--lighten;
-        }
+            cursor: pointer;
+            outline: none;
+            
+            &__input {
+                position: absolute;
+                width: 1px;
+                height: 1px;
+                overflow: hidden;
+                clip: rect(0 0 0 0);
+
+                
+            }
+            &__box {
+                position: absolute;
+                margin-left: -30px;
+                width: 18px;
+                height: 18px;
+                overflow: hidden;
+                border-radius: 4px;
+                border: 1px solid $dark-shade--transparent;
+                background-color: $white;
+                background-repeat: no-repeat;
+                background-position: 50% 50%;
+            }
+            .check__input:checked + .check__box {
+                border-color: $purple;
+                background-color: $white;
+                background-image: url(../img/check.svg);
+            }
+            .check-style {
+                display: block;
+                margin-bottom: 15px;
+            }           
+        }   
     }//menu
+    .menu-active {
+        display: flex;
+    }
+   
     
 }//checkbox-list
