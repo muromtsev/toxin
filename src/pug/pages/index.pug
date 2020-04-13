@@ -37,3 +37,10 @@ html(lang='en')
         include ../ui-kit/room-information/room-information.pug
         +room_information('mood', 'Комфорт', 'Шумопоглащающие стены')
         +room_information('location_city', 'Удобство', 'Окно в каждой из спален')
+        +block-descr('checkbox buttons')
+        include ../ui-kit/checkbox-buttons/checkbox-buttons.pug
+        +checkbox-buttons
+        +block-descr('radio-buttons')
+        include ../ui-kit/radio-buttons/radio-buttons.pug
+        +radio-buttons
+        
