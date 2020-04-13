@@ -1,0 +1,62 @@
+@import "_var";
+
+.toggle-button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 260px;
+    width: 100%;
+    margin-bottom: 12px;
+
+    &__spec {
+        display: block;
+        font-size: $font-size--base;
+        line-height: 24px;
+        color: $dark-shade--light;
+    }
+
+    &__control {        
+        position: relative;
+        box-sizing: border-box;        
+    }
+
+    &__input {
+        display: none;              
+    }
+
+    &__box {
+        display: block;
+        position: absolute;
+        top: -10px;
+        width: 38px;
+        height: 18px;
+        border-radius: 10px;
+        border: 1px solid $dark-shade--lightest;
+        cursor: pointer;
+        overflow: hidden;
+        transition: 0.2s;
+        background-color: $white;
+
+        &:before {
+            position: absolute;
+            top: 3px;
+            left: 3px;
+            content: '';
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: $dark-shade--lightest;            
+            transition: 0.2s;
+        }
+    }
+
+    &__input:checked + &__box:before {
+        transform: translateX(20px);
+        background-color: $purple;
+    }
+
+    &__input:checked + &__box {
+        border-color: $purple;
+    }
+    
+}
