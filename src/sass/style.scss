@@ -17,6 +17,7 @@
 @import "../pug/ui-kit/checkbox-buttons/checkbox-buttons.scss";
 @import "../pug/ui-kit/radio-buttons/radio-buttons.scss";
 @import "../pug/ui-kit/toggle-button/toggle-button.scss";
+@import "../pug/ui-kit/like-button/like-button.scss";
 
 // .material-icons {
 //     @include material-icons();
@@ -25,7 +26,7 @@ a {text-decoration: none;}
 ul {list-style: none; margin: 0; padding: 0;}
 p {margin: 0;padding: 0;}
 body {
-    height: 2000px;
+    height: 3000px;
     background-color: $white;
 
 }
