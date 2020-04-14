@@ -49,4 +49,6 @@ html(lang='en')
         +toggle-button(false)
         +block-descr('like button')
         include ../ui-kit/like-button/like-button.pug
-        +like-button('', 2)
+        .flex-block(style="display: flex; justify-content: flex-start; max-width: 320px; width: 100%")
+          +like-button
+          +like-button--Active
