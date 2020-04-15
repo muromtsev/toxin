@@ -1,6 +1,7 @@
 @import "_var";
 
 .rate-button {
+
     &__group {
         position: relative;
         width: 120px;
@@ -23,6 +24,7 @@
         appearance: none;
         background-size: 24px auto;
         background-repeat: repeat-x;
+        cursor: pointer;
     }
     
     &__star:focus {
