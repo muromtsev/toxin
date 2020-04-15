@@ -1,0 +1,8 @@
+-
+    var bulletList = ['Нельзя с питомцами', 'Без вечеринок и мероприятий', 'Время прибытия — после 13:00, а выезд до 12:00']
+
+mixin bullet-list
+    .bullet-list
+        ul.bullet-list__list
+            each item in bulletList
+                li.bullet-list__item #{item}
