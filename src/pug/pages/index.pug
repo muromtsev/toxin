@@ -8,6 +8,7 @@ html(lang='en')
       //- include ../ui-kit/header_footer/header_footer.pug
       .container.wrapper
         include ../includes/block-descr.pug
+        include ../ui-kit/header-block/header-block.pug
         +block-descr('text field', 'default')
         include ../ui-kit/text-field/text-field.pug
         +text-field
@@ -61,3 +62,5 @@ html(lang='en')
         +block-descr('bullet list')
         include ../ui-kit/bullet-list/bullet-list.pug
         +bullet-list
+        include ../ui-kit/range-slider/range-slider.pug
+        +range-slider('range slider')

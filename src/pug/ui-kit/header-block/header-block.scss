@@ -1,0 +1,20 @@
+.header-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 320px;
+    width: 100%;    
+    line-height: 15px;
+    text-transform: uppercase;  
+
+    &__title {
+        font-family: $mainFont--bold;
+        color: $dark-shade;
+        font-size: $font-size--small;        
+    }
+    &__text {
+        font-family: $mainFont;
+        font-size: $font-size--small;  
+        color: $dark-shade--lighten;
+    }
+}

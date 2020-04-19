@@ -1,0 +1,55 @@
+.r-slider {
+    max-width: 266px;
+
+    &__head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+    }
+    &__value {
+      width: 50%;
+      font-family: $mainFont;
+      font-size: $font-size--small;  
+      color: $dark-shade--lighten;
+      border: none;
+      outline: none;
+    }
+
+    
+  
+  }
+  span.irs.irs--flat {
+    max-width: 266px;
+
+    .irs-max,
+    .irs-min {
+      display: none;
+    }
+    .irs-line {
+      width: 266px;
+      height: 6px;
+      background: #FFFFFF;
+      border: 1px solid $dark-shade--lightest;
+      box-sizing: border-box;
+      border-radius: 3px;
+    }
+    .irs-bar {
+      height: 6px;
+      background-color: $green;
+    }
+    .irs-handle.from,
+    .irs-handle.to {
+      width: 12px;
+      height: 12px;
+      background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+      border: 2px solid #FFFFFF;
+      border-radius: 10px;
+      cursor: pointer;
+      i {
+        display: none;
+      }
+    }   
+      
+  }
+  

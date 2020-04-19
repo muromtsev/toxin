@@ -1,0 +1,5 @@
+mixin header-block({title='heading', text}={})
+    .header-block
+        h3.header-block__title #{title}
+        if(text) 
+            .header-block__text #{text}
