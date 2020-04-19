@@ -1,0 +1,47 @@
+.button-link {
+    max-width: 99px;
+    width: 100%;
+    box-sizing: border-box;
+
+    &__elem {
+        display: block;
+        padding: 12px 17px;        
+        font-size: $font-size--small;  
+        font-family: $mainFont--bold;             
+        line-height: 15px;
+        text-align: center;
+        text-transform: uppercase;
+        transition: all 0.5s;
+        
+    }
+
+    .btnBackground {        
+        color: $white;
+        background: $main-gradient;
+        border-radius: 22px;
+
+        &:hover {
+            opacity: 0.5;
+        }
+    }
+    .btnBorder {
+        color: $purple;
+        border-width: 2px;
+        border-style: solid;
+        border-color: $main-gradient;
+        border-radius: 22px;
+
+        &:hover {
+            opacity: 0.5;
+        }
+    }
+    .btnDefault {
+        padding: 0;
+        color: $purple;
+        width: 61px;
+
+        &:hover {
+            color: $dark-shade--lighten;
+        }
+    }
+}

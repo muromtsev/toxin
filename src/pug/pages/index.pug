@@ -63,4 +63,9 @@ html(lang='en')
         include ../ui-kit/bullet-list/bullet-list.pug
         +bullet-list
         include ../ui-kit/range-slider/range-slider.pug
-        +range-slider('range slider')
+        +range-slider('range slider')        
+        +header-block({title: 'buttons'})
+        include ../ui-kit/button/button.pug        
+        +button({className: 'btnBackground'})
+        +button({className: 'btnBorder'})
+        +button({className: 'btnDefault'})
