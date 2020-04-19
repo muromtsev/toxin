@@ -1,4 +1,4 @@
-mixin button({className, address='/mock-address/change-me'}={})
+mixin button({className = 'btnDefault', address='/mock-address/change-me'}={})
     -   let btnClass   
     .button-link    
         case className
@@ -6,9 +6,6 @@ mixin button({className, address='/mock-address/change-me'}={})
                 - btnClass = className
             when 'btnBorder'
                 - btnClass = className
-            when 'btnDefault'
-                - btnClass = 'btnDefault'
-        
         a.button-link__elem(class=className href=address) click me
 
         
