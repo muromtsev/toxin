@@ -1,11 +1,15 @@
-mixin button({className = 'btnDefault', address='/mock-address/change-me'}={})
+mixin button({className = 'btnDefault', text = 'click me', address='/mock-address/change-me', arrow}={})
     -   let btnClass   
     .button-link    
         case className
             when 'btnBackground'
                 - btnClass = className
             when 'btnBorder'
-                - btnClass = className
-        a.button-link__elem(class=className href=address) click me
+                - btnClass = className            
+        if arrow
+            a.button-link__elem(class='btnLong' href=address) #{text}
+                span.material-icons arrow_forward
+        else    
+            a.button-link__elem(class=className href=address) #{text}
 
         

@@ -44,4 +44,22 @@
             color: $dark-shade--lighten;
         }
     }
+    .btnLong {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 320px;
+        color: $white;
+        line-height: 24px;
+        background: $main-gradient;
+        border-radius: 22px;
+        &:hover {
+            opacity: 0.5;
+        }
+        .material-icons {
+            position: absolute;
+            right: 10px;
+        }
+    }
 }
