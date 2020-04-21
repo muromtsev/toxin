@@ -1,0 +1,20 @@
+mixin pagination({numFrom = 1, numTo = 12, numMax = '100+', text = ' вариантов аренды', links = []}={})
+    +header-block({title: 'pagination'})
+    ul.pagination-list
+        each link, i in links
+            - let { href, isActive, number } = link
+            if i === link.length-1
+                li.pagination-list__item
+                    a.pagination__link-dotted(href=href) ...
+            li.pagination-list__item
+                a.pagination-list__link(href=href, class= isActive ? 'pagination-list__link-active' : null)=number
+        li.pagination-list__item
+            a.pagination-list__link-next(href='/mock-address/change-me')
+                span.material-icons arrow_forward
+    .pagination-text
+        span.pagination-text__numFrom=numFrom
+        span=' - '
+        span.pagination-text__numTo=numTo
+        span=' из '
+        span.pagination-text__numMax=numMax
+        span.pagination-text__description=text

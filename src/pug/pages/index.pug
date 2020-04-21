@@ -73,3 +73,12 @@ html(lang='en')
           text: 'перейти к оплате',
           arrow: true
         })
+        include ../ui-kit/pagination/pagination.pug
+        +pagination({
+          links: [
+            {href: 'mock-address/change-me', number: 1, isActive: true },
+            {href: 'mock-address/change-me', number: 2 },
+            {href: 'mock-address/change-me', number: 3 },
+            {href: 'mock-address/change-me', number: 15 },
+          ]
+        })
