@@ -1,6 +1,7 @@
 .pagination-list {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     max-width: 241px;
     width: 100%;
 
@@ -8,6 +9,36 @@
 
     }
     &__link {
-        
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        font-size: $font-size--small;
+        line-height: 15px;
+        font-family: $mainFont;
+        color: $dark-shade--lighten;
+        border-radius: 50%;
+        // transition: all 0.3s;
+        background: $white;
+
+        &:hover {
+            color: $white;
+            background: $main-gradient;
+        }
+    }
+
+    &__link-next {
+        @extend .pagination-list__link;
+        &:hover {
+            background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+        }
+
+    }
+    .pagination-text {
+        padding-top: 10px;
+        font-size: $font-size--base;
+        color: $dark-shade--light;
+        text-align: center;
     }
 }
