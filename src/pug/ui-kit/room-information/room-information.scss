@@ -1,5 +1,3 @@
-@import "_var";
-
 .room_information {
     display: flex;
     justify-content: start;
@@ -24,7 +22,8 @@
     &__right {        
 
         .room_information__title {
-            font-family: $mainFont--bold;
+            font-family: $mainFont;   
+            font-weight: bold;
             font-size: $font-size--base;
             line-height: 24px;
             color: $dark-shade--light;
@@ -32,6 +31,7 @@
         }
         .room_information__text {
             font-family: $mainFont;
+            font-weight: normal;
             @extend .room_information__title;
         }
     }

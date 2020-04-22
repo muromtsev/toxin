@@ -6,7 +6,6 @@
 // @import "../pug/ui-kit/header_footer/header_footer.scss"; //header & footer
 // @import "../pug/ui-kit/color_type/color_type.scss";
 // @import "media";
-@import "../pug/includes/block-descr.scss";
 @import "../pug/ui-kit/header-block/header-block.scss";
 @import "../pug/ui-kit/text-field/text-field.scss";
 @import "../pug/ui-kit/dropdown/dropdown.scss";
@@ -27,9 +26,6 @@
 @import "../pug/ui-kit/pagination/pagination.scss";
 @import "../pug/ui-kit/comments/comments.scss";
 
-// .material-icons {
-//     @include material-icons();
-// }
 a {text-decoration: none;}
 ul {list-style: none; margin: 0; padding: 0;}
 p {margin: 0;padding: 0;}

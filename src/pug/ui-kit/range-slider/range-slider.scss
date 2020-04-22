@@ -15,10 +15,9 @@
       border: none;
       outline: none;
     }
-
-    
   
   }
+
   span.irs.irs--flat {
     max-width: 266px;
 
@@ -26,6 +25,7 @@
     .irs-min {
       display: none;
     }
+
     .irs-line {
       width: 266px;
       height: 6px;
@@ -34,10 +34,12 @@
       box-sizing: border-box;
       border-radius: 3px;
     }
+
     .irs-bar {
       height: 6px;
       background-color: $green;
     }
+
     .irs-handle.from,
     .irs-handle.to {
       width: 12px;
@@ -46,6 +48,7 @@
       border: 2px solid #FFFFFF;
       border-radius: 10px;
       cursor: pointer;
+      
       i {
         display: none;
       }

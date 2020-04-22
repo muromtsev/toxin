@@ -22,7 +22,8 @@
                 color: $dark-shade--light;
             }
             .footer__title {
-                font-family: $mainFont--bold;
+                font-family: $mainFont;   
+                font-weight: bold;
                 font-size: $font-size--small;
                 line-height: 15px;
                 text-transform: uppercase;
@@ -51,12 +52,14 @@
                             transition: 0.3s linear; 
 
                             &:hover {
-                                font-family: $mainFont--bold;
+                                font-family: $mainFont;   
+                                font-weight: bold;
                             }
                             &::before {
                                 display: block;
                                 content: attr(title);
-                                font-family: $mainFont--bold;
+                                font-family: $mainFont;   
+                                font-weight: bold;
                                 height: 0;
                                 overflow: hidden;
                                 visibility: hidden;

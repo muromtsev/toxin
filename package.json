@@ -5,12 +5,9 @@
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server --mode development --open",
-<<<<<<< HEAD
     "build": "webpack --mode production",
     "deploy": "gh-pages -d dist"
-=======
-    "build": "webpack --mode production"
->>>>>>> 43b38c70abedcaa2d7bdf815f035fdd6f7b22d9d
+
   },
   "author": "muromtsev",
   "license": "ISC",

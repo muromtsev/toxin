@@ -42,7 +42,8 @@
     }
 
     &__title {
-        font-family: $mainFont--bold;
+        font-family: $mainFont;   
+        font-weight: bold;
         font-size: $font-size--base;
         line-height: 18px;
         color: $dark-shade--light;

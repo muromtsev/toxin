@@ -12,7 +12,8 @@
         line-height: 24px;
     }
     &__user-name {
-        font-family: $mainFont--bold;
+        font-family: $mainFont;   
+        font-weight: bold;
     }
     &__text {
         padding-top: 10px;

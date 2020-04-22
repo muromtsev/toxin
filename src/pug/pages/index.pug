@@ -7,9 +7,7 @@ html(lang='en')
       //- include ../ui-kit/color_type/color_type.pug
       //- include ../ui-kit/header_footer/header_footer.pug
       .container.wrapper
-        include ../includes/block-descr.pug
         include ../ui-kit/header-block/header-block.pug
-        //- +block-descr('text field', 'default')
         include ../ui-kit/text-field/text-field.pug
         +text-field({
           headerTitle: 'Text Field',
@@ -65,7 +63,6 @@ html(lang='en')
         include ../ui-kit/like-button/like-button.pug
         +like-button({headerTitle: 'like button'})
         +like-button--Active
-        +block-descr('rate button')
         include ../ui-kit/rate-button/rate-button.pug
         +rate-button
         include ../ui-kit/rich-checkbox-button/rich-checkbox-button.pug

@@ -23,7 +23,8 @@
                 transition: font-weight .3s;                  
 
                 &:hover {
-                    font-family: $mainFont--bold;                   
+                    font-family: $mainFont;   
+                    font-weight: bold;                   
                 }
                 
                 .material-icons {
@@ -34,14 +35,16 @@
                 &::before {
                     display: block;
                     content: attr(title);
-                    font-family: $mainFont--bold;
+                    font-family: $mainFont;   
+                    font-weight: bold;
                     height: 0;
                     overflow: hidden;
                     visibility: hidden;
                 }
             }//menu__item-link     
             .active {
-                font-family: $mainFont--bold;
+                font-family: $mainFont;   
+                font-weight: bold;
             } 
             .submenu {
                 position: absolute;

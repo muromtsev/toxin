@@ -1,5 +1,3 @@
-@import "_var";
-
 .checkbox-list {
     position: relative;
     display: flex;
@@ -10,7 +8,8 @@
     height: 44px;
 
     &__title {
-        font-family: $mainFont--bold;
+        font-family: $mainFont;   
+        font-weight: bold;
         font-size: $font-size--small;
         line-height: 15px;
         text-transform: uppercase;
