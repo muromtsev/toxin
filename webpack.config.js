@@ -2,106 +2,73 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 
-module.exports = (env, options) => {
-
-    const PATHS = {
-        src: path.join(__dirname, './src'),
-        dist: path.join(__dirname, './dist'),
-    };
-
-    const PAGES_DIR = `${PATHS.src}/pug/pages/`;
-    const production = options.mode === 'production';
-    const publicDir = './';
-
-    return {
-        entry: {
-            app: `${PATHS.src}/js`,
-        },
-        devtool: production ? false : 'eval-sourcemap',
-        devServer: {
-            overlay: {
-                warnings: true,
-                errors: true,
-            },
-            watchOptions: {
-                ignored: /node_modules/,
-            },
-        },
-        output: {
-            filename: 'js/[name].[hash].js',
-            path: PATHS.dist,
-            publicPath: publicDir,
-        },
-        optimization: {
-            splitChunks: {
-              cacheGroups: {
-                vendor: {
-                  name: 'vendors',
-                  test: /node_modules/,
-                  chunks: 'all',
-                  enforce: true,
-                },
-              },
-            },
-          },
-        module: {
-            rules: [{
-                    test: /\.pug$/,
-                    loader: 'pug-loader',
-                },{
-                    test: /\.js$/,
-                    loader: 'babel-loader',
-                    exclude: '/node_modules/',
-                },{
-                    test: /\.(sa|sc|c)ss$/,
-                    use: [
-                        {
-                            loader: MiniCssExtractPlugin.loader,
-                        },
-                        {
-                            loader: 'css-loader',
-                        }, {
-                            loader: 'sass-loader',
-                        },
-                    ],
-                },{
-                    test: /\.(eot|svg|ttf|woff|woff2)$/,
-                    exclude: [/ui-kit/, /img/],
-                    use: {
-                        loader: 'file-loader',
-                        options: {
-                            name: './fonts/[name].[ext]',
-                            publicPath: '../',
-                        }
-                    }
-                },{
-                    test: /\.(png|jpg|gif|svg)$/,
-                    loader: 'file-loader',
-                    exclude: [/fonts/],
-                    options: {
-                        name: './img/[name].[ext]',
-                        publicPath: '../',
+module.exports = {
+    entry: './src/js/index.js',
+    output: {
+        path: path.resolve(__dirname, 'dist'),
+        filename: 'main.js'
+    },
+    module: {
+        rules: [
+            {
+                test: /\.pug$/,
+                use: 
+                    {
+                        loader: 'pug-loader'
                     },
-                },
-            ],
-        },
-        resolve: {
-            extensions: ['.js', '.scss'],            
-        },
-        plugins: [
-            new MiniCssExtractPlugin({
-                filename: 'css/[name].[hash].css',
-            }),
-            new webpack.ProvidePlugin({
-                $: 'jquery',
-                jQuery: 'jquery',
-                'window.jQuery': 'jQuery',
-            }),
-            new HtmlWebpackPlugin({
-                template: `${PAGES_DIR}/index.pug`,
-                filename: 'index.html',          
-            }),
-        ],
-    };
-};
+            },
+            {
+                test: /\.m?js$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: 'babel-loader'
+                }
+            },
+            {
+                test: /\.s[ac]ss$/i,
+                use: [
+                    'style-loader',
+                    MiniCssExtractPlugin.loader,
+                    {
+                        loader: 'css-loader'
+                    }, {
+                        loader: 'sass-loader'
+                    },
+                ],
+            },
+            {
+                test: /\.css$/,
+                use: [
+                    MiniCssExtractPlugin.loader,
+                    'css-loader'
+                ]
+            },
+            {
+                test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+                loader: 'file-loader',
+                options: {
+                    name: '[name].[ext]',
+                    outputPath: 'assets/fonts'
+                }
+            }
+        ]
+    },
+    plugins: [
+        new webpack.ProvidePlugin({
+            $: 'jquery',
+            jQuery: 'jquery'
+        }),
+        new HtmlWebpackPlugin({
+            template: './src/pug/pages/index.pug',
+            filename: 'index.html',
+            inject: 'body'            
+        }),
+        new MiniCssExtractPlugin(),
+        
+        // new CopyPlugin([
+        //     {from: 'src/fonts', to: 'assets/fonts'}
+        // ])
+    ]
+}
