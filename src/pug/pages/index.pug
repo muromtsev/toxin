@@ -82,3 +82,11 @@ html(lang='en')
             {href: 'mock-address/change-me', number: 15 },
           ]
         })
+        include ../ui-kit/comments/comments.pug
+        +comments({
+          avatarSrc: './src/img/avatar.png',
+          avatarAlt: 'Avatar',
+          userName: 'Мурад Сарафанов',
+          date: '5 дней назад',
+          text: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.'
+        })
