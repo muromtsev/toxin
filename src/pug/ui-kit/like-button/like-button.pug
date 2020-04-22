@@ -1,4 +1,5 @@
-mixin like-button
+mixin like-button({headerTitle}={})
+    +header-block({title: headerTitle})
     .like-button
         .like-button__heart
             <svg class="heart-border">

@@ -1,6 +1,8 @@
-mixin button({className = 'btnDefault', text = 'click me', address='/mock-address/change-me', arrow}={})
+mixin button({headerTitle, className = 'btnDefault', text = 'click me', address='/mock-address/change-me', arrow}={})
     -   let btnClass   
     .button-link    
+        if headerTitle
+            +header-block({title: headerTitle})
         case className
             when 'btnBackground'
                 - btnClass = className

@@ -20,17 +20,12 @@ html(lang='en')
           elems: ['Взрослые', 'Дети', 'Младенцы'],
           classItem: 'dropdown-number-of-guests'
         })   
-        +block-descr('masked text field', 'default')
         include ../ui-kit/date-default/date-default.pug
         +date-default
-        +block-descr('date dropdown')
         include ../ui-kit/date-dropdown/date-dropdown.pug
-        +date-dropdown('date-dropdown-default','ДД.ММ.ГГГГ')
-        +block-descr('date dropdown')
-        +date-dropdown('date-dropdown-default','19.08.2019')
-        +block-descr('filter date dropdown')
-        +date-dropdown('filter-date-dropdown','19 авг - 23 авг')
-        +block-descr('subscription text field')
+        +date-dropdown({className: 'date-dropdown-default', text: 'ДД.ММ.ГГГГ'})
+        +date-dropdown({className: 'date-dropdown-default', text: '19.08.2019'})
+        +date-dropdown({className: 'filter-date-dropdown', text: '19 авг - 23 авг'})
         include ../ui-kit/subscription-text-field/subscription-text-field.pug
         +subscription-text-field
         +dropdown({
@@ -39,40 +34,57 @@ html(lang='en')
           classItem: 'dropdown-room-amenities'
         })
         include ../ui-kit/checkbox-list/checkbox-list.pug
-        +checkbox-list
-        +checkbox-list
+        +checkbox-list({
+          menuList: [
+            {name: 'Завтрак', check: false},
+            {name: 'Письменный стол', check: true},
+            {name: 'Стул для кормления', check: true},
+            {name: 'Кроватка', check: true},
+            {name: 'Телевизор', check: false},
+            {name: 'Шампунь', check: false},
+            {name: 'Телевизор', check: false},
+            {name: 'Шампунь', check: false},
+          ],
+        })
         include ../ui-kit/room-information/room-information.pug
-        +room_information('mood', 'Комфорт', 'Шумопоглащающие стены')
-        +room_information('location_city', 'Удобство', 'Окно в каждой из спален')
-        +block-descr('checkbox buttons')
+        +room_information
+        +room_information({iconName: 'location_city', titleRoom: 'Удобство', textRoom: 'Окно в каждой из спален'})
         include ../ui-kit/checkbox-buttons/checkbox-buttons.pug
-        +checkbox-buttons
-        +block-descr('radio-buttons')
+        +checkbox-buttons({
+          listButtons: [
+            {name: 'Можно курить', check: false},
+            {name: 'Можно с питомцами', check: true},
+            {name: 'Можно пригласить гостей (до 10 человек)', check: true}
+          ]
+        })
         include ../ui-kit/radio-buttons/radio-buttons.pug
         +radio-buttons
-        +block-descr('toggle')
         include ../ui-kit/toggle-button/toggle-button.pug
-        +toggle-button(true)
-        +toggle-button(false)
-        +block-descr('like button')
+        +toggle-button({headerTitle: 'toggle'})
+        +toggle-button({isActive: false})
         include ../ui-kit/like-button/like-button.pug
-        .flex-block(style="display: flex; justify-content: flex-start; max-width: 320px; width: 100%")
-          +like-button
-          +like-button--Active
+        +like-button({headerTitle: 'like button'})
+        +like-button--Active
         +block-descr('rate button')
         include ../ui-kit/rate-button/rate-button.pug
         +rate-button
-        +block-descr('rich-checkbox-button')
         include ../ui-kit/rich-checkbox-button/rich-checkbox-button.pug
-        +rich-checkbox-button
-        +block-descr('bullet list')
+        +rich-checkbox-button({
+          headerTitle: 'rich-checkbox-button',
+          richCheckboxButton: [
+            {richTitle: 'Широкий коридор', richText: 'Ширина коридоров в номере не менее 91 см.'},
+            {richTitle: 'Помощник для инвалидов', richText: 'На 1 этаже вас встретит специалист  и проводит до номера.'}
+          ]
+        })
         include ../ui-kit/bullet-list/bullet-list.pug
-        +bullet-list
+        +bullet-list({
+          headerTitle: 'bullet-list',
+          bulletList: ['Нельзя с питомцами', 'Без вечеринок и мероприятий', 'Время прибытия — после 13:00, а выезд до 12:00'],
+        })
         include ../ui-kit/range-slider/range-slider.pug
-        +range-slider('range slider')        
-        +header-block({title: 'buttons'})
+        +range-slider({headerTitle: 'range slider'})       
         include ../ui-kit/button/button.pug        
-        +button({className: 'btnBackground'})
+        +button({headerTitle: 'button', className: 'btnBackground'})
         +button({className: 'btnBorder'})
         +button
         +button({

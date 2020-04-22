@@ -1,15 +1,4 @@
--
-    var menuList = [
-        {name: 'Завтрак', check: false},
-        {name: 'Письменный стол', check: true},
-        {name: 'Стул для кормления', check: true},
-        {name: 'Кроватка', check: true},
-        {name: 'Телевизор', check: false},
-        {name: 'Шампунь', check: false},
-        {name: 'Телевизор', check: false},
-        {name: 'Шампунь', check: false}
-    ]
-mixin checkbox-list
+mixin checkbox-list({menuList=[]}={})
     .checkbox-list
         span.checkbox-list__title expandable checkbox list
         a.checkbox-list__arrow.checkbox__arrow(href="#")

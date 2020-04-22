@@ -1,11 +1,10 @@
-- var iconNames = ['mood','location_city','whatshot']
-
-mixin room_information(iconName, title, text)
+//- - var iconNames = ['mood','location_city','whatshot']
+mixin room_information({iconName='mood', titleRoom='Комфорт', textRoom='Шумопоглащающие стены'}={})
     .room_information
         .room_information__icon
-            <span class="material-icons">#{iconName}</span>
+            span.material-icons=iconName
         .room_information__right
-            p.room_information__title #{title}
-            p.room_information__text #{text}
+            p.room_information__title=titleRoom
+            p.room_information__text=textRoom
 
     

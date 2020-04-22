@@ -1,7 +1,5 @@
--
-    var bulletList = ['Нельзя с питомцами', 'Без вечеринок и мероприятий', 'Время прибытия — после 13:00, а выезд до 12:00']
-
-mixin bullet-list
+mixin bullet-list({headerTitle, bulletList=[]}={})
+    +header-block({title: headerTitle})
     .bullet-list
         ul.bullet-list__list
             each item in bulletList

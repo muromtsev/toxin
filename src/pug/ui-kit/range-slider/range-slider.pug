@@ -1,6 +1,6 @@
-mixin range-slider(heading)
+mixin range-slider({headerTitle}={})
   .r-slider
     .r-slider__head
-      +header-block({title: heading})
+      +header-block({title: headerTitle})
       input.r-slider__value.js-r-slider__value(type='text' readonly value="")
     input.range-slider.js-range-slider(type='text')

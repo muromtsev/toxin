@@ -1,10 +1,5 @@
--
-    var listButtons = [
-        {name: 'Можно курить', check: false},
-        {name: 'Можно с питомцами', check: true},
-        {name: 'Можно пригласить гостей (до 10 человек)', check: true}
-    ]
-mixin checkbox-buttons
+mixin checkbox-buttons({listButtons=[]}={})
+    +header-block({title: 'checkbox buttons'})
     .checkbox-buttons
         each btn in listButtons
             label.check.check-style

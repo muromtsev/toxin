@@ -1,5 +1,5 @@
-let checkbox_menu = document.querySelectorAll('.checkbox-list__menu')[1];
-let checkboxArrow = document.querySelectorAll('.checkbox__arrow')[1];
+let checkbox_menu = document.querySelector('.checkbox-list__menu');
+let checkboxArrow = document.querySelector('.checkbox__arrow');
 checkboxArrow.addEventListener('click', function(event) {
     event.preventDefault();    
     
@@ -7,7 +7,6 @@ checkboxArrow.addEventListener('click', function(event) {
     this.classList.toggle('arrow-active');
     let inps = document.querySelectorAll('.checkbox-list__menu .check__input');
     let lbs = document.querySelectorAll('.checkbox-list__menu .check');
-    console.log(lbs[1].childNodes[2].textContent);
     let arrayItems = [];
     inps.forEach((item, index) => {
         item.addEventListener('input', () => {

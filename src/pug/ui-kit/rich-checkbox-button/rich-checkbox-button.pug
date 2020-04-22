@@ -1,14 +1,9 @@
--
-    var richCheckboxButton = [
-        {title: 'Широкий коридор', text: 'Ширина коридоров в номере не менее 91 см.'},
-        {title: 'Помощник для инвалидов', text: 'На 1 этаже вас встретит специалист  и проводит до номера.'}
-    ]
-
-mixin rich-checkbox-button
+mixin rich-checkbox-button({headerTitle, richCheckboxButton=[]}={})
+    +header-block({title: headerTitle})
     .rich-checkbox-button    
         each item in richCheckboxButton
             label.rich-checkbox-button__check
                 input.rich-checkbox-button__input(type="checkbox")
                 span.rich-checkbox-button__box 
-                .rich-checkbox-button__title #{item.title}
-                .rich-checkbox-button__text #{item.text}
+                .rich-checkbox-button__title #{item.richTitle}
+                .rich-checkbox-button__text #{item.richText}
