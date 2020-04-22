@@ -9,14 +9,17 @@ html(lang='en')
       .container.wrapper
         include ../includes/block-descr.pug
         include ../ui-kit/header-block/header-block.pug
-        +block-descr('text field', 'default')
+        //- +block-descr('text field', 'default')
         include ../ui-kit/text-field/text-field.pug
-        +text-field
-        +block-descr('text field', 'hover/focus')
-        +text-field('This is pretty awesome')
-        +block-descr('dropdown', 'default')
+        +text-field({
+          headerTitle: 'Text Field',
+          headerText: 'default'
+        })                
         include ../ui-kit/dropdown/dropdown.pug
-        +dropdown(people, 'dropdown-number-of-guests ')   
+        +dropdown({
+          elems: ['Взрослые', 'Дети', 'Младенцы'],
+          classItem: 'dropdown-number-of-guests'
+        })   
         +block-descr('masked text field', 'default')
         include ../ui-kit/date-default/date-default.pug
         +date-default
@@ -30,8 +33,11 @@ html(lang='en')
         +block-descr('subscription text field')
         include ../ui-kit/subscription-text-field/subscription-text-field.pug
         +subscription-text-field
-        +block-descr('dropdown', 'default')
-        +dropdown(room, 'dropdown-room-amenities')
+        +dropdown({
+          titleText: '2 спальни, 2 кровати...',
+          elems: ['Спальни', 'Кровати', 'Ванные комнаты'],
+          classItem: 'dropdown-room-amenities'
+        })
         include ../ui-kit/checkbox-list/checkbox-list.pug
         +checkbox-list
         +checkbox-list

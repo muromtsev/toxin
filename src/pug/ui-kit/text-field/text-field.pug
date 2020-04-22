@@ -1,2 +1,3 @@
-mixin text-field(text)
-    input.text-field(type="text" placeholder="Email" value= text)
+mixin text-field({headerTitle, headerText, text}={})
+    +header-block({title: headerTitle, text: headerText})
+    input.text-field(type="text" placeholder="Email" value=text)

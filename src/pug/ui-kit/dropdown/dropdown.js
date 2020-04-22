@@ -1,19 +1,22 @@
-let dropdown_number_of_guests = document.querySelector('.number-of-guests');
-let dropdown_link = document.querySelector('.dropdown__link');
-let dropdown_menu = document.querySelector('.dropdown__menu');
+// кнопка "Очистить" при нажатии на "+" должна появляться
+
+
+let dropdown_number_of_guests = document.querySelector('.dropdown-room-amenities');
+let dropdown_link = dropdown_number_of_guests.querySelector('.dropdown__link');
+let dropdown_menu = dropdown_number_of_guests.querySelector('.dropdown__menu');
 
 dropdown_link.addEventListener('click', (evt) => {
     evt.preventDefault();
-    dropdown_number_of_guests.classList.toggle('dropdown-active');
-    // dropdown_menu.classList.toggle('dropdown__menu-active');
+    // dropdown_number_of_guests.classList.toggle('dropdown-active');
+    dropdown_menu.classList.toggle('dropdown__menu-active');
 });
 
 
 
 function dropdown_guests() {      
     let dropdown_text = document.querySelector('.dropdown__text');
-    let btns_minus = document.querySelectorAll('.btn-minus');
-    let btns_plus = document.querySelectorAll('.btn-plus');
+    let btns_minus = document.querySelectorAll('.minus');
+    let btns_plus = document.querySelectorAll('.plus');
     let baseNumbers = document.querySelectorAll('.count-number');
     let txt = '';  
         for(let i = 0; i < 3; i++) {

@@ -1,25 +1,18 @@
--
-    var people = ['Взрослые', 'Дети', 'Младенцы']
-    var room =  ['Спальни', 'Кровати', 'Ванные комнаты']
-
-mixin dropdown(elems, classItem)
-        .dropdown(class= classItem)
-            if elems == people
-                span.dropdown__text Сколько гостей
-                a.dropdown__link(href="#")
-                        span(class="material-icons") keyboard_arrow_down
-            else 
-                span.dropdown__text 2 спальни, 2 кровати...
-                a.dropdown__link(href="#")
-                    span(class="material-icons") keyboard_arrow_down
-            
-            .dropdown__menu
-                each elem in elems
-                    .dropdown__menu-item
-                        p.dropdown__menu-item-text #{elem}
-                        p.dropdown__menu-item-count
-                            span.btn-minus -
-                            span.count-number 0
-                            span.btn-plus +
-                a.drop__menu-btn(href="#") Применить
+mixin dropdown({titleText = 'Сколько гостей', elems = [], classItem} = {})
+    +header-block({title: 'dropdown', text: 'default'})
+    .dropdown(class= classItem)        
+        span.dropdown__text=titleText
+        a.dropdown__link(href="#")
+            span(class="material-icons") keyboard_arrow_down   
+        .dropdown__menu
+            each elem in elems
+                .dropdown__menu-item
+                    p.dropdown__menu-text #{elem}
+                    p.dropdown__menu-count
+                        span.dropdown__menu-count-btn.minus -
+                        span.count-number 0
+                        span.dropdown__menu-count-btn.plus +
+            .dropdown__menu-btns
+                a.dropdown__menu-clear(href="#") Очистить
+                a.dropdown__menu-active(href="#") Применить
                 
