@@ -1,3 +1,23 @@
+include ../ui-kit/header-block/header-block.pug
+include ../ui-kit/text-field/text-field.pug
+include ../ui-kit/dropdown/dropdown.pug
+include ../ui-kit/date-default/date-default.pug
+include ../ui-kit/date-dropdown/date-dropdown.pug
+include ../ui-kit/subscription-text-field/subscription-text-field.pug
+include ../ui-kit/checkbox-list/checkbox-list.pug
+include ../ui-kit/room-information/room-information.pug
+include ../ui-kit/checkbox-buttons/checkbox-buttons.pug
+include ../ui-kit/radio-buttons/radio-buttons.pug
+include ../ui-kit/toggle-button/toggle-button.pug
+include ../ui-kit/like-button/like-button.pug
+include ../ui-kit/rate-button/rate-button.pug
+include ../ui-kit/rich-checkbox-button/rich-checkbox-button.pug
+include ../ui-kit/bullet-list/bullet-list.pug
+include ../ui-kit/range-slider/range-slider.pug     
+include ../ui-kit/button/button.pug    
+include ../ui-kit/pagination/pagination.pug
+include ../ui-kit/comments/comments.pug
+
 doctype html
 html(lang='en')
   include ../includes/head.pug
@@ -7,31 +27,24 @@ html(lang='en')
       //- include ../ui-kit/color_type/color_type.pug
       //- include ../ui-kit/header_footer/header_footer.pug
       .container.wrapper
-        include ../ui-kit/header-block/header-block.pug
-        include ../ui-kit/text-field/text-field.pug
         +text-field({
           headerTitle: 'Text Field',
           headerText: 'default'
         })                
-        include ../ui-kit/dropdown/dropdown.pug
         +dropdown({
           elems: ['Взрослые', 'Дети', 'Младенцы'],
           classItem: 'dropdown-number-of-guests'
         })   
-        include ../ui-kit/date-default/date-default.pug
         +date-default
-        include ../ui-kit/date-dropdown/date-dropdown.pug
         +date-dropdown({className: 'date-dropdown-default', text: 'ДД.ММ.ГГГГ'})
         +date-dropdown({className: 'date-dropdown-default', text: '19.08.2019'})
         +date-dropdown({className: 'filter-date-dropdown', text: '19 авг - 23 авг'})
-        include ../ui-kit/subscription-text-field/subscription-text-field.pug
         +subscription-text-field
         +dropdown({
           titleText: '2 спальни, 2 кровати...',
           elems: ['Спальни', 'Кровати', 'Ванные комнаты'],
           classItem: 'dropdown-room-amenities'
         })
-        include ../ui-kit/checkbox-list/checkbox-list.pug
         +checkbox-list({
           menuList: [
             {name: 'Завтрак', check: false},
@@ -44,10 +57,8 @@ html(lang='en')
             {name: 'Шампунь', check: false},
           ],
         })
-        include ../ui-kit/room-information/room-information.pug
         +room_information
         +room_information({iconName: 'location_city', titleRoom: 'Удобство', textRoom: 'Окно в каждой из спален'})
-        include ../ui-kit/checkbox-buttons/checkbox-buttons.pug
         +checkbox-buttons({
           listButtons: [
             {name: 'Можно курить', check: false},
@@ -55,17 +66,12 @@ html(lang='en')
             {name: 'Можно пригласить гостей (до 10 человек)', check: true}
           ]
         })
-        include ../ui-kit/radio-buttons/radio-buttons.pug
         +radio-buttons
-        include ../ui-kit/toggle-button/toggle-button.pug
         +toggle-button({headerTitle: 'toggle'})
         +toggle-button({isActive: false})
-        include ../ui-kit/like-button/like-button.pug
         +like-button({headerTitle: 'like button'})
         +like-button--Active
-        include ../ui-kit/rate-button/rate-button.pug
         +rate-button
-        include ../ui-kit/rich-checkbox-button/rich-checkbox-button.pug
         +rich-checkbox-button({
           headerTitle: 'rich-checkbox-button',
           richCheckboxButton: [
@@ -73,14 +79,11 @@ html(lang='en')
             {richTitle: 'Помощник для инвалидов', richText: 'На 1 этаже вас встретит специалист  и проводит до номера.'}
           ]
         })
-        include ../ui-kit/bullet-list/bullet-list.pug
         +bullet-list({
           headerTitle: 'bullet-list',
           bulletList: ['Нельзя с питомцами', 'Без вечеринок и мероприятий', 'Время прибытия — после 13:00, а выезд до 12:00'],
         })
-        include ../ui-kit/range-slider/range-slider.pug
-        +range-slider({headerTitle: 'range slider'})       
-        include ../ui-kit/button/button.pug        
+        +range-slider({headerTitle: 'range slider'})      
         +button({headerTitle: 'button', className: 'btnBackground'})
         +button({className: 'btnBorder'})
         +button
@@ -88,7 +91,6 @@ html(lang='en')
           text: 'перейти к оплате',
           arrow: true
         })
-        include ../ui-kit/pagination/pagination.pug
         +pagination({
           links: [
             {href: 'mock-address/change-me', number: 1, isActive: true },
@@ -97,7 +99,6 @@ html(lang='en')
             {href: 'mock-address/change-me', number: 15 },
           ]
         })
-        include ../ui-kit/comments/comments.pug
         +comments({
           avatarSrc: './src/img/avatar.png',
           avatarAlt: 'Avatar',
