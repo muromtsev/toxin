@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "webpack-dev-server --mode development --open",
     "build": "webpack --mode production",
-    "watch": "webpack --watch"
+    "deploy": "gh-pages -d dist"
   },
   "author": "muromtsev",
   "license": "ISC",
