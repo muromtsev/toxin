@@ -1,0 +1,41 @@
+.form-elements {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__grid {
+        display: grid;
+        max-width: 1440px;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: auto auto auto;
+        grid-template-areas: 'textfield check-buttons buttons'
+                            'dropdown-left dropdown-mid dropdown-right'
+                            'bot-left comment comment';
+        grid-row-gap: 100px;
+        grid-column-gap: 10px;
+    }
+    &__text-fields {
+        grid-area: textfield;
+    }
+    &__ckeck-buttons {
+        grid-area: ckeck-buttons;
+    }
+    &__buttons {
+        grid-area: buttons;
+    }
+    &__dropdownLeft {
+        grid-area: dropdown-left;
+    }
+    &__dropdownMid {
+        grid-area: dropdown-mid;
+    }
+    &__dropdownRight {
+        grid-area: dropdown-right;
+    }
+    &__bot-left {
+        grid-area: bot-left;
+    }
+    &__comment {
+        grid-area: comment;
+    }
+}

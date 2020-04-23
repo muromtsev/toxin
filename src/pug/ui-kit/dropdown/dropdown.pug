@@ -1,6 +1,6 @@
 mixin dropdown({titleText = 'Сколько гостей', elems = [], classItem} = {})
-    +header-block({title: 'dropdown', text: 'default'})
-    .dropdown(class= classItem)        
+    +header-block({title: 'dropdown', text: 'default'}) 
+    .dropdown(class= classItem)               
         span.dropdown__text=titleText
         a.dropdown__link(href="#")
             span(class="material-icons") keyboard_arrow_down   
