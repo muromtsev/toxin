@@ -16,6 +16,7 @@ block content
     include ../../ui-kit/radio-buttons/radio-buttons.pug
     include ../../ui-kit/toggle-button/toggle-button.pug
     include ../../ui-kit/like-button/like-button.pug
+    include ../../ui-kit/like-button-active/like-button-active.pug
     include ../../ui-kit/rate-button/rate-button.pug
     include ../../ui-kit/rich-checkbox-button/rich-checkbox-button.pug
     include ../../ui-kit/bullet-list/bullet-list.pug
@@ -32,14 +33,23 @@ block content
                     headerTitle: 'Text Field',
                     headerText: 'default'
                 })                
-                +dropdown({
-                    elems: ['Взрослые', 'Дети', 'Младенцы'],
-                    classItem: 'dropdown-number-of-guests'
-                })   
+                .form-elements__item
+                    +header-block({title: 'dropdown', text: 'default'})
+                    +dropdown({
+                        elems: ['Взрослые', 'Дети', 'Младенцы'],
+                        classItem: 'dropdown-number-of-guests'
+                    })   
                 +date-default
-                +date-dropdown({className: 'date-dropdown-default', text: 'ДД.ММ.ГГГГ'})
-                +date-dropdown({className: 'date-dropdown-default', text: '19.08.2019'})
-                +date-dropdown({className: 'filter-date-dropdown', text: '19 авг - 23 авг'})
+                .form-elements__flex
+                    .form-elements__item
+                        +header-block({title: 'date dropdown'})
+                        +date-dropdown({className: 'date-dropdown-default', text: 'ДД.ММ.ГГГГ'})
+                    .form-elements__item
+                        +header-block({title: 'date dropdown'})
+                        +date-dropdown({className: 'date-dropdown-default', text: '19.08.2019'})
+                .form-elements__item
+                    +header-block({title: 'filter date dropdown'})
+                    +date-dropdown({className: 'filter-date-dropdown', text: '19 авг - 23 авг'})
                 +subscription-text-field
             
             .form-elements__check-buttons
@@ -53,18 +63,31 @@ block content
                 +radio-buttons
                 +toggle-button({headerTitle: 'toggle'})
                 +toggle-button({isActive: false})
-                +like-button({headerTitle: 'like button'})
-                +like-button--Active
-                +rate-button
+                .form-elements__item
+                    +header-block({title: 'like button'})
+                    +like-button
+                .form-elements__item
+                    +like-button-active
+                .form-elements__item
+                    +header-block({title: 'rate button'})    
+                    +rate-button
             .form-elements__buttons
-                +range-slider({headerTitle: 'range slider'})      
-                +button({headerTitle: 'button', className: 'btnBackground'})
-                +button({className: 'btnBorder'})
-                +button
-                +button({
-                    text: 'перейти к оплате',
-                    arrow: true
-                })
+                .form-elements__item
+                    +header-block({title: 'range slider'})
+                    +range-slider  
+                .flex-elements__flex-col
+                    .form-elements__item.btn-mb 
+                        +header-block({title: 'buttons'})
+                        +button({className: 'btnBackground'})
+                    .form-elements__item.btn-mb
+                        +button({className: 'btnBorder'})
+                    .form-elements__item.btn-mb
+                        +button
+                    .form-elements__item
+                        +button({
+                            text: 'перейти к оплате',
+                            arrow: true
+                        })
                 +pagination({
                     links: [
                     {href: 'mock-address/change-me', number: 1, isActive: true },
@@ -75,23 +98,26 @@ block content
                 })
                 
             .form-elements__dropdownLeft
-                +dropdown({
-                    titleText: '2 спальни, 2 кровати...',
-                    elems: ['Спальни', 'Кровати', 'Ванные комнаты'],
-                    classItem: 'dropdown-room-amenities'
-                })
-                +checkbox-list({
-                    menuList: [
-                    {name: 'Завтрак', check: false},
-                    {name: 'Письменный стол', check: true},
-                    {name: 'Стул для кормления', check: true},
-                    {name: 'Кроватка', check: true},
-                    {name: 'Телевизор', check: false},
-                    {name: 'Шампунь', check: false},
-                    {name: 'Телевизор', check: false},
-                    {name: 'Шампунь', check: false},
-                    ],
-                })
+                .form-elements__item
+                    +header-block({title: 'dropdown', text: 'default', width: '266px'})     
+                    +dropdown({
+                        titleText: '2 спальни, 2 кровати...',
+                        elems: ['Спальни', 'Кровати', 'Ванные комнаты'],
+                        classItem: 'dropdown-room-amenities'
+                    })
+                .form-elements__item.mt
+                    +checkbox-list({
+                        menuList: [
+                        {name: 'Завтрак', check: false},
+                        {name: 'Письменный стол', check: true},
+                        {name: 'Стул для кормления', check: true},
+                        {name: 'Кроватка', check: true},
+                        {name: 'Телевизор', check: false},
+                        {name: 'Шампунь', check: false},
+                        {name: 'Телевизор', check: false},
+                        {name: 'Шампунь', check: false},
+                        ],
+                    })
                 
             .form-elements__dropdownMid
                 +rich-checkbox-button({

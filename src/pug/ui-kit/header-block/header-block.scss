@@ -8,6 +8,7 @@
     text-transform: uppercase;  
 
     &__title {
+        padding-top: 10px;
         font-family: $mainFont;   
         font-weight: bold;
         color: $dark-shade;

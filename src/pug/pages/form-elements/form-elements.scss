@@ -3,17 +3,64 @@
     justify-content: center;
     align-items: center;
 
+    &__flex {
+        display: flex;
+        justify-content: space-between;
+        max-width: 320px;
+        width: 100%;
+    }
+
+    &__flex-col {
+        display: flex;
+        flex-direction: column;
+        max-width: 320px;
+        width: 100%;
+    }
+
+    .mt {
+        margin-top: 50px;
+    }
+
+    .btn-mb {
+        margin-bottom: 30px;
+    }
+
     &__grid {
         display: grid;
         max-width: 1440px;
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-rows: auto auto auto;
-        grid-template-areas: 'textfield check-buttons buttons'
-                            'dropdown-left dropdown-mid dropdown-right'
-                            'bot-left comment comment';
+        grid-template-areas: 'textfield     check-buttons   buttons'
+                             'dropdown-left dropdown-mid    dropdown-right'
+                             'bot-left      comment         comment';
         grid-row-gap: 100px;
-        grid-column-gap: 10px;
+        grid-column-gap: 50px;
+
+        @media (max-width: 1160px) {
+            grid-template-columns: auto auto;
+            grid-template-rows: auto auto auto auto;
+            grid-template-areas: 'textfield     check-buttons'
+                                 'buttons       dropdown-right'
+                                 'dropdown-left dropdown-mid'
+                                 'bot-left      comment';
+            grid-row-gap: 50px;
+        }
+        @media (max-width: 618px) {
+            grid-template-columns: 1fr;
+            grid-template-rows: auto auto auto auto auto auto auto;
+            grid-template-areas: 'textfield'
+                                 'check-buttons'
+                                 'buttons'
+                                 'dropdown-right'
+                                 'dropdown-left'
+                                 'dropdown-mid'
+                                 'bot-left'
+                                 'comment';
+            grid-row-gap: 0px;
+            padding-left: 10px;
+        }
     }
+    
     &__text-fields {
         grid-area: textfield;
     }
@@ -37,5 +84,8 @@
     }
     &__comment {
         grid-area: comment;
+        @media (max-width: 618px) {
+            padding-top: 20px;
+        }
     }
 }

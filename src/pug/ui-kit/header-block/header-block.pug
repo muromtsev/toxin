@@ -1,5 +1,5 @@
-mixin header-block({title, text}={})
-    .header-block
+mixin header-block({title, text, width}={})
+    .header-block(style='max-width: ' + width)
         h3.header-block__title #{title}
         if(text) 
             .header-block__text #{text}
