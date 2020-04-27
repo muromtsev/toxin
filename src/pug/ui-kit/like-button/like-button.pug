@@ -1,10 +1,11 @@
-mixin like-button
-    .like-button
-        .like-button__heart
-            <svg class="heart-border">
-                <use xlink:href="../src/img/sprite.svg#favorite_border" x="5" y="6"></use>
-            </svg>
-            <svg class="heart">
-                <use xlink:href="../src/img/sprite.svg#favorite" x="5" y="6"></use>
-            </svg>
-        .like-button__count 2
+mixin like-button({isCheck = false, count = 2, icon = 'favorite_border'}={})
+    if isCheck
+        .like-button.js-like-button(class='like-button__active')
+            .like-button__heart
+                span.material-icons=icon
+            .like-button__count=count
+    else
+        .like-button.js-like-button
+            .like-button__heart
+                span.material-icons=icon
+            .like-button__count=count

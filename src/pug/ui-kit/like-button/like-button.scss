@@ -1,5 +1,6 @@
 .like-button {
     display: flex;
+    justify-content: center;
     align-items: center;
     width: 38px;
     height: 18px;
@@ -12,35 +13,26 @@
     transition: all 0.2s;
     user-select: none;
     
+    &__active {
+        border-color: $purple;
+        color: $purple;
+    }
+
     &:hover {
         border-color: $purple;
         color: $purple;
     }
 
     &__heart {   
-
-        .heart-border {
-            display: block;
-            width: 20px;
-            height: 20px;
-        }
-        .heart {
-            display: none;
-            width: 20px;
-            height: 20px;
+        padding-right: 8px;
+        .material-icons {
+            font-size: 10px;
+            vertical-align: middle;
         }
                 
     }
     &__count {
-        line-height: 12px;      
-    }
-        
-    
-    &:hover .heart-border {
-        display: none;
-    }
-    &:hover .heart {
-        display: block;
-    }
+        // line-height: 12px;      
+    }          
     
 }

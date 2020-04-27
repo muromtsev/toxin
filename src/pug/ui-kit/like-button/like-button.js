@@ -1,19 +1,19 @@
-// let like_button = document.querySelector('.like-button');
-let like_button = document.querySelectorAll('.like-button');
+class LikeButton {
+    constructor(element) {
+        this.btn = element;
+        this.cons();
+    }
 
-function likeCounter(elem) {
-    elem.forEach(item => {
-        item.addEventListener('click', function(event) {            
-            let like = item.querySelector('.like-button__count');
-            let idx = +like.innerHTML;
-
-            idx++;
-
-            like.innerHTML = idx;
-            
+    cons() {
+        this.btn.addEventListener('mousemove', function() {
+            console.log(1);
         })
-    });
+    }
 }
 
+document.addEventListener('DOMContentLoaded', () => {
+    const likeButtons = document.querySelectorAll('.js-like-button');
+    likeButtons.forEach((item) => new LikeButton(item));
+})
 
-likeCounter(like_button)
+export default LikeButton

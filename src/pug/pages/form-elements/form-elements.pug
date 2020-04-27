@@ -16,7 +16,6 @@ block content
     include ../../ui-kit/radio-buttons/radio-buttons.pug
     include ../../ui-kit/toggle-button/toggle-button.pug
     include ../../ui-kit/like-button/like-button.pug
-    include ../../ui-kit/like-button-active/like-button-active.pug
     include ../../ui-kit/rate-button/rate-button.pug
     include ../../ui-kit/rich-checkbox-button/rich-checkbox-button.pug
     include ../../ui-kit/bullet-list/bullet-list.pug
@@ -75,8 +74,7 @@ block content
                 .form-elements__item
                     +header-block({title: 'like button'})
                     +like-button
-                .form-elements__item
-                    +like-button-active
+                    +like-button({isCheck: true, icon: 'favorite'})
                 .form-elements__item
                     +header-block({title: 'rate button'})    
                     +rate-button
