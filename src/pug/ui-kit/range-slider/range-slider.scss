@@ -1,12 +1,6 @@
 .r-slider {
     max-width: 266px;
 
-    &__head {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-
-    }
     &__value {
       width: 50%;
       font-family: $mainFont;
