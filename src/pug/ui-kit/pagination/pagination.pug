@@ -1,5 +1,4 @@
 mixin pagination({numFrom = 1, numTo = 12, numMax = '100+', text = ' вариантов аренды', links = []}={})
-    +header-block({title: 'pagination'})
     ul.pagination-list
         each link, i in links
             - let { href, isActive, number } = link

@@ -29,17 +29,18 @@ block content
     .form-elements
         .form-elements__grid
             .form-elements__text-field
-                +text-field({
-                    headerTitle: 'Text Field',
-                    headerText: 'default'
-                })                
+                .form-elements__item    
+                    +header-block({title: 'text-field'})
+                    +text-field              
                 .form-elements__item
                     +header-block({title: 'dropdown', text: 'default'})
                     +dropdown({
                         elems: ['Взрослые', 'Дети', 'Младенцы'],
                         classItem: 'dropdown-number-of-guests'
                     })   
-                +date-default
+                .form-elements__item
+                    +header-block({title: 'date dafault'})
+                    +date-default
                 .form-elements__flex
                     .form-elements__item
                         +header-block({title: 'date dropdown'})
@@ -50,19 +51,27 @@ block content
                 .form-elements__item
                     +header-block({title: 'filter date dropdown'})
                     +date-dropdown({className: 'filter-date-dropdown', text: '19 авг - 23 авг'})
-                +subscription-text-field
+                .form-elements__item
+                    +header-block({title: 'subscription text field'})
+                    +subscription-text-field
             
             .form-elements__check-buttons
-                +checkbox-buttons({
-                    listButtons: [
-                    {name: 'Можно курить', check: false},
-                    {name: 'Можно с питомцами', check: true},
-                    {name: 'Можно пригласить гостей (до 10 человек)', check: true}
-                    ]
-                })
-                +radio-buttons
-                +toggle-button({headerTitle: 'toggle'})
-                +toggle-button({isActive: false})
+                .form-elements__item
+                    +header-block({title: 'checkbox button'})
+                    +checkbox-buttons({
+                        listButtons: [
+                        {name: 'Можно курить', check: false},
+                        {name: 'Можно с питомцами', check: true},
+                        {name: 'Можно пригласить гостей (до 10 человек)', check: true}
+                        ]
+                    })
+                .form-elements__item
+                    +header-block({title: 'radio-buttons'})
+                    +radio-buttons
+                .form-elements__item
+                    +header-block({title: 'toggle'})
+                    +toggle-button
+                    +toggle-button({isActive: false})
                 .form-elements__item
                     +header-block({title: 'like button'})
                     +like-button
@@ -88,14 +97,16 @@ block content
                             text: 'перейти к оплате',
                             arrow: true
                         })
-                +pagination({
-                    links: [
-                    {href: 'mock-address/change-me', number: 1, isActive: true },
-                    {href: 'mock-address/change-me', number: 2 },
-                    {href: 'mock-address/change-me', number: 3 },
-                    {href: 'mock-address/change-me', number: 15 },
-                    ]
-                })
+                .form-elements__item
+                    +header-block({title: 'pagination'})
+                    +pagination({
+                        links: [
+                        {href: 'mock-address/change-me', number: 1, isActive: true },
+                        {href: 'mock-address/change-me', number: 2 },
+                        {href: 'mock-address/change-me', number: 3 },
+                        {href: 'mock-address/change-me', number: 15 },
+                        ]
+                    })
                 
             .form-elements__dropdownLeft
                 .form-elements__item
@@ -120,18 +131,21 @@ block content
                     })
                 
             .form-elements__dropdownMid
-                +rich-checkbox-button({
-                    headerTitle: 'rich-checkbox-button',
-                    richCheckboxButton: [
-                    {richTitle: 'Широкий коридор', richText: 'Ширина коридоров в номере не менее 91 см.'},
-                    {richTitle: 'Помощник для инвалидов', richText: 'На 1 этаже вас встретит специалист  и проводит до номера.'}
-                ]
-                })
+                .form-elements__item
+                    +header-block({title: 'rich-checkbox-button'})
+                    +rich-checkbox-button({
+                        richCheckboxButton: [
+                        {richTitle: 'Широкий коридор', richText: 'Ширина коридоров в номере не менее 91 см.'},
+                        {richTitle: 'Помощник для инвалидов', richText: 'На 1 этаже вас встретит специалист  и проводит до номера.'}
+                        ]
+                    })
             .form-elements__dropdownRight
-                +bullet-list({
-                    headerTitle: 'bullet-list',
-                    bulletList: ['Нельзя с питомцами', 'Без вечеринок и мероприятий', 'Время прибытия — после 13:00, а выезд до 12:00'],
-                })
+                .form-elements__item
+                    +header-block({title: 'bullet list'})
+                    +bullet-list({
+                        headerTitle: 'bullet-list',
+                        bulletList: ['Нельзя с питомцами', 'Без вечеринок и мероприятий', 'Время прибытия — после 13:00, а выезд до 12:00'],
+                    })
             .form-elements__bot-left
                 +room_information
                 +room_information({iconName: 'location_city', titleRoom: 'Удобство', textRoom: 'Окно в каждой из спален'})

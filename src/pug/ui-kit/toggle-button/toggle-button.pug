@@ -1,6 +1,4 @@
-mixin toggle-button({headerTitle, isActive=true, toggleText='Получать спецпредложения'}={})
-    if headerTitle
-        +header-block({title: headerTitle})
+mixin toggle-button({isActive=true, toggleText='Получать спецпредложения'}={})
     .toggle-button
         label.toggle-button__control
             input.toggle-button__input(type="checkbox" checked= isActive)
