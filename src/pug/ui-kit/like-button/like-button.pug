@@ -1,11 +1,11 @@
 mixin like-button({isCheck = false, count = 2, icon = 'favorite_border'}={})
     if isCheck
-        .like-button.js-like-button(class='like-button__active')
-            .like-button__heart
+        .like-button.js-like-button(class='js-like-button__active')
+            .like-button__heart.js-like-button__heart
                 span.material-icons=icon
-            .like-button__count=count
+            .like-button__count.js-like-button__count=count
     else
         .like-button.js-like-button
-            .like-button__heart
+            .like-button__heart.js-like-button__heart
                 span.material-icons=icon
-            .like-button__count=count
+            .like-button__count.js-like-button__count=count

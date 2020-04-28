@@ -13,10 +13,10 @@
     transition: all 0.2s;
     user-select: none;
     
-    &__active {
-        border-color: $purple;
-        color: $purple;
-    }
+    // &__active {
+    //     border-color: $purple;
+    //     color: $purple;
+    // }
 
     &:hover {
         border-color: $purple;
@@ -35,4 +35,8 @@
         // line-height: 12px;      
     }          
     
+}
+.js-like-button__active {
+    border-color: $purple;
+    color: $purple;
 }
