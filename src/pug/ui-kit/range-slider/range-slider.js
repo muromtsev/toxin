@@ -1,3 +1,4 @@
+import $ from 'jquery';
 import 'ion-rangeslider/css/ion.rangeSlider.min.css';
 import 'ion-rangeslider/js/ion.rangeSlider.min';
 

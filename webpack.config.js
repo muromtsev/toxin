@@ -67,7 +67,7 @@ module.exports = (env, options) => {
                     ],
                 },{
                     test: /\.(eot|svg|ttf|woff|woff2)$/,
-                    exclude: [/ui-kit/, /img/],
+                    exclude: [/pug/, /img/],
                     use: {
                         loader: 'file-loader',
                         options: {
