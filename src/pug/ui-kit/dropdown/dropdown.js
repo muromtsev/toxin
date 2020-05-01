@@ -1,7 +1,8 @@
 function dropdownInitiall() {
     let dropdowns = document.querySelectorAll('.js-dropdown');
     for(let i = 0; i < dropdowns.length; i++) {
-        dropdown_menu(dropdowns[i])
+        dropdown_menu(dropdowns[i]);
+        // guests_counts(dropdowns[i]);
     }
     dropdown_menu_add_class(dropdowns);
 }
@@ -29,8 +30,7 @@ function dropdown_menu_add_class(elements) {
 function dropdown_menu(element) {
     let menu = element.querySelector('.js-dropdown__menu');
     let counts = menu.querySelectorAll('.js-count-number');
-    // let clear = menu.querySelector('.js-dropdown__menu-clear');
-    let count_guests = [];
+
     menu.addEventListener('click', function(event) {
         let target = event.target;
 
@@ -76,16 +76,72 @@ function dropdown_menu_minus_remove_class(element) {
 
 }
 
+// function guests_counts(parent) {
+//     let menu, menuItem, arr = [];
+//     if(parent.classList.contains('dropdown-number-of-guests')) {
+//         menu = parent.querySelector('.dropdown__menu');
+//         menuItem = menu.querySelectorAll('.dropdown__menu-item');
+//         for(item of menuItem) {
+//             console.log(item);
+//         }
+//     }
+// }
+
 function dropdown_menu_count_guests(elements) {
     let arr = [];
-    let result = 0;
     for(let i = 0; i < elements.length; i++) {
         let txt = Number(elements[i].innerHTML);
         arr.push(txt);
-        result += arr[i]
     }
-    return result;
     
+    return guests_string(arr);
+}
+
+function guests_string(array) {
+    console.log(array);
+    let txt = 'Сколько гостей';
+    let display = document.querySelector('.dropdown-number-of-guests .dropdown__text');  
+    let clear = document.querySelector('.dropdown-number-of-guests .dropdown__menu-clear');
+    let sum = 0;  
+    let obj = {
+        parents:    array[0],
+        children:   array[1],
+        babys:      array[2],
+        sum: function(){
+            return obj.parents + obj.children
+        }
+    };
+    for(let i = 0; i < array.length; i++) {
+        sum += array[i];
+        if(sum === 0) {
+            clear.style.opacity = 0;
+        } else {
+            clear.style.opacity = 1;
+        }
+    }
+
+    if(obj.sum() == 1) {
+        txt = `${obj.sum()} гость`;
+    } else if(obj.sum() > 0 && obj.sum() <= 4) {
+        txt = `${obj.sum()} гостя`;
+    } else if(obj.sum() > 4) {
+        txt = `${obj.sum()} гостей`;
+    } else {
+        txt = 'Сколько гостей';
+    }
+
+    if(obj.babys == 1) {
+        txt += `, ${obj.babys} младенец`;
+    } else if(obj.babys > 0 && obj.babys <= 4) {
+        txt += `, ${obj.babys} младенца`;
+    } else if(obj.babys > 4) {
+        txt += `, ${obj.babys} младенцев`;
+    }
+    else {
+        txt = '';
+    }
+
+    display.innerHTML = txt;
 }
 
 dropdownInitiall();
