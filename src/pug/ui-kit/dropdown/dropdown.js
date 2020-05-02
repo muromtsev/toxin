@@ -1,17 +1,21 @@
 function dropdownInitiall() {
     let dropdowns = document.querySelectorAll('.js-dropdown');
+
     for(let i = 0; i < dropdowns.length; i++) {
         dropdown_menu(dropdowns[i]);
-        // guests_counts(dropdowns[i]);
     }
-    dropdown_menu_add_class(dropdowns);
-}
 
-function dropdown_menu_add_class(elements) {
+    dropdown_menu_change_class(dropdowns);
+
+    clear_display();
+};
+
+function dropdown_menu_change_class(elements) {
     
     elements.forEach((item) => {    
         let link = item.querySelector('.js-dropdown__link');
         let menu = item.querySelector('.js-dropdown__menu');
+        let btn_apply = menu.querySelector('.js-dropdown__menu-apply');
 
         link.addEventListener('click', (event) => {
             event.preventDefault();
@@ -24,12 +28,16 @@ function dropdown_menu_add_class(elements) {
                 item.classList.add('dropdown-active');
             }
         });
-    })
-}
+
+        btn_apply.addEventListener('click', () => {
+            menu.classList.remove('dropdown__menu-active');
+        });
+    });
+};
 
 function dropdown_menu(element) {
-    let menu = element.querySelector('.js-dropdown__menu');
-    let counts = menu.querySelectorAll('.js-count-number');
+    let menu    = element.querySelector('.js-dropdown__menu');
+    let counts  = menu.querySelectorAll('.js-count-number');
 
     menu.addEventListener('click', function(event) {
         let target = event.target;
@@ -42,169 +50,135 @@ function dropdown_menu(element) {
             dropdown_menu_minus(target, counts);
         };        
     });
-}
+};
+
 function dropdown_menu_plus(elem, items) {
-    let count = elem.previousElementSibling;
-    let idx = Number(count.innerHTML);
+    let count   = elem.previousElementSibling;
+    let idx     = Number(count.innerHTML);
+
     idx++;
-    // console.log(`индекс плюса: ${idx}`);
+
     count.innerHTML = idx;
+
     dropdown_menu_minus_add_class(count.previousElementSibling);
     dropdown_menu_count_guests(items);
-}
+};
+
 function dropdown_menu_minus(elem, items) {
-    let count = elem.nextElementSibling;
-    let idx = Number(count.innerHTML);
+    let count   = elem.nextElementSibling;
+    let idx     = Number(count.innerHTML);
+
     idx--;
 
     if(idx <= 0) {
         idx = 0;
         dropdown_menu_minus_remove_class(elem);        
     }
-    // console.log(`индекс минуса: ${idx}`);
+
     count.innerHTML = idx;
+
     dropdown_menu_count_guests(items);
-}
+};
+
 function dropdown_menu_minus_add_class(element) {
     
     element.classList.add('minus-active');
     
-}
+};
+
 function dropdown_menu_minus_remove_class(element) {
 
     element.classList.remove('minus-active');
 
-}
-
-// function guests_counts(parent) {
-//     let menu, menuItem, arr = [];
-//     if(parent.classList.contains('dropdown-number-of-guests')) {
-//         menu = parent.querySelector('.dropdown__menu');
-//         menuItem = menu.querySelectorAll('.dropdown__menu-item');
-//         for(item of menuItem) {
-//             console.log(item);
-//         }
-//     }
-// }
+};
 
 function dropdown_menu_count_guests(elements) {
     let arr = [];
+
     for(let i = 0; i < elements.length; i++) {
         let txt = Number(elements[i].innerHTML);
         arr.push(txt);
-    }
-    
-    return guests_string(arr);
-}
+    }    
 
-function guests_string(array) {
-    console.log(array);
-    let txt = 'Сколько гостей';
-    let display = document.querySelector('.dropdown-number-of-guests .dropdown__text');  
-    let clear = document.querySelector('.dropdown-number-of-guests .dropdown__menu-clear');
-    let sum = 0;  
-    let obj = {
-        parents:    array[0],
-        children:   array[1],
-        babys:      array[2],
-        sum: function(){
-            return obj.parents + obj.children
-        }
-    };
+    return guests_counts(arr);
+};
+
+function guests_counts(array) {
+    let string_growns, 
+        string_babies   = '',
+        sum             = 0,
+        display         = document.querySelector('.dropdown-number-of-guests .dropdown__text'), 
+        clear           = document.querySelector('.dropdown-number-of-guests .dropdown__menu-clear'),        
+        growns          = array.slice(0, 2),
+        babies          = array[array.length - 1];
+
+    clear_display(display, clear, array);
+
     for(let i = 0; i < array.length; i++) {
         sum += array[i];
+
         if(sum === 0) {
             clear.style.opacity = 0;
         } else {
             clear.style.opacity = 1;
         }
-    }
+    };
 
-    if(obj.sum() == 1) {
-        txt = `${obj.sum()} гость`;
-    } else if(obj.sum() > 0 && obj.sum() <= 4) {
-        txt = `${obj.sum()} гостя`;
-    } else if(obj.sum() > 4) {
-        txt = `${obj.sum()} гостей`;
+    let growns_sum = sum_growns_counts(growns);
+
+    if(growns_sum > 0) {
+        if(growns_sum == 1) {
+            string_growns = `${growns_sum} гость`
+        } else if(growns_sum > 1 && growns_sum < 5) {
+            string_growns = `${growns_sum} гостя`
+        } else if(growns_sum > 4) {
+            string_growns = `${growns_sum} гостей`
+        }
     } else {
-        txt = 'Сколько гостей';
+        string_growns = 'Сколько гостей'
     }
 
-    if(obj.babys == 1) {
-        txt += `, ${obj.babys} младенец`;
-    } else if(obj.babys > 0 && obj.babys <= 4) {
-        txt += `, ${obj.babys} младенца`;
-    } else if(obj.babys > 4) {
-        txt += `, ${obj.babys} младенцев`;
-    }
-    else {
-        txt = '';
+    display.innerHTML = string_growns;
+
+    if(babies > 0) {
+        if(babies == 1) {
+            string_babies = `${babies} младенец`;
+        } else if(babies > 1 && babies < 5) {
+            string_babies = `${babies} младенца`;
+        } else if(babies > 4) {
+            string_babies = `${babies} младенцев`;
+        } else {
+            string_babies = '';
+        }
+        display.innerHTML = string_babies;
     }
 
-    display.innerHTML = txt;
+    if(growns_sum > 0 && babies > 0) {
+        display.innerHTML = `${string_growns}, ${string_babies}`;
+    }
+
+};
+
+function sum_growns_counts(array) {
+    let sum = 0;
+
+    array.forEach(item => {
+        sum += item;
+    });
+
+    return sum;
+};
+
+function clear_display() {
+    let dropdown    = document.querySelector('.dropdown-number-of-guests');
+    let clear       = dropdown.querySelector('.js-dropdown__menu-clear');
+    let display     = dropdown.querySelector('.js-dropdown__text');
+    let counts      = dropdown.querySelectorAll('.js-count-number');
+
+    clear.addEventListener('click', () => {
+        display.innerHTML = 'Сколько гостей';
+        counts.forEach(item => item.innerHTML = 0);
+    })
 }
 
 dropdownInitiall();
-
-// let dropdown_number_of_guests = document.querySelector('.dropdown-room-amenities');
-// let dropdown_link = dropdown_number_of_guests.querySelector('.dropdown__link');
-// let dropdown_menu = dropdown_number_of_guests.querySelector('.dropdown__menu');
-
-// dropdown_link.addEventListener('click', (evt) => {
-//     evt.preventDefault();
-//     // dropdown_number_of_guests.classList.toggle('dropdown-active');
-//     dropdown_menu.classList.toggle('dropdown__menu-active');
-// });
-
-
-
-// function dropdown_guests() {      
-//     let dropdown_text = document.querySelector('.dropdown__text');
-//     let btns_minus = document.querySelectorAll('.minus');
-//     let btns_plus = document.querySelectorAll('.plus');
-//     let baseNumbers = document.querySelectorAll('.count-number');
-//     let txt = '';  
-//         for(let i = 0; i < 3; i++) {
-
-//             let num = Number(baseNumbers[i].textContent);
-
-//             btns_minus[i].addEventListener('click', () => {
-//                 if(num == 0) {
-//                     num = 0;                    
-//                 } else {
-//                     num--;
-//                     baseNumbers[i].innerHTML = num;
-//                     txt = checkdeGuests(num);
-//                 }
-//                 dropdown_text.innerHTML = `${num} ${txt}`;
-//             })
-
-//             btns_plus[i].addEventListener('click', () => {
-//                 if(num >= 10) {
-//                     num = 10;
-//                 } else {
-//                     num++;
-//                     baseNumbers[i].innerHTML = num;
-//                     txt = checkdeGuests(num);      
-//                 }
-//                 dropdown_text.innerHTML = `${num} ${txt}`;
-//             })
-//         }
-
-    
-// }
-// dropdown_guests()
-
-// function checkdeGuests(item) {
-//     let t = '';
-//     if(item == 1) {
-//         t = 'гость';
-//     } else if(2 <= item >= 4) {
-//         t = 'гостя';
-//     } else {
-//         t = 'гостей';
-//     }
-//     return t;
-// }
-
-// dropdown_guests()
