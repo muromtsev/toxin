@@ -1,13 +1,18 @@
+// переделать вывод в room
 function dropdownInitiall() {
     let dropdowns = document.querySelectorAll('.js-dropdown');
 
-    for(let i = 0; i < dropdowns.length; i++) {
-        dropdown_menu(dropdowns[i]);
-    }
-
+    // for(let i = 0; i < dropdowns.length; i++) {
+    //     dropdown_menu(dropdowns[i]);
+    // }
+    let dropdown_guests = document.querySelector('#dropdown-number-of-guests');
+    let dropdown_rooms = document.querySelector('#dropdown-room-amenities');
+    dropdown_menu(dropdown_guests);
+    dropdown_menu(dropdown_rooms);
     dropdown_menu_change_class(dropdowns);
 
-    clear_display();
+    clear_display(dropdown_guests);
+    clear_display(dropdown_rooms);
 };
 
 function dropdown_menu_change_class(elements) {
@@ -17,8 +22,7 @@ function dropdown_menu_change_class(elements) {
         let menu = item.querySelector('.js-dropdown__menu');
         let btn_apply = menu.querySelector('.js-dropdown__menu-apply');
 
-        link.addEventListener('click', (event) => {
-            event.preventDefault();
+        link.addEventListener('click', () => {
             
             if(menu.classList.contains('dropdown__menu-active')) {
                 menu.classList.remove('dropdown__menu-active');
@@ -39,23 +43,24 @@ function dropdown_menu_change_class(elements) {
 };
 
 function dropdown_menu(element) {
-    let menu    = element.querySelector('.js-dropdown__menu');
-    let counts  = menu.querySelectorAll('.js-count-number');
-
+    let menu = element.querySelector('.js-dropdown__menu');
+    let counts = menu.querySelectorAll('.js-count-number');        
+    
     menu.addEventListener('click', function(event) {
         let target = event.target;
 
         if(target.classList.contains('js-plus')) {
-            dropdown_menu_plus(target, counts);
+            dropdown_menu_plus(element, target, counts);
             
         }
         else if(target.classList.contains('js-minus')) {
-            dropdown_menu_minus(target, counts);
+            dropdown_menu_minus(element, target, counts);
         };        
     });
+    
 };
 
-function dropdown_menu_plus(elem, items) {
+function dropdown_menu_plus(element, elem, items) {
     let count   = elem.previousElementSibling;
     let idx     = Number(count.innerHTML);
 
@@ -64,10 +69,10 @@ function dropdown_menu_plus(elem, items) {
     count.innerHTML = idx;
 
     dropdown_menu_minus_add_class(count.previousElementSibling);
-    dropdown_menu_count_guests(items);
+    dropdown_menu_count_guests(element, items);
 };
 
-function dropdown_menu_minus(elem, items) {
+function dropdown_menu_minus(element, elem, items) {
     let count   = elem.nextElementSibling;
     let idx     = Number(count.innerHTML);
 
@@ -80,7 +85,7 @@ function dropdown_menu_minus(elem, items) {
 
     count.innerHTML = idx;
 
-    dropdown_menu_count_guests(items);
+    dropdown_menu_count_guests(element, items);
 };
 
 function dropdown_menu_minus_add_class(element) {
@@ -95,7 +100,7 @@ function dropdown_menu_minus_remove_class(element) {
 
 };
 
-function dropdown_menu_count_guests(elements) {
+function dropdown_menu_count_guests(element, elements) {
     let arr = [];
 
     for(let i = 0; i < elements.length; i++) {
@@ -103,19 +108,17 @@ function dropdown_menu_count_guests(elements) {
         arr.push(txt);
     }    
 
-    return guests_counts(arr);
+    return guests_counts(element, arr);
 };
 
-function guests_counts(array) {
+function guests_counts(el, array) {
     let string_growns, 
         string_babies   = '',
         sum             = 0,
-        display         = document.querySelector('.dropdown-number-of-guests .dropdown__text'), 
-        clear           = document.querySelector('.dropdown-number-of-guests .dropdown__menu-clear'),        
+        display         = el.querySelector('.dropdown__text'), 
+        clear           = el.querySelector('.dropdown__menu-clear'),        
         growns          = array.slice(0, 2),
         babies          = array[array.length - 1];
-
-    clear_display(display, clear, array);
 
     for(let i = 0; i < array.length; i++) {
         sum += array[i];
@@ -172,11 +175,11 @@ function sum_growns_counts(array) {
     return sum;
 };
 
-function clear_display() {
-    let dropdown    = document.querySelector('.dropdown-number-of-guests');
-    let clear       = dropdown.querySelector('.js-dropdown__menu-clear');
-    let display     = dropdown.querySelector('.js-dropdown__text');
-    let counts      = dropdown.querySelectorAll('.js-count-number');
+function clear_display(el) {
+    // let dropdown    = document.querySelector('#dropdown-number-of-guests');
+    let clear       = el.querySelector('.js-dropdown__menu-clear');
+    let display     = el.querySelector('.js-dropdown__text');
+    let counts      = el.querySelectorAll('.js-count-number');
 
     clear.addEventListener('click', () => {
         display.innerHTML = 'Сколько гостей';
