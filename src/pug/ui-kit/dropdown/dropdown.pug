@@ -1,7 +1,7 @@
 mixin dropdown({titleText = 'Сколько гостей', elems = [], classItem} = {})
     .dropdown.js-dropdown(class= classItem)               
         span.dropdown__text.js-dropdown__text=titleText
-        a.dropdown__link.js-dropdown__link(href="#")
+        span.dropdown__link.js-dropdown__link
             span(class="material-icons") keyboard_arrow_down   
         .dropdown__menu.js-dropdown__menu
             each elem, index in elems
@@ -12,5 +12,5 @@ mixin dropdown({titleText = 'Сколько гостей', elems = [], classItem
                         span.count-number.js-count-number 0
                         span.dropdown__menu-count-btn.plus.js-plus +
             .dropdown__menu-btns
-                a.dropdown__menu-clear.js-dropdown__menu-clear(href="#") Очистить
-                a.dropdown__menu-apply.js-dropdown__menu-apply(href="#") Применить
+                span.dropdown__menu-clear.js-dropdown__menu-clear Очистить
+                span.dropdown__menu-apply.js-dropdown__menu-apply Применить

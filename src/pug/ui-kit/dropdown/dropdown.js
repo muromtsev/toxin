@@ -23,14 +23,17 @@ function dropdown_menu_change_class(elements) {
             if(menu.classList.contains('dropdown__menu-active')) {
                 menu.classList.remove('dropdown__menu-active');
                 item.classList.remove('dropdown-active');
+                link.classList.remove('dropdown__link-active');
             } else {
                 menu.classList.add('dropdown__menu-active')
                 item.classList.add('dropdown-active');
+                link.classList.add('dropdown__link-active');
             }
         });
 
         btn_apply.addEventListener('click', () => {
             menu.classList.remove('dropdown__menu-active');
+            link.classList.remove('dropdown__link-active');
         });
     });
 };

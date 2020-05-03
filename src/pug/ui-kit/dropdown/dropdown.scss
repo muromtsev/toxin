@@ -30,6 +30,12 @@
         width: 44px;
         height: 44px;
         color: $dark-shade--lighten;
+        transition: 0.1s;
+        cursor: pointer;      
+    }
+
+    &__link-active {
+        transform: rotateZ(-180deg);
     }
 
     &__menu {
@@ -120,12 +126,14 @@
                 padding: 20px 0 13px 14px;
                 color: $dark-shade--lighten;
                 opacity: 0;
+                cursor: pointer;
 
             }
             .dropdown__menu-apply {
                 display: inline-block;
                 padding: 20px 7px 13px 0;
                 color: $purple;
+                cursor: pointer;
             }
         }
         
