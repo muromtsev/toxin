@@ -31,7 +31,8 @@
         height: 44px;
         color: $dark-shade--lighten;
         transition: 0.1s;
-        cursor: pointer;      
+        cursor: pointer;
+        user-select: none;   
     }
 
     &__link-active {
@@ -80,6 +81,7 @@
         &-count {
             display: flex;
             align-items: center;
+            user-select: none;
             
             &-btn {
                 display: flex;
@@ -101,7 +103,7 @@
                 color: $dark-shade--lightest;
                 cursor: default;
             }
-            .minus-active {
+            .js-minus-active {
                 border: 1px solid $dark-shade--lighten;
                 color: $dark-shade--lighten;
                 cursor: pointer;
