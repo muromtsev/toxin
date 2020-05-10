@@ -1,9 +1,7 @@
-mixin rate-button
+mixin rate-button({rating = 5,}={})
+    - let n = 0;
     .rate-button
         .rate-button__group
-            input.rate-button__star(type="radio" name="star" checked)
-            input.rate-button__star(type="radio" name="star" checked)
-            input.rate-button__star(type="radio" name="star" checked)
-            input.rate-button__star(type="radio" name="star" checked)
-            input.rate-button__star(type="radio" name="star")
+            while n < 5
+                input.rate-button__star(type="radio" name="star" value=n+=1 checked=rating-1===n)
             .rate-button__focus
