@@ -89,4 +89,10 @@
             padding-top: 20px;
         }
     }
+
+    &__item .d-flex {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+    }
 }

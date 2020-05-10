@@ -80,8 +80,9 @@ block content
                     +toggle-button({isActive: false})
                 .form-elements__item
                     +header-block({title: 'like button'})
-                    +like-button
-                    +like-button({isCheck: true, icon: 'favorite'})
+                    .d-flex
+                        +like-button                    
+                        +like-button({isCheck: true, count: 12, icon: 'favorite'})
                 .form-elements__item
                     +header-block({title: 'rate button'})    
                     +rate-button
