@@ -5,13 +5,15 @@ class Dropdown {
         this.init();
     }
     init() {
-        this.menu = this.dropdown.querySelector('.js-dropdown__menu');
-        this.open = this.dropdown.querySelector('.js-dropdown__link');
+        this.menu   = this.dropdown.querySelector('.js-dropdown__menu');
+        this.open   = this.dropdown.querySelector('.js-dropdown__link');
         this.counts = this.menu.querySelectorAll('.js-count-number');
+        this.clear  = this.menu.querySelector('.dropdown__menu-clear');
 
         this.open_menu();
-        this.close_menu();
+        this.menu.childNodes.length === 4 ? this.close_menu() : null;  
         this.dropdown_menu();
+        
     }
     open_menu() {
         this.open.addEventListener('click', this.handler_open_menu.bind(this));
@@ -47,6 +49,7 @@ class Dropdown {
         } else if(target.classList.contains('js-minus')) {
             this.menu_btn_minus(target);
         }
+        this.menu.childNodes.length === 4 ? this.display_clear() : null;
     }
     menu_btn_plus(elem) {
         let count   = elem.previousElementSibling,
@@ -76,6 +79,22 @@ class Dropdown {
             subling.previousElementSibling.classList.remove('js-minus-active');
         }
     }
+    display_clear() {
+        this.clear.addEventListener('click', this.handler_clear.bind(this));
+    }
+    handler_clear() {
+        if(this.dropdown.getAttribute('data-dropdown-name') === 'guests') {
+            this.dropdown.querySelector('.js-dropdown__text').innerHTML = 'Сколько гостей';
+            this.counts.forEach(item => {
+                item.innerHTML = 0;
+            })
+            this.dropdown.querySelectorAll('.js-minus').forEach(elem => {
+                elem.classList.remove('js-minus-active');
+            })
+            this.clear.style.opacity = 0;
+            this.clear.style.cursor = 'default';
+        }
+    }
     write_count_to_array() {
         let array_counts = [];
 
@@ -83,7 +102,7 @@ class Dropdown {
             let number_count = Number(item.textContent);
             array_counts.push(number_count);
         })
-
+        
         return this.write_dropdown_display(array_counts);
     }
 
@@ -138,7 +157,7 @@ class Dropdown {
                 room_txt = `${room} спален`
             }            
         } else {
-            room_txt = ''
+            room_txt = '2 спальни'
         }
         room_display.innerHTML = room_txt;
 
@@ -153,7 +172,7 @@ class Dropdown {
             }
             room_display.innerHTML = bed_txt;
         } else {
-            bed_txt = '';
+            bed_txt = '2 кровати';
         }
         
         
@@ -180,6 +199,9 @@ class Dropdown {
         if(room > 0 && bedroom > 0 && bathroom > 0) {
             room_display.innerHTML = `${room_txt}, ${bed_txt}...`
         }
+        if(room == 0 && bedroom == 0 && bathroom == 0) {
+            room_display.innerHTML = `В фойе на полу!`
+        }
     }
 
     write_dropdown_display(count_guests) {        
@@ -189,6 +211,7 @@ class Dropdown {
         if(displayName === 'guests') {
             display = this.dropdown.querySelector('.js-dropdown__text');
             this.dropdown_count_guests(count_guests, display);
+            this.dropdown_clear_btn(count_guests);
         } else if(displayName == 'rooms') {
             display = this.dropdown.querySelector('.js-dropdown__text');
             this.dropdown_count_rooms(count_guests, display);
@@ -202,6 +225,19 @@ class Dropdown {
         })
 
         return count;
+    }
+    dropdown_clear_btn(array) {        
+        let n = 0;
+        array.forEach(num => {
+            n += num;
+        })
+        if(n > 0) {
+            this.clear.style.opacity = 1;
+            this.clear.style.cursor = 'pointer';
+        } else if(n === 0) {
+            this.clear.style.opacity = 0;
+            this.clear.style.cursor = 'default';
+        }
     }
 }
 

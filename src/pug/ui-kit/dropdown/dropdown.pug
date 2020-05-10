@@ -1,4 +1,4 @@
-mixin dropdown({titleText = 'Сколько гостей', elems = [], classItem, dataName,} = {})
+mixin dropdown({titleText = 'Сколько гостей', elems = [], classItem, dataName, buttonsShow,} = {})
     .dropdown.js-dropdown(class= classItem, data-dropdown-name= dataName)     
         span.dropdown__text.js-dropdown__text=titleText
         span.dropdown__link.js-dropdown__link
@@ -6,11 +6,12 @@ mixin dropdown({titleText = 'Сколько гостей', elems = [], classItem
         .dropdown__menu.js-dropdown__menu
             each elem in elems
                 .dropdown__menu-item
-                    p.dropdown__menu-text.js-dropdown__menu-text #{elem}
+                    p.dropdown__menu-text.js-dropdown__menu-text #{elem.name}
                     p.dropdown__menu-count
-                        span.dropdown__menu-count-btn.minus.js-minus -
-                        span.count-number.js-count-number 0
+                        span.dropdown__menu-count-btn.minus.js-minus(class= elem.classActive) -
+                        span.count-number.js-count-number #{elem.value}
                         span.dropdown__menu-count-btn.plus.js-plus +
-            .dropdown__menu-btns
-                span.dropdown__menu-clear.js-dropdown__menu-clear Очистить
-                span.dropdown__menu-apply.js-dropdown__menu-apply Применить
+            if buttonsShow
+                .dropdown__menu-btns
+                    span.dropdown__menu-clear.js-dropdown__menu-clear Очистить
+                    span.dropdown__menu-apply.js-dropdown__menu-apply Применить
