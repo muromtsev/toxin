@@ -11,6 +11,7 @@ import {Dropdown} from '../pug/ui-kit/dropdown/dropdown'
 
 document.addEventListener('DOMContentLoaded', () => {
     const dropdowns = document.querySelectorAll('.js-dropdown');
+    
     dropdowns.forEach(element => {
         const dropdown = new Dropdown(element);
     })

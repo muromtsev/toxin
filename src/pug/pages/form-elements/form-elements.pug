@@ -35,7 +35,8 @@ block content
                     +header-block({title: 'dropdown', text: 'default'})
                     +dropdown({
                         elems: ['Взрослые', 'Дети', 'Младенцы'],
-                        classItem: 'dropdown-number-of-guests'
+                        classItem: 'dropdown-number-of-guests',
+                        dataName: 'guests'
                     })   
                 .form-elements__item
                     +header-block({title: 'date dafault'})
@@ -112,7 +113,8 @@ block content
                     +dropdown({
                         titleText: '2 спальни, 2 кровати...',
                         elems: ['Спальни', 'Кровати', 'Ванные комнаты'],
-                        classItem: 'dropdown-room-amenities'
+                        classItem: 'dropdown-room-amenities',
+                        dataName: 'rooms'
                     })
                 .form-elements__item.mt
                     +checkbox-list({

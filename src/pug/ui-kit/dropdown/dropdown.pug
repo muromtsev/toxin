@@ -1,10 +1,10 @@
-mixin dropdown({titleText = 'Сколько гостей', elems = [], classItem} = {})
-    .dropdown.js-dropdown(class= classItem)               
+mixin dropdown({titleText = 'Сколько гостей', elems = [], classItem, dataName,} = {})
+    .dropdown.js-dropdown(class= classItem, data-dropdown-name= dataName)     
         span.dropdown__text.js-dropdown__text=titleText
         span.dropdown__link.js-dropdown__link
             span(class="material-icons") keyboard_arrow_down   
         .dropdown__menu.js-dropdown__menu
-            each elem, index in elems
+            each elem in elems
                 .dropdown__menu-item
                     p.dropdown__menu-text.js-dropdown__menu-text #{elem}
                     p.dropdown__menu-count

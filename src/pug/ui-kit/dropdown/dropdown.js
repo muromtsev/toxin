@@ -1,7 +1,7 @@
 class Dropdown {
     constructor(element) {
         this.dropdown = element;
-
+        
         this.init();
     }
     init() {
@@ -12,7 +12,6 @@ class Dropdown {
         this.open_menu();
         this.close_menu();
         this.dropdown_menu();
-        // console.log(this.menu, this.link)
     }
     open_menu() {
         this.open.addEventListener('click', this.handler_open_menu.bind(this));
@@ -30,7 +29,6 @@ class Dropdown {
     }
     close_menu() {        
         this.btn_apply = this.menu.querySelector('.js-dropdown__menu-apply');
-
         this.btn_apply.addEventListener('click', this.handler_close_menu.bind(this));
     }
     handler_close_menu() {
@@ -71,8 +69,7 @@ class Dropdown {
         count.innerHTML = idx;
         this.write_count_to_array();
     }
-    menu_btn_minus_changes_class({active = true, subling}) {
-        
+    menu_btn_minus_changes_class({active = true, subling}) {        
         if(active) {
             subling.previousElementSibling.classList.add('js-minus-active');
         } else {
@@ -81,208 +78,131 @@ class Dropdown {
     }
     write_count_to_array() {
         let array_counts = [];
+
         this.counts.forEach(item => {
             let number_count = Number(item.textContent);
             array_counts.push(number_count);
         })
-        return console.log(array_counts);
+
+        return this.write_dropdown_display(array_counts);
     }
 
+    dropdown_count_guests(array_counts, guests_display) {
+        let adults_array    = array_counts.slice(0, 2),
+            adults_count    = this.adult_count(adults_array),
+            babies_count    = array_counts[array_counts.length - 1],
+            string_growns,
+            string_babies   = '';
+
+        if(adults_count > 0) {
+            if(adults_count == 1) {
+                string_growns = `${adults_count} гость`
+            } else if(adults_count > 1 && adults_count < 5) {
+                string_growns = `${adults_count} гостя`
+            } else if(adults_count > 4) {
+                string_growns = `${adults_count} гостей`
+            }
+        } else {
+            string_growns = 'Сколько гостей'
+        }
+    
+        guests_display.innerHTML = string_growns;
+    
+        if(babies_count > 0) {
+            if(babies_count == 1) {
+                string_babies = `${babies_count} младенец`;
+            } else if(babies_count > 1 && babies_count < 5) {
+                string_babies = `${babies_count} младенца`;
+            } else if(babies_count > 4) {
+                string_babies = `${babies_count} младенцев`;
+            } else {
+                string_babies = '';
+            }
+            guests_display.innerHTML = string_babies;
+        }
+    
+        if(adults_count > 0 && babies_count > 0) {
+            guests_display.innerHTML = `${string_growns}, ${string_babies}`;
+        }
+    }
+    dropdown_count_rooms(array_counts, room_display) {
+        let [room, bedroom, bathroom]   = array_counts,
+            room_txt, bed_txt, bath_txt = '';
+
+        if(room > 0) {
+            if(room == 1) {
+                room_txt = `${room} спальня`
+            } else if(room > 1 && room < 5) {
+                room_txt = `${room} спальни`
+            } else if(room > 4) {
+                room_txt = `${room} спален`
+            }            
+        } else {
+            room_txt = ''
+        }
+        room_display.innerHTML = room_txt;
+
+        
+        if(bedroom > 0) {
+            if(bedroom == 1) {
+                bed_txt = `${bedroom} кровать`
+            } else if(bedroom > 1 && bedroom < 5) {
+                bed_txt = `${bedroom} кровати`
+            } else if(bedroom > 4) {
+                bed_txt = `${bedroom} кроватей`
+            }
+            room_display.innerHTML = bed_txt;
+        } else {
+            bed_txt = '';
+        }
+        
+        
+        if(bathroom > 0) {
+            if(bathroom == 1) {
+                bath_txt = `${bathroom} ванная комната`
+            } else if(bathroom > 1 && bathroom < 5) {
+                bath_txt = `${bathroom} ванные комн...`
+            } else if(bathroom > 4) {
+                bath_txt = `${bathroom} ванных комн...`
+            }
+            room_display.innerHTML = bath_txt;
+        } else {
+            bath_txt = '';
+        }
+
+        if(room > 0 && bedroom > 0) {
+            room_display.innerHTML = `${room_txt}, ${bed_txt}`
+        } else if(bedroom > 0 && bathroom > 0) {
+            room_display.innerHTML = `${bed_txt}, ${bath_txt}`
+        } else if(room > 0 && bathroom > 0) {
+            room_display.innerHTML = `${room_txt}, ${bath_txt}`            
+        } 
+        if(room > 0 && bedroom > 0 && bathroom > 0) {
+            room_display.innerHTML = `${room_txt}, ${bed_txt}...`
+        }
+    }
+
+    write_dropdown_display(count_guests) {        
+        let display,
+            displayName = this.dropdown.getAttribute('data-dropdown-name');
+        
+        if(displayName === 'guests') {
+            display = this.dropdown.querySelector('.js-dropdown__text');
+            this.dropdown_count_guests(count_guests, display);
+        } else if(displayName == 'rooms') {
+            display = this.dropdown.querySelector('.js-dropdown__text');
+            this.dropdown_count_rooms(count_guests, display);
+        }
+    }
+    adult_count(array) {
+        let count = 0;
+
+        array.forEach(adult => {
+            count += adult;
+        })
+
+        return count;
+    }
 }
 
 export {Dropdown}
-
-
-// function dropdownInitiall() {
-//     let dropdowns = document.querySelectorAll('.js-dropdown');
-
-//     // for(let i = 0; i < dropdowns.length; i++) {
-//     //     dropdown_menu(dropdowns[i]);
-//     // }
-//     let dropdown_guests = document.querySelector('#dropdown-number-of-guests');
-//     let dropdown_rooms = document.querySelector('#dropdown-room-amenities');
-//     dropdown_menu(dropdown_guests);
-//     dropdown_menu(dropdown_rooms);
-//     dropdown_menu_change_class(dropdowns);
-
-//     clear_display(dropdown_guests);
-//     clear_display(dropdown_rooms);
-// };
-
-// function dropdown_menu_change_class(elements) {
-    
-//     elements.forEach((item) => {    
-//         let link = item.querySelector('.js-dropdown__link');
-//         let menu = item.querySelector('.js-dropdown__menu');
-//         let btn_apply = menu.querySelector('.js-dropdown__menu-apply');
-
-//         link.addEventListener('click', () => {
-            
-//             if(menu.classList.contains('dropdown__menu-active')) {
-//                 menu.classList.remove('dropdown__menu-active');
-//                 item.classList.remove('dropdown-active');
-//                 link.classList.remove('dropdown__link-active');
-//             } else {
-//                 menu.classList.add('dropdown__menu-active')
-//                 item.classList.add('dropdown-active');
-//                 link.classList.add('dropdown__link-active');
-//             }
-//         });
-
-//         btn_apply.addEventListener('click', () => {
-//             menu.classList.remove('dropdown__menu-active');
-//             link.classList.remove('dropdown__link-active');
-//         });
-//     });
-// };
-
-// function dropdown_menu(element) {
-//     let menu = element.querySelector('.js-dropdown__menu');
-//     let counts = menu.querySelectorAll('.js-count-number');        
-    
-//     menu.addEventListener('click', function(event) {
-//         let target = event.target;
-
-//         if(target.classList.contains('js-plus')) {
-//             dropdown_menu_plus(element, target, counts);
-            
-//         }
-//         else if(target.classList.contains('js-minus')) {
-//             dropdown_menu_minus(element, target, counts);
-//         };        
-//     });
-    
-// };
-
-// function dropdown_menu_plus(element, elem, items) {
-//     let count   = elem.previousElementSibling;
-//     let idx     = Number(count.innerHTML);
-
-//     idx++;
-
-//     count.innerHTML = idx;
-
-//     dropdown_menu_minus_add_class(count.previousElementSibling);
-//     dropdown_menu_count_guests(element, items);
-// };
-
-// function dropdown_menu_minus(element, elem, items) {
-//     let count   = elem.nextElementSibling;
-//     let idx     = Number(count.innerHTML);
-
-//     idx--;
-
-//     if(idx <= 0) {
-//         idx = 0;
-//         dropdown_menu_minus_remove_class(elem);        
-//     }
-
-//     count.innerHTML = idx;
-
-//     dropdown_menu_count_guests(element, items);
-// };
-
-// function dropdown_menu_minus_add_class(element) {
-    
-//     element.classList.add('minus-active');
-    
-// };
-
-// function dropdown_menu_minus_remove_class(element) {
-
-//     element.classList.remove('minus-active');
-
-// };
-
-// function dropdown_menu_count_guests(element, elements) {
-//     let arr = [];
-
-//     for(let i = 0; i < elements.length; i++) {
-//         let txt = Number(elements[i].innerHTML);
-//         arr.push(txt);
-//     }    
-
-//     return guests_counts(element, arr);
-// };
-
-// function guests_counts(el, array) {
-//     let string_growns, 
-//         string_babies   = '',
-//         sum             = 0,
-//         display         = el.querySelector('.dropdown__text'), 
-//         clear           = el.querySelector('.dropdown__menu-clear'),        
-//         growns          = array.slice(0, 2),
-//         babies          = array[array.length - 1];
-
-//     for(let i = 0; i < array.length; i++) {
-//         sum += array[i];
-
-//         if(sum === 0) {
-//             clear.style.opacity = 0;
-//         } else {
-//             clear.style.opacity = 1;
-//         }
-//     };
-
-//     let growns_sum = sum_growns_counts(growns);
-
-//     if(growns_sum > 0) {
-//         if(growns_sum == 1) {
-//             string_growns = `${growns_sum} гость`
-//         } else if(growns_sum > 1 && growns_sum < 5) {
-//             string_growns = `${growns_sum} гостя`
-//         } else if(growns_sum > 4) {
-//             string_growns = `${growns_sum} гостей`
-//         }
-//     } else {
-//         string_growns = 'Сколько гостей'
-//     }
-
-//     display.innerHTML = string_growns;
-
-//     if(babies > 0) {
-//         if(babies == 1) {
-//             string_babies = `${babies} младенец`;
-//         } else if(babies > 1 && babies < 5) {
-//             string_babies = `${babies} младенца`;
-//         } else if(babies > 4) {
-//             string_babies = `${babies} младенцев`;
-//         } else {
-//             string_babies = '';
-//         }
-//         display.innerHTML = string_babies;
-//     }
-
-//     if(growns_sum > 0 && babies > 0) {
-//         display.innerHTML = `${string_growns}, ${string_babies}`;
-//     }
-
-// };
-
-// function sum_growns_counts(array) {
-//     let sum = 0;
-
-//     array.forEach(item => {
-//         sum += item;
-//     });
-
-//     return sum;
-// };
-
-// function clear_display(el) {
-//     // let dropdown    = document.querySelector('#dropdown-number-of-guests');
-//     let clear       = el.querySelector('.js-dropdown__menu-clear');
-//     let display     = el.querySelector('.js-dropdown__text');
-//     let counts      = el.querySelectorAll('.js-count-number');
-
-//     clear.addEventListener('click', () => {
-//         display.innerHTML = 'Сколько гостей';
-//         counts.forEach(item => {
-//             item.innerHTML = 0;
-//             item.previousElementSibling.classList.remove('minus-active');
-//         });
-//         clear.style.opacity = 0;
-//     })
-// }
-
-// dropdownInitiall();
