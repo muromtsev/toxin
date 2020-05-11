@@ -90,7 +90,14 @@ block content
             .form-elements__buttons
                 .form-elements__item
                     +header-block({title: 'range slider'})
-                    +range-slider  
+                    +range-slider({  
+                        type: 'double', 
+                        min: 1000, 
+                        max: 15000, 
+                        step: 1, 
+                        from: 5000, 
+                        to: 10000, 
+                    }) 
                 .flex-elements__flex-col
                     .form-elements__item.btn-mb 
                         +header-block({title: 'buttons'})
