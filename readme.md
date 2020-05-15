@@ -2,14 +2,19 @@
 ## Task 2 TOXIC
 
 ### Установка
-**Клонировать**
-> https://github.com/muromtsev/toxic.git
-**Установка**
-> npm i
-**Запуск webpack server**
-> npm run dev
-**Запуск production build**
-> npm run build
+
+_Клонировать_
+> ```git clone https://github.com/muromtsev/toxic.git```
+
+_Установка_
+> ```npm i```
+
+_Запуск webpack server_
+> ```npm run dev```
+
+_Запуск production build_
+> ```npm run build```
+
 ---
 
 
