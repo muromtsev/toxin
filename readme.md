@@ -3,19 +3,15 @@
 
 ### Установка
 **Клонировать**
-> https://github.com/muromtsev/toxic.git
+> ```git clone https://github.com/muromtsev/toxic.git```
 
 **Установка**
-> npm i
+> ```npm i```
 
 **Запуск webpack server**
-> npm run dev
+> ```npm run dev```
 
 **Запуск production build**
-> npm run build
+> ```npm run build```
 
 ---
-
-
-
-
