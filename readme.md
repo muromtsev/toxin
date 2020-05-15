@@ -1,13 +1,17 @@
 # FSD practice 
 ## Task 2 TOXIC
 
-Сделаны следующие страницы:
-+ Color & Type
-+ Header & Footer
-    - Здесь в дальнейшем необходимо рефакторить pug components
-    - Responsive
-+ Form elements
-    - Рефакторинг интерактивных компонентов pug
-    - Написать к ним JS
+### Установка
+**Клонировать**
+> https://github.com/muromtsev/toxic.git
+**Установка**
+> npm i
+**Запуск webpack server**
+> npm run dev
+**Запуск production build**
+> npm run build
+---
+
+
 
 
