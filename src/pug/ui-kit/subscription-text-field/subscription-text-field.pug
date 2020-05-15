@@ -1,5 +1,5 @@
-mixin subscription-text-field
+mixin subscription-text-field({type='text', name='input-email', placeholder='Email', sendAddress='/mock-address/change-me/'}={})
     .subscription-text
-        input.subscription-text__input(type="text" name="name" placeholder="Your email address")                
-        a.subscription-text__btn(href="#")
+        input.subscription-text__input(type=type name=name placeholder=placeholder)                
+        a.subscription-text__btn(href=sendAddress)
             span.material-icons arrow_forward

@@ -30,7 +30,11 @@ block content
             .form-elements__text-field
                 .form-elements__item    
                     +header-block({title: 'text-field'})
-                    +text-field              
+                    +text-field({
+                        type: email,
+                        name: 'input-text-field',
+                        placeholder: 'Email',
+                    })             
                 .form-elements__item
                     +header-block({title: 'dropdown', text: 'default'})
                     +dropdown({
@@ -45,8 +49,10 @@ block content
                         buttonsShow: true
                     })   
                 .form-elements__item
-                    +header-block({title: 'date dafault'})
-                    +date-default
+                    +header-block({title: 'masked text field'})
+                    +text-field({
+                        isMasked: true
+                    })
                 .form-elements__flex
                     .form-elements__item
                         +header-block({title: 'date dropdown'})
