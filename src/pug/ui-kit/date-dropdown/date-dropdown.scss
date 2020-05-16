@@ -1,22 +1,30 @@
 .date-dropdown {
-    position: relative;
-    max-width: 320px;
+
     &__input {
-        @extend .text-field;
+        max-width: 150px;
+        width: 100%;
+        position: relative;
+        margin-top: 5px;
+
+        &_width {
+            &_large {
+                max-width: 266px;
+            }
+        }
         
     }
     &__link {
         position: absolute;
         top: 0;
         right: 0;
-        @extend .dropdown__link;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 44px;
+        height: 44px;
+        color: $dark-shade--lighten;
+        transition: 0.1s;
+        cursor: pointer;
+        user-select: none;
     }
-}
-.date-dropdown-default {
-    max-width: 150px;
-    width: 100%;
-}
-.filter-date-dropdown {
-    max-width: 266px;
-    width: 100%;
 }

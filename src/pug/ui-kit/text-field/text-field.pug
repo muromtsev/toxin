@@ -1,15 +1,17 @@
-mixin text-field({type='text', name, placeholder, disabled=false, readonly=false, isMasked,}={})
+mixin text-field({type='text', name, placeholder, disabled=false, readonly=false, isMasked, isClickable,}={})
     - let maskedModifier = ''
-
+    - let isClickableModifier = ''
     if isMasked
         - maskedModifier = 'text-field__masked',
         - placeholder = 'ДД.ММ.ГГГГ'
 
+    if isClickable
+        - isClickableModifier = 'text-field__clickable'
+
     input.text-field.js-text-field(
-        class= `${maskedModifier}`
+        class= `${maskedModifier}${isClickableModifier}`
         type=type
         name=name
         placeholder=placeholder
         disabled=disabled
-        readonly=readonly
-        )
+        readonly=readonly)

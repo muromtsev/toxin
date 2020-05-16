@@ -7,8 +7,8 @@ block content
     include ../../ui-kit/header-block/header-block.pug
     include ../../ui-kit/text-field/text-field.pug
     include ../../ui-kit/dropdown/dropdown.pug
-    include ../../ui-kit/date-default/date-default.pug
-    include ../../ui-kit/date-dropdown/date-dropdown.pug
+    //- include ../../ui-kit/date-dropdown/date-dropdown.pug
+    include ../../ui-kit/filter-date-dropdown/filter-date-dropdown.pug
     include ../../ui-kit/subscription-text-field/subscription-text-field.pug
     include ../../ui-kit/checkbox-list/checkbox-list.pug
     include ../../ui-kit/room-information/room-information.pug
@@ -29,14 +29,14 @@ block content
         .form-elements__grid
             .form-elements__text-field
                 .form-elements__item    
-                    +header-block({title: 'text-field'})
+                    +header-block({title: 'text-field',})
                     +text-field({
                         type: email,
                         name: 'input-text-field',
-                        placeholder: 'Email',
+                        placeholder: 'Email'
                     })             
                 .form-elements__item
-                    +header-block({title: 'dropdown', text: 'default'})
+                    +header-block({title: 'dropdown',})
                     +dropdown({
                         elems: [
                             {name: 'Взрослые', value: 0},
@@ -53,16 +53,10 @@ block content
                     +text-field({
                         isMasked: true
                     })
-                .form-elements__flex
-                    .form-elements__item
-                        +header-block({title: 'date dropdown'})
-                        +date-dropdown({className: 'date-dropdown-default', text: 'ДД.ММ.ГГГГ'})
-                    .form-elements__item
-                        +header-block({title: 'date dropdown'})
-                        +date-dropdown({className: 'date-dropdown-default', text: '19.08.2019'})
                 .form-elements__item
-                    +header-block({title: 'filter date dropdown'})
-                    +date-dropdown({className: 'filter-date-dropdown', text: '19 авг - 23 авг'})
+                    +filter-date-dropdown({filterType: 'double'})
+                .form-elements__item
+                    +filter-date-dropdown({firstHeaderTitle: 'filter date dropdown'})
                 .form-elements__item
                     +header-block({title: 'subscription text field'})
                     +subscription-text-field
@@ -130,7 +124,7 @@ block content
                 
             .form-elements__dropdownLeft
                 .form-elements__item
-                    +header-block({title: 'dropdown', text: 'default', width: '266px'})     
+                    +header-block({title: 'dropdown', width: 'small'})     
                     +dropdown({
                         titleText: '2 спальни, 2 кровати...',
                         elems: [

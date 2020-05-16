@@ -1,0 +1,233 @@
+.date-picker-calendar {
+    position: absolute;
+    top: 0;
+    left: 0;
+  
+    &__apply-button {
+      text-align: right;
+      font-family: $mainFont;
+      font-style: normal;
+      font-weight: bold;
+      font-size: $font-size--small;
+      line-height: 15px;
+      color: $purple;
+      text-transform: uppercase;
+      cursor: pointer;
+      background: none;
+      outline: none;
+      user-select: none;
+    }
+  
+    &__material-icon {
+      font-family: 'Material Icons';
+      font-weight: normal;
+      font-style: normal;
+      font-size: 24px;
+      display: inline-block;
+      line-height: 1;
+      text-transform: none;
+      letter-spacing: normal;
+      word-wrap: normal;
+      white-space: nowrap;
+      direction: ltr;
+      user-select: none;
+      /* Support for all WebKit browsers. */
+      -webkit-font-smoothing: antialiased;
+      /* Support for Safari and Chrome. */
+      text-rendering: optimizeLegibility;
+      /* Support for Firefox. */
+      -moz-osx-font-smoothing: grayscale;
+      /* Support for IE. */
+      font-feature-settings: 'liga';
+  
+      &_color {
+  
+        &_purple {
+          color: $purple;
+        }
+      }
+    }
+  
+    &__inner {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      max-width: 320px;
+      width: max-content;
+      padding: 19px;
+      box-sizing: border-box;
+    
+      .datepicker {  
+    
+        &--pointer {
+          display: none;
+        }
+    
+        &--nav {
+          border: none;
+          padding-bottom: 10px;
+          width: 100%;
+    
+          &-title {
+            font-family: $titleFont;
+            font-weight: bold;
+            font-size: $font-size--medium;
+            line-height: 24px;
+            text-align: center;
+            color: $dark-shade;
+    
+            i {
+              color: inherit;
+            }
+    
+            &:hover {
+              background: none;
+            }
+          }
+        }
+    
+        &--day-name {
+          width: 38Px;
+          height: 38Px;
+          font-family: $mainFont;
+          font-size: $font-size--small;
+          line-height: 15px;
+          color: $purple;
+        }
+  
+        &--cells-days {
+          display: grid;
+          grid-template-columns: repeat(7, auto); 
+        }
+    
+        &--cell-day {
+          display: flex ;
+          justify-content: center;
+          align-items: center;
+          width: 38px;
+          height: 38px;
+          border: none;
+          padding: 0;
+          margin: 0;
+          box-sizing: border-box;
+          font-family: $mainFont;
+          font-size: $font-size--small;
+          line-height: 15px;
+          color: $dark-shade--light;
+          border: none;
+          background: none;
+  
+          @media (max-width: 380px) {    
+            width: 30px;
+            height: 30px;
+          }
+    
+          &.-other-month- {
+            color: $dark-shade--light;
+          }
+    
+          &.-current- {
+            background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+            border-radius: 50%;
+            color: #fff;
+          }
+    
+          &.-selected- {
+            background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+            border-radius: 50%;
+            color: #fff;
+            position: relative;
+          }
+    
+          &.-in-range- {
+            color: $dark-shade;
+    
+            &::after {
+              content: '';
+              display: block;
+              position: absolute;
+              top: 0;
+              left: 0;
+              top: 0;
+              right: 0;
+              width: 100%;
+              height: 100%;
+              background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+              opacity: 0.15;
+            }
+          }
+    
+          &.-range-from-::after {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+            border-radius: 50% 0 0 50%;
+            opacity: 0.15;
+          }
+    
+          &.-range-to-::after {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+            border-radius: 0 50% 50% 0;
+            opacity: 0.15;
+          }
+    
+          &:hover {
+            background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+            border-radius: 50%;
+            color: #fff;
+          }
+        }
+    
+        &--buttons {
+          justify-content: space-between;
+          align-items: center;
+          width: 100%;
+          margin-top: 20px;
+          padding: 0;
+          border: unset;
+        }
+    
+        &--button {
+          display: inline-block;
+          max-width: min-content;
+          height: min-content;
+          text-align: left;
+          font-family: $mainFont;
+          font-weight: bold;
+          font-size: $font-size--small;
+          text-transform: uppercase;
+          user-select: none; 
+          cursor: pointer;
+          color: $dark-shade;
+    
+          &:hover {
+            background: none;
+          }
+        }
+    
+        &--nav-action {
+    
+          &:hover {
+            background: none;
+          }
+        }
+      }
+    }
+  }

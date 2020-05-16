@@ -18,5 +18,12 @@ class TextField {
             });
         }
     }
+
+    getValueElement() {
+        return this.$textField;
+    }
+    eventListenerBind(type, fn) {
+        if (this.$textField) this.$textField.on(type, fn);
+    }
 }
 export default TextField;

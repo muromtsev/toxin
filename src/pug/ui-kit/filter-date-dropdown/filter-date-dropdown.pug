@@ -1,0 +1,15 @@
+include ../text-field/text-field.pug
+include ../date-dropdown/date-dropdown.pug
+include ../calendar/calendar.pug
+
+mixin filter-date-dropdown({filterType='single', firstHeaderTitle='date dropdown', secondHeaderTitle='date dropdown'}={})
+    .filter-date-dropdown.js-filter-date-dropdown
+        case filterType
+            when 'single'
+                .filter-date-dropdown__input
+                    +date-dropdown({title: firstHeaderTitle, type: 'alone', placeholder: 'ДД.МЕС - ДД.МЕС', width: 'large',})
+            when 'double'
+                .filter-date-dropdown__inputs
+                    +date-dropdown({title: firstHeaderTitle, type:'start', placeholder: 'ДД.ММ.ГГГГ',})
+                    +date-dropdown({title: secondHeaderTitle, type:'end', placeholder: 'ДД.ММ.ГГГГ',})
+        +calendar()

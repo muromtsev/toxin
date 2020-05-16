@@ -241,4 +241,4 @@ class Dropdown {
     }
 }
 
-export {Dropdown}
+export default Dropdown

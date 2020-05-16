@@ -1,34 +1,24 @@
-import 'air-datepicker/dist/css/datepicker.min.css';
-import 'air-datepicker/dist/js/datepicker.min.js';
+import TextField from '../text-field/text-field';
 
-$('.datepicker-here').datepicker({
-    // dateFormat: 'dd M -',
-    position: 'bottom left',
-    range: true,
-    clearButton: true,
-    navTitles: {
-        days: 'MM, <i>yyyy</i>',
-        months: 'yyyy'
-    },
-    onSelect: function(formattedDate, date, inst) {
-        console.log(inst.el.value);
-    },
+class DateDropdown {
+    container($container, type) {
+        this.$container = $container;
+        this.$type = type;
+        this.setElements();
+    }
 
-    
-})
+    setElements() {
+        this.$dateDropdownContainer = this.$container.find(`.js-date-dropdown__input-${this.type}-date`);
+        this.textField = new TextField(this.$dateDropdownContainer);
+        this.$dateTextFiled = this.textField.getValueElement();
+    }
 
+    getValueElement() {
+        return $dateTextField;
+    }
+    eventListenerBind(type, fn) {
+        if (this.$dateTextField) this.textField.eventListenerBind(type, fn);
+    }
+}
 
-
-
-$.fn.datepicker.language['ru'] =  {
-    days: ['Воскресенье','Понедельник','Вторник','Среда','Четверг','Пятница','Суббота'],
-    daysShort: ['Вос','Пон','Вто','Сре','Чет','Пят','Суб'],
-    daysMin: ['Вс','Пн','Вт','Ср','Чт','Пт','Сб'],
-    months: ['Январь','Февраль','Март','Апрель','Май','Июнь','Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь'],
-    monthsShort: ['янв','фев','мар','апр','май','июн','июл','авг','сен','окт','ноя','дек'],
-    today: 'Сегодня',
-    clear: 'Очистить',
-    dateFormat: 'dd M',
-    timeFormat: 'hh:ii',
-    firstDay: 1
-};
+export default DateDropdown

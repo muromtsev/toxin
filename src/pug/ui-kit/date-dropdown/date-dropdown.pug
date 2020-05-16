@@ -1,5 +1,22 @@
-mixin date-dropdown({className, text}={})
-    .date-dropdown(class= className)
-        input.date-dropdown__input(type="text" placeholder= text class='datepicker-here')
-        a.date-dropdown__link(href="#")
-            span(class="material-icons") keyboard_arrow_down
+include ../header-block/header-block.pug
+include ../text-field/text-field.pug
+
+mixin date-dropdown({title='date-dropdown', type='start', placeholder, width,}={})
+    - let widthModifier
+    case width
+        when 'large'
+            - widthModifier = 'date-dropdown__input_width_large'
+
+    .date-dropdown
+        +header-block({title: title,})
+        .date-dropdown__input(class= widthModifier)
+            span.date-dropdown__link
+                span(class="material-icons") keyboard_arrow_down
+            div(class= `date-dropdown__input-${type}-date js-date-dropdown__input-${type}-date`)
+                +text-field({
+                    type: 'text',
+                    readonly: 'readonly',
+                    isClickable: true,
+                    placeholder
+                })
+        

@@ -19,4 +19,7 @@
         font-size: $font-size--small;  
         color: $dark-shade--lighten;
     }
+    &__small {
+        max-width: 150px;
+    }
 }
