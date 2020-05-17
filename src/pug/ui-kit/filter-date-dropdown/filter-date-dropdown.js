@@ -4,44 +4,46 @@ import DateDropdown from '../date-dropdown/date-dropdown';
 class FilterDateDropdown {
     constructor(calendar) {
         this.$calendar = $(calendar);
+        
+        this.findDOMElements();
+        this.initCalendar();
     }
 
-    findElements() {
+    findDOMElements() {
         this.input = new DateDropdown(this.$calendar, 'alone');
-        this.$input = this.input.getValueElement();
-        this.isRange = false;
+        this.$input = this.input.getElement();        
 
         if(this.$input.length === 0) {
             this.isRange = true;
             this.startInput = new DateDropdown(this.$calendar, 'start');
-            this.$startInput = this.startInput.getValueElement();
+            
+            this.$startInput = this.startInput.getElement();
             this.endInput = new DateDropdown(this.$calendar, 'end');
-            this.$endInput = this.input.getValueElement();
+            this.$endInput = this.endInput.getElement();
             this.datepickerPluginInstance = this.$startInput.datepicker().data('datepicker');
         }
     }
+
     initCalendar() {
         if(this.isRange) {
-            let { $startInput, $endInput } = this;
-
+            const { $startInput, $endInput } = this;
             $startInput.datepicker({
                 range: true,
                 multipleDatesSeparator: ' - ',
                 language: 'ru',
                 clearButton: true,
             });
-
             $startInput.datepicker({
                 onSelect(formattedDate) {
-                    let inputValues = formattedDate.split('-');
-                    let [startValue, secondValue] = inputValues;
-                    $startInput.val(startInput);
-                    $endInput.val(endInput);
+                    const inputValues = formattedDate.split('-');
+                    const [startValue, secondValue] = inputValues;
+                    $startInput.val(startValue);
+                    $endInput.val(secondValue);
                 },
             });
 
             new Calendar(this.$startInput.datepicker().data('datepicker'), this.$calendar);
-            this.initInput();
+            this.initEndInput();
         } else {
             this.$input.datepicker({
                 range: true,
@@ -50,8 +52,8 @@ class FilterDateDropdown {
                 dateFormat: 'dd M',
                 clearButton: true,
             });
-
             this.datepickerPluginInstance = this.$input.datepicker().data('datepicker');
+            
             new Calendar(this.datepickerPluginInstance, this.$calendar);
             this.setAdditionalClass();
         }
@@ -60,12 +62,11 @@ class FilterDateDropdown {
     initEndInput() {
         this.endInput.eventListenerBind('click', this.handleEndInputClick.bind(this));
     }
-
     handleEndInputClick() {
         this.datepickerPluginInstance.show();
     }
     setAdditionalClass() {
-        this.datepickerPluginInstance.$dapicker.addClass('datepicker-smiller');
+        this.datepickerPluginInstance.$datepicker.addClass('datepicker--smaller');
     }
 }
 
