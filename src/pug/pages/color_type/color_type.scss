@@ -1,24 +1,23 @@
-@import "../sass/var";
-@import "../sass/fonts";
 @import "../sass/mixins";
 
 .content-flex {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    font-family: $mainFont;
+    font-family: $titleFont;
     margin-top: 67px;
     margin-left: 150px;
     margin-right: 191px;
 
     .flex-left {
-        width: 275px;
+        width: 290px;
         
         &__item {
             display: flex;
             flex-wrap: wrap;
             font-size: $font-size--medium;
             line-height: 29px;
+            color: $dark-shade;
 
             &:not(:first-child) {
                 margin-top: 20px;    
@@ -29,25 +28,25 @@
                 @include colorItem;
                 
             }
-            .c1 {
+            .dark-shade {
                 background-color: $dark-shade;
             }
-            .c2 {
+            .dark-shade-light {
                 background-color: $dark-shade--light;
             }
-            .c3 {
+            .dark-shade-lighten {
                 background-color: $dark-shade--lighten;
             }
-            .c4 {
+            .dark-shade-lightest {
                 background-color: $dark-shade--lightest;
             }
-            .c5 {
+            .dark-shade-white {
                 background-color: $dark-shade--white;
             }
-            .c6 {
+            .main-color-purple {
                 background-color: $purple;
             }
-            .c7 {
+            .main-color-green {
                 background-color: $green;
             }
             

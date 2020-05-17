@@ -24,6 +24,7 @@
 @import "../pug/ui-kit/pagination/pagination.scss";
 @import "../pug/ui-kit/comments/comments.scss";
 
+@import "../pug/pages/color_type/color_type.scss";
 @import "../pug/pages/form-elements/form-elements.scss";
 
 a {text-decoration: none;}
@@ -33,8 +34,6 @@ body {
     font-family: $mainFont;
     font-size: $font-size--base;
     background-color: $white;
-    height: 3000px;
-
 }
 
 
