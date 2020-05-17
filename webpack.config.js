@@ -102,6 +102,10 @@ module.exports = (env, options) => {
                 template: `${PAGES_DIR}/index.pug`,
                 filename: 'index.html',          
             }),
+            new HtmlWebpackPlugin({
+                template: `${PAGES_DIR}/form-elements/form-elements.pug`,
+                filename: `./form-elements.html`
+            }),
         ],
     };
 };
