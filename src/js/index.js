@@ -9,6 +9,13 @@ import Dropdown from '../pug/ui-kit/dropdown/dropdown';
 import FilterDateDropdown from '../pug/ui-kit/filter-date-dropdown/filter-date-dropdown';
 import initialSlider from '../pug/ui-kit/range-slider/range-slider';
 
+  
+function importAll(resolve) {
+    resolve.keys().forEach(resolve);
+}
+importAll(require.context('../img', true, /\.(jpg|png|svg|png)$/));
+
+
 document.addEventListener('DOMContentLoaded', () => {
     const dropdowns = document.querySelectorAll('.js-dropdown');
     
