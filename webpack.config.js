@@ -104,7 +104,15 @@ module.exports = (env, options) => {
             }),
             new HtmlWebpackPlugin({
                 template: `${PAGES_DIR}/form-elements/form-elements.pug`,
-                filename: `./form-elements.html`
+                filename: `./form-elements.html`,
+            }),
+            new HtmlWebpackPlugin({
+                template: `${PAGES_DIR}/color_type/color_type.pug`,
+                filename: `./color_type.html`,
+            }),
+            new HtmlWebpackPlugin({
+                template: `${PAGES_DIR}/header_footer/header_footer.pug`,
+                filename: `./header_footer.html`,
             }),
         ],
     };

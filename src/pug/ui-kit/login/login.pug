@@ -1,11 +1,7 @@
-- let registration = false
-
-mixin login(register)
+mixin login({register=false, href='/mock-address/change-me/', userName='Cosmin Negoita'}={})
     if register
-        a.user-name Cosmin Negoita
+        a.user-name= userName
     else
-        a.login(href="#") Login
-        a.register(href="#") Register
+        a.login(href=href) Login
+        a.register(href=href) Register
 
-.header__user-manage
-    +login(registration)

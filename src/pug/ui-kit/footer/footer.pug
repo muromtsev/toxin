@@ -1,41 +1,25 @@
--
-    let elementsMenu = [
-            {
-                'name': 'Navigation',
-                'list': ['About Us', 'News', 'Support', 'Products']
-            },
-            {
-                'name': 'About us',
-                'list': ['Who we are', 'Our team', 'Careers', 'Investors']
-            },
-            {
-                'name': 'Support',
-                'list': ['Documentation', 'Community', 'Get in Touch']
-            }
-        ]
+include ../logo/logo.pug
+include ../footer-menu/footer-menu.pug
+include ../subscription-text-field/subscription-text-field.pug
 
-mixin footerMenu(elements)
-    each el in elements
-        .footer-flex__col
-            .footer__title #{el.name}
-            nav
-                ul.footer__menu
-                    each item in el.list
-                        li.footer__menu-item
-                            a.footer__menu-item-link(href="#" title= item) #{item}
 
-footer.footer.wrapper
-    .footer-flex
-        .footer-flex__col
-            include ../logo/logo.pug
-            .footer__text 
-                |Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.
-        +footerMenu(elementsMenu)
-        .footer-flex__col
-            .footer__title Subscribe to our newsletter
-            .footer__text
-                |Receive our latest news and promotions in your inbox!
-            form.footer__form(action="" method="get")
-                input.footer__form-input(type="text" name="name" placeholder="Your email address")                
-                a.footer__form-btn(href="#")
-                    span.material-icons arrow_forward
+mixin footer({text, }={})
+    footer.footer
+        .footer-flex
+            .footer-flex__col
+                +logo
+                .footer__text 
+                    div= text
+            +footerMenu({
+                elements: [
+                    {name: 'Navigation', list: ['About Us', 'News', 'Support', 'Products']},
+                    {name: 'About us', list: ['Who we are', 'Our team', 'Careers', 'Investors']},
+                    {name: 'Support', list: ['Documentation', 'Community', 'Get in Touch']},
+                ]
+            })
+            .footer-flex__col
+                .footer__title Subscribe to our newsletter
+                .footer__text
+                    |Receive our latest news and promotions in your inbox!
+                form.footer__form(action="" method="get")
+                    +subscription-text-field({type: 'email', name: 'subscribe-email', placeholder: 'Your email address',})

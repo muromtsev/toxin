@@ -1,0 +1,47 @@
+
+@import "../../ui-kit/logo/logo.scss";
+@import "../../ui-kit/login/login.scss";
+@import "../../ui-kit/nav-menu/nav-menu.scss";
+@import "../../ui-kit/footer/footer.scss";
+@import "../../ui-kit/copyright-bar/copyright-bar.scss";
+@import "../../ui-kit/footer-creative/footer-creative.scss";
+
+.container {
+    max-width: 1920px;    
+    margin: 0 auto;
+    
+    &-border {
+        border-top: 1px solid #E5E5E5;
+    }
+    &-shadow {
+        box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+    }
+    &-header {
+        height: 70px;
+        
+    }
+    &-inner {
+        max-width: 1440px;
+        margin: 0 auto;
+    }
+    
+    
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 77px auto 0;
+    height: 70px;
+
+    &__logotype {
+        flex-grow: 1;
+    }
+}
+
+
+
+
+
+

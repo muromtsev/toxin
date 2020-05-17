@@ -1,20 +1,5 @@
-- 
-    let elements = [
-            {'name': 'Home', 'href': '#home', 'active': true},
-            {'name': 'About Us', 'href': '#about'},
-            {'name': 'Services', 'href': '#services', 'submenu': true},
-            {'name': 'Careers', 'href': '#careers'},
-            {'name': 'News','href': '#news'},
-            {'name': 'Documentation', 'href': '#documentation'}
-        ]
-- 
-    let subelements = [
-            {'name': 'Occultism', 'href': '#occultism'},
-            {'name': 'Necromancy', 'href': '#necromancy'},
-            {'name': 'Reincarnation', 'href': '#reincarnation'},
-        ]
-mixin menu(className, elements)
-    nav(class=className)
+mixin menu({elements=[], subelements=[],}={})
+    nav.header__menu
         ul.menu
             each elem in elements
                 li.menu__item
@@ -30,6 +15,4 @@ mixin menu(className, elements)
                             a.menu__item-link.active(href= elem.href title= elem.name) #{elem.name}
                         else
                             a.menu__item-link(href= elem.href title= elem.name) #{elem.name} 
-                        
-</span>
-+menu('header__menu', elements)
+

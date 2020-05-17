@@ -1,4 +1,5 @@
-@import "_var";
+@import "../../ui-kit/logo/logo.scss";
+@import "../../ui-kit/footer-menu/footer-menu.scss";
 
 .footer {    
     height: auto;
@@ -21,6 +22,7 @@
                 line-height: 24px;
                 color: $dark-shade--light;
             }
+
             .footer__title {
                 font-family: $mainFont;   
                 font-weight: bold;
@@ -29,46 +31,6 @@
                 text-transform: uppercase;
                 color: $dark-shade;
             }
-            nav {
-
-                .footer__menu {
-                    display: flex;
-                    justify-content: flex-start;
-                    align-content: flex-start;
-                    flex-direction: column;
-                    list-style: none;
-                    margin: 0;
-                    padding: 0;
-
-                    &-item {
-                        padding-top: 20px;
-
-                        &:first-child {
-                            padding-top: 21px;
-                        }
-
-                        &-link {
-                            color: $dark-shade--lighten;
-                            transition: 0.3s linear; 
-
-                            &:hover {
-                                font-family: $mainFont;   
-                                font-weight: bold;
-                            }
-                            &::before {
-                                display: block;
-                                content: attr(title);
-                                font-family: $mainFont;   
-                                font-weight: bold;
-                                height: 0;
-                                overflow: hidden;
-                                visibility: hidden;
-                            }
-                        }
-                    }//footer-menu__item
-                }//footer-menu
-            }//nav
-            
             .footer__form {
                 position: relative;
                 display: flex;

@@ -1,0 +1,59 @@
+include ../../ui-kit/logo/logo.pug
+include ../../ui-kit/nav-menu/nav-menu.pug
+include ../../ui-kit/login/login.pug
+include ../../ui-kit/footer/footer.pug
+include ../../ui-kit/copyright-bar/copyright-bar.pug
+include ../../ui-kit/footer-creative/footer-creative.pug
+
+.container.container-header.container-shadow
+    .container-inner
+        header.header
+            .header__logotype
+                +logo            
+            +menu({elements: [
+                {'name': 'Home', 'href': '#home', 'active': true},
+                {'name': 'About Us', 'href': '#about'},
+                {'name': 'Services', 'href': '#services', 'submenu': true},
+                {'name': 'Careers', 'href': '#careers'},
+                {'name': 'News','href': '#news'},
+                {'name': 'Documentation', 'href': '#documentation'},
+            ], subelements: [
+                {'name': 'Occultism', 'href': '#occultism'},
+                {'name': 'Necromancy', 'href': '#necromancy'},
+                {'name': 'Reincarnation', 'href': '#reincarnation'},
+            ]})
+            .header__user-manage
+                +login
+            
+.container.container-header.container-shadow
+    .container-inner
+        header.header
+            .header__logotype
+                +logo           
+            +menu({elements: [
+                {'name': 'Home', 'href': '#home', 'active': true},
+                {'name': 'About Us', 'href': '#about'},
+                {'name': 'Services', 'href': '#services', 'submenu': true},
+                {'name': 'Careers', 'href': '#careers'},
+                {'name': 'News','href': '#news'},
+                {'name': 'Documentation', 'href': '#documentation'},
+            ], subelements: [
+                {'name': 'Occultism', 'href': '#occultism'},
+                {'name': 'Necromancy', 'href': '#necromancy'},
+                {'name': 'Reincarnation', 'href': '#reincarnation'},
+            ]})
+            .header__user-manage
+                +login({register: true,})
+.container
+    .container-inner
+        +footer({text: 'Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.'})
+        
+.container.container-header.container-shadow
+    .container-border
+        .container-inner    
+            +copyright-bar({text: 'Copyright © 2018 Toxin UI Kit. All rights reserved.'})
+.container.container-shadow
+    .container-inner     
+        +footer-creative({
+            text: 'Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.'
+        })

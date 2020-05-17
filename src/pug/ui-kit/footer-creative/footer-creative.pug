@@ -1,5 +1,13 @@
-footer.footer-creative.wrapper
-    include ../logo/logo.pug
-    .footer-creative__text 
-        |Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.
-    include ../social-icon/social-icon.pug
+include ../../ui-kit/logo/logo.pug
+include ../social-icon/social-icon.pug
+
+mixin footer-creative({text, }={})
+    footer.footer-creative
+        +logo
+        .footer-creative__text 
+            div= text
+        +social-icon({images: [
+            {'name': 'twitter', 'src': '../src/img/twitter.svg', href: '/mock-address/change-me',},
+            {'name': 'facebook', 'src': '../src/img/facebook.svg', href: '/mock-address/change-me',},
+            {'name': 'instagramm', 'src': '../src/img/instagramm.svg', href: '/mock-address/change-me',},
+        ]})

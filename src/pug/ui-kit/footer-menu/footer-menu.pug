@@ -1,0 +1,11 @@
+mixin footerMenu({elements=[], href='/mock-address/change-me/'}={})
+    each el in elements
+        .footer-flex__col
+            .footer__title #{el.name}
+            nav
+                ul.footer__menu
+                    each item in el.list
+                        li.footer__menu-item
+                            a.footer__menu-item-link(href=href title= item) #{item}
+
+
