@@ -8,4 +8,8 @@
     margin: 0 auto;
     font-size: $font-size--base;
     line-height: 17px;    
+
+    @media (max-width: 690px) {
+        display: none;
+    }
 }

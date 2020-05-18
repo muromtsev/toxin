@@ -5,6 +5,10 @@
     height: auto;
     margin: 77px auto 0;
     padding-top: 100px; 
+    
+    @media (max-width: 690px) {
+        display: none;
+    }
 
     .footer-flex {
         display: flex;
