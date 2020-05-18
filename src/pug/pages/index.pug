@@ -14,17 +14,10 @@ html(lang='en')
   body
       include ../includes/header-ui.pug
       block content
+      include ../ui-kit/index-menu/index-menu.pug 
       //- include ./form-elements/form-elements.pug  
       //- include ./color_type/color_type.pug
       //- include ./header_footer/header_footer.pug
-
-      mixin index_menu({menu=[]}={}) 
-        .wrapper
-          nav
-            ul.index-menu
-              each item in menu
-                li.index-menu-item
-                  a(href= item.link) #{item.name}
       
       +index_menu({
         menu: [
