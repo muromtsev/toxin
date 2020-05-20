@@ -1,4 +1,5 @@
 @import "../../ui-kit/selection/selection.scss";
+@import "../../ui-kit/registration/registration.scss";
 
 .container-cards {
     max-width: 1920px;
@@ -17,6 +18,8 @@
         &__row {
             display: flex;
             flex-direction: row;
+            max-width: 380px;
+            width: 100%;
             margin-bottom: 40px;
             background-color: $white;
             box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
@@ -25,14 +28,7 @@
             box-sizing: border-box;
         }
     
-        &__number {
-            background-color: $white;
-            box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
-            border-radius: 4px;
-        }
-    
-        .selection {
-            max-width: 380px;
+        .selection {            
             height: 374px;
             
         }
@@ -46,7 +42,7 @@
             height: 646px;
         }
         .sign-in {
-           height: 358px;
+            height: 358px;
         }
         .card-second {
             height: 257px;

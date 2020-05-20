@@ -1,0 +1,65 @@
+include ../header-block/header-block.pug
+include ../text-field/text-field.pug
+include ../radio-buttons/radio-buttons.pug
+include ../toggle-button/toggle-button.pug
+include ../button/button.pug
+
+mixin registration-form({ action='/mock-address/change-me/', name='registration-form', method='post', titleText, }={}) 
+    form.registration-form(action=action name=name method=method)
+        .registration-form__wrapper
+            .registration-form__title
+                h1=titleText
+            .registration-form__user-name
+                +text-field({
+                    type: 'text',
+                    name: 'user-name',
+                    placeholder: 'Имя',
+                    })
+            .registration-form__user-last-name
+                +text-field({
+                    type: 'text',
+                    name: 'user-last-name',
+                    placeholder: 'Фамилия',
+                })
+            .registration-form__sex
+                +radio-buttons
+            .registration-form__bithday
+                +header-block({
+                    title: 'дата рождения',
+                })
+                +text-field({
+                    type: 'text',
+                    name: 'user-birthday',
+                    isMasked: true,
+                })
+            .registration-form__user-data
+                +header-block({title: 'данные для входа в сервис'})
+                .user-data-email
+                    +text-field({
+                        type: 'text',
+                        name: 'user-email',
+                        placeholder: 'Email',
+                    })
+                .user-data-password
+                    +text-field({
+                        type: 'password',
+                        name: 'user-password',
+                        placeholder: 'Password',
+                    })
+            .registration-form__toggle-button
+                +toggle-button({ isActive: false, })
+            .registration-form__button
+                +button({
+                    className: 'btnBackground',
+                    text: 'перейти к оплате',
+                    address: '/mock-address/change-me',
+                    arrow: true, 
+                    })
+            .registration-form__login
+                p.registration-form__login-text Уже есть аккаунт на Toxic
+                +button({
+                    className: 'btnBorder',
+                    text: 'войти',
+                    address: '/mock-address/change-me', 
+                    })
+

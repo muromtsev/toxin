@@ -4,15 +4,23 @@ block variables
 block content
 
     include ../../ui-kit/selection/selection.pug
+    include ../../ui-kit/registration/registration.pug
+
+
 
     .container-cards
         .container-cards-flex
             .container-cards-flex__column
                 .container-cards-flex__row.selection
-                    +selection({titleText: 'Найдем номера под ваши пожелания',})
-                .container-cards-flex__row.armor
-            .container-cards-flex-column
+                    +selection({
+                        titleText: 'Найдем номера под ваши пожелания',
+                        })
                 .container-cards-flex__row.registration
+                    +registration-form({
+                        titleText: 'Регистрация аккаунта',
+                    })
+            .container-cards-flex-column
+                .container-cards-flex__row.armor
                 .container-cards-flex__row.sign-in
             .container-cards-flex-column
                 .container-cards-flex__row.card-first

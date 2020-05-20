@@ -3,7 +3,7 @@ include ../dropdown/dropdown.pug
 include ../button/button.pug
 include ../header-block/header-block.pug
 
-mixin selection({titleText, action='/mock-address/change-me/', name='section-form', method='post', }={})
+mixin selection({titleText, action='/mock-address/change-me/', name='section-form', method='get', }={})
     form.selection-form(action=action, name=name, method=method,)
         .selection-form__wrapper
             .selection-form-title

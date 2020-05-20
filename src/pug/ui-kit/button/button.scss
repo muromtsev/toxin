@@ -1,7 +1,4 @@
 .button-link {
-    max-width: 99px;
-    width: 100%;
-    box-sizing: border-box;
 
     &__elem {
         display: block;
@@ -24,17 +21,21 @@
         color: $white;
         background: $main-gradient;
         border-radius: 22px;
+        
 
         &:hover {
             opacity: 0.5;
         }
     }
     .btnBorder {
+        width: 99px;
         color: $purple;
         border-width: 2px;
         border-style: solid;
         border-color: $main-gradient;
         border-radius: 22px;
+        line-height: 20px;
+        box-sizing: border-box;
 
         &:hover {
             opacity: 0.5;
