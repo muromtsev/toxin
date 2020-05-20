@@ -1,6 +1,6 @@
 @import "_var";
 @import "mixins";
-@import "_normalize";
+// @import "_normalize";
 @import '~material-icons/iconfont/material-icons.scss';
 @import "../pug/includes/header-ui";
 @import "../pug/ui-kit/header-block/header-block.scss";
@@ -28,10 +28,11 @@
 @import "../pug/pages/color_type/color_type.scss";
 @import "../pug/pages/form-elements/form-elements.scss";
 @import "../pug/pages/header_footer/header_footer.scss";
+@import "../pug/pages/cards/cards.scss";
 
 a {text-decoration: none;}
 ul {list-style: none; margin: 0; padding: 0;}
-p {margin: 0;padding: 0;}
+p, h1, h2, h3, h4, h5, h6 {margin: 0;padding: 0;}
 body {
     font-family: $mainFont;
     font-size: $font-size--base;

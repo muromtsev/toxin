@@ -1,4 +1,4 @@
-mixin button({headerTitle, className = 'btnDefault', text = 'click me', address='/mock-address/change-me', arrow}={})
+mixin button({headerTitle, className = 'btnDefault', text = 'click me', buttonType = 'submit', arrow}={})
     -   let btnClass   
     .button-link    
         if headerTitle
@@ -9,9 +9,9 @@ mixin button({headerTitle, className = 'btnDefault', text = 'click me', address=
             when 'btnBorder'
                 - btnClass = className            
         if arrow
-            a.button-link__elem(class='btnLong' href=address) #{text}
+            button.button-link__elem(class='btnLong' type=buttonType) #{text}
                 span.material-icons arrow_forward
         else    
-            a.button-link__elem(class=className href=address) #{text}
+            button.button-link__elem(class=className type=buttonType) #{text}
 
         

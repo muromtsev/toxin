@@ -5,7 +5,7 @@
 
     &__elem {
         display: block;
-        padding: 12px 17px;        
+        padding: 10px 17px;        
         font-size: $font-size--small;  
         font-family: $mainFont;   
         font-weight: bold;          
@@ -13,6 +13,10 @@
         text-align: center;
         text-transform: uppercase;
         transition: all 0.5s;
+        box-sizing: border-box;
+        border: none;
+        user-select: none;
+        cursor: pointer;
         
     }
 

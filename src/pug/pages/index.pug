@@ -14,15 +14,16 @@ html(lang='en')
   body
       include ../includes/header-ui.pug
       block content
-      include ../ui-kit/index-menu/index-menu.pug 
+      //- include ../ui-kit/index-menu/index-menu.pug 
       //- include ./form-elements/form-elements.pug  
       //- include ./color_type/color_type.pug
       //- include ./header_footer/header_footer.pug
+      include ./cards/cards.pug
       
-      +index_menu({
-        menu: [
-          {link: './color_type.html', name: 'Color & Type'},
-          {link: './form-elements.html', name: 'Form Elements'},
-          {link: './header_footer.html', name: 'Header & Footer'},
-        ]
-      })
+      //- +index_menu({
+      //-   menu: [
+      //-     {link: './color_type.html', name: 'Color & Type'},
+      //-     {link: './form-elements.html', name: 'Form Elements'},
+      //-     {link: './header_footer.html', name: 'Header & Footer'},
+      //-   ]
+      //- })

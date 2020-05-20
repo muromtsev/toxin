@@ -1,0 +1,36 @@
+include ../filter-date-dropdown/filter-date-dropdown.pug
+include ../dropdown/dropdown.pug
+include ../button/button.pug
+include ../header-block/header-block.pug
+
+mixin selection({titleText, action='/mock-address/change-me/', name='section-form', method='post', }={})
+    form.selection-form(action=action, name=name, method=method,)
+        .selection-form__wrapper
+            .selection-form-title
+                h1= titleText
+            .selection-form-filter
+                +filter-date-dropdown({
+                    filterType: 'double',
+                    firstHeaderTitle: 'Прибытие',
+                    secondHeaderTitle: 'Въезд',
+                })
+            .selection-form-dropdown
+                +header-block({title: 'гости', })
+                +dropdown({
+                    elems: [
+                        {name: 'Взрослые', value: 0},
+                        {name: 'Дети', value: 0},
+                        {name: 'Младенцы', value: 0},
+
+                    ],
+                    classItem: 'dropdown-number-of-guests',
+                    dataName: 'guests',
+                    buttonsShow: true
+                })   
+            .selection-form-button
+                +button({
+                    className: 'btnBackground',
+                    text: 'подобрать номер',
+                    address: '/mock-address/change-me',
+                    arrow: true, 
+                    })
