@@ -8,6 +8,7 @@ import TextField from '../pug/ui-kit/text-field/text-field';
 import Dropdown from '../pug/ui-kit/dropdown/dropdown';
 import FilterDateDropdown from '../pug/ui-kit/filter-date-dropdown/filter-date-dropdown';
 import initialSlider from '../pug/ui-kit/range-slider/range-slider';
+import InfoTable from '../pug/ui-kit/info-table/info-table';
 
   
 function importAll(resolve) {
@@ -21,7 +22,23 @@ document.addEventListener('DOMContentLoaded', () => {
     
     dropdowns.forEach(element => {
         const dropdown = new Dropdown(element);
+    });
+
+    const values = {
+        priceOfRoom: '9 999',
+        numberOfDays: '4',
+        totalPriceOfDays: '39 960',
+        discountOfServices: '2 179',
+        totalServicesAmount: '0',
+        totalAdditionalAmount: '300',
+        totalTablePrice: '38 081'
+    }
+    const infoTables = document.querySelectorAll('.js-info-table');
+
+    infoTables.forEach((val) => {
+        new InfoTable(val, values);
     })
+
 })
 $(() => {
     let $textFields = $('.js-text-field');

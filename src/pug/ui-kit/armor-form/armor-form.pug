@@ -37,17 +37,7 @@ mixin armor-form({ action='/mock-address/change-me/', name='armor-form', method=
                     buttonsShow: true
                 })
             .armor-form__info-table
-                +info-table({ 
-                    tablePrice: '9 999', 
-                    currency: '₽', 
-                    numberOfDay: '4', 
-                    inTime: 'суток', 
-                    totalAmount: '39 960', 
-                    discount: '2 179', 
-                    totalServicesAmount: '0', 
-                    totalAdditionalAmount: '300', 
-                    totalTablePrice: '38 081',
-                })
+                +info-table
             .armor-form__button
                 +button({
                     className: 'btnBackground',

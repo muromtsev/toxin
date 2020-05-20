@@ -1,21 +1,25 @@
-mixin info-table({ tablePrice = '9 999', currency = '₽', numberOfDay = '1', inTime = 'сутки', totalAmount = '0', discount = '50', totalServicesAmount = '0', totalAdditionalAmount= '0', totalTablePrice = '1000', }={})
-    table.info-table
+mixin info-table({ tablePrice = '9 999', currency = '₽', numberOfDay = '1', inTime = 'сутки', totalAmount = '0', discount = '0', totalServicesAmount = '0', totalAdditionalAmount= '0', totalTablePrice = '9 999', }={})
+    table.info-table.js-info-table
         tr.info-table__row
             td.info-table__cell-service
-                span.info-table__price= tablePrice
+                span.info-table__price.js-info-table__price= tablePrice
                 span.info-table__currency= `${currency} x `
-                span.info-table__number-of-days= numberOfDay
+                span.info-table__number-of-days.js-info-table__number-of-days= numberOfDay
                 span.info-table__in-time= ` ${inTime}`
             td.info-table__cell-price
-                span.info-table__total-amount= `${totalAmount}${currency}`
+                span.info-table__total-amount.js-info-table__total-amount= `${totalAmount}`
+                span.info-table__currency= `${currency}`
         tr.info-table__row
             td.info-table__cell-service
                 .info-table__services-text
-                    span.info-table__services-text= `Сбор за услуги: скидка ${discount}${currency}`
+                    span.info-table__services-text= `Сбор за услуги: скидка `
+                    span.info-table__discount.js-info-table__discount= `${discount}`
+                    span.info-table__currency= `${currency}`
                     span.info-table__info i
             td.info-table__cell-price
                 .info-table__total-discount-price
-                    span.info-table__total-services-amount= `${totalServicesAmount}${currency}`
+                    span.info-table__total-services-amount.js-info-table__total-services-amount= `${totalServicesAmount}`
+                    span.info-table__currency= `${currency}`
         tr.info-table__row
             td.info-table__cell-service
                 .info-table__additional-text
@@ -23,10 +27,12 @@ mixin info-table({ tablePrice = '9 999', currency = '₽', numberOfDay = '1', in
                     span.info-table__info i
             td.info-table__cell-price
                 .info-table__total-additional-price
-                    span.info-table__total-additional-amount= `${totalAdditionalAmount}${currency}`
+                    span.info-table__total-additional-amount.js-info-table__total-additional-amount= `${totalAdditionalAmount}`
+                    span.info-table__currency= `${currency}`
         tr.info-table__row
             td.info-table__cell-service.info-table__total-table
                 span.info-table__total-table Итого
                 span.info-table__underline
             td.info-table__cell-price.info-table__total-price
-                span.info-table__total-table-price= `${totalTablePrice}${currency}`
+                span.info-table__total-table-price.js-info-table__total-table-price= `${totalTablePrice}`
+                span.info-table__currency= `${currency}`
