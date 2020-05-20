@@ -1,0 +1,58 @@
+include ../header-block/header-block.pug
+include ../filter-date-dropdown/filter-date-dropdown.pug
+include ../dropdown/dropdown.pug
+include ../info-table/info-table.pug
+include ../button/button.pug
+
+
+mixin armor-form({ action='/mock-address/change-me/', name='armor-form', method='post', orderId = ' 888', orderLuxury = ' люкс', pricePerDayNumber = '9 999', currency = '₽', inDay = ' в сутки'}={})
+    form.armor-form(action=action name=name method=method)
+        .armor-form__wrapper
+            .armor-form__title
+                p.armor-form__order
+                    span.order-No №
+                    span.order-id= orderId
+                    span.order-luxury= orderLuxury
+                p.armor-form__price-in-day 
+                    span.price-in-day-number= pricePerDayNumber
+                    span.price-in-day-number= currency
+                    span.in-day= inDay
+            .armor-form__filter-date-dropdown
+                +filter-date-dropdown({
+                    filterType: 'double',
+                    firstHeaderTitle: 'Прибытие',
+                    secondHeaderTitle: 'Въезд',
+                })
+            .armor-form__dropdown
+                +header-block({title: 'гости', })
+                +dropdown({
+                    elems: [
+                        {name: 'Взрослые', value: 0},
+                        {name: 'Дети', value: 0},
+                        {name: 'Младенцы', value: 0},
+
+                    ],
+                    classItem: 'dropdown-number-of-guests',
+                    dataName: 'guests',
+                    buttonsShow: true
+                })
+            .armor-form__info-table
+                +info-table({ 
+                    tablePrice: '9 999', 
+                    currency: '₽', 
+                    numberOfDay: '4', 
+                    inTime: 'суток', 
+                    totalAmount: '39 960', 
+                    discount: '2 179', 
+                    totalServicesAmount: '0', 
+                    totalAdditionalAmount: '300', 
+                    totalTablePrice: '38 081',
+                })
+            .armor-form__button
+                +button({
+                    className: 'btnBackground',
+                    text: 'забронировать',
+                    address: '/mock-address/change-me',
+                    arrow: true, 
+                    })
+

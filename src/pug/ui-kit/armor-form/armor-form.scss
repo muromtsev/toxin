@@ -1,0 +1,66 @@
+@import '../../ui-kit/info-table/info-table.scss';
+
+.armor-form {
+    display: flex;
+    flex-direction: column;
+    width: 380px;
+    // width: 100%;
+    min-height: 511px;
+
+    &__wrapper {
+        padding: 40px 30px 30px 30px;
+    }
+    &__title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center; 
+        padding-bottom: 20px;
+    }
+    &__order {
+        .order-No,
+        .order-id {
+            font-family: $titleFont;
+            font-weight: bold;
+            font-style: normal;
+            font-size: $font-size--base;
+            line-height: 17px;
+            color: $dark-shade;
+        }
+        .order-id {
+            font-size: $font-size--big;
+            line-height: 20px;
+        }
+        .order-luxury {
+            font-family: $mainFont;
+            font-style: normal;
+            font-weight: bold;
+            font-size: $font-size--base;
+            line-height: 15px;
+            text-transform: uppercase;
+            color: $purple;
+        }
+    }
+    &__price-in-day {
+        .price-in-day-number,
+        .in-day {
+            font-family: $mainFont;
+            font-weight: bold;
+            font-style: normal;
+            font-size: $font-size--base;
+            line-height: 18px;
+            color: $dark-shade--lighten;
+        }
+        .in-day {
+            font-weight: normal;
+        }
+    }
+    &__filter-date-dropdown {
+        padding-bottom: 20px;
+    }
+    &__info-table {
+        padding-top: 20px;
+    }
+    &__button {
+        padding-top: 25px;
+    }
+}
