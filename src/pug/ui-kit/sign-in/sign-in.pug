@@ -1,0 +1,32 @@
+include ../text-field/text-field.pug
+include ../button/button.pug
+
+mixin sign-in({ action='/mock-address/change-me/', name='sign-in-form', method='post', titleText='Войти', }={}) 
+    form.sign-in(action=action name=name method=method)
+        .sign-in-form__wrapper
+            .sign-in-form__title
+                h1= titleText
+            .sign-in-form__email
+                +text-field({
+                    type: 'text', 
+                    placeholder: 'Email',
+                })
+            .sign-in-form__password 
+                +text-field({
+                    type: 'password',
+                    placeholder: 'Password',
+                })
+            .sign-in-form__button
+                +button({
+                    className: 'btnBackground',
+                    text: 'войти',
+                    address: '/mock-address/change-me',
+                    arrow: true,
+                })
+            .sign-in-form__login
+                p.sign-in-form__login-text Нет аакаунта на Toxic?
+                +button({
+                    className: 'btnBorder',
+                    text: 'создать',
+                    address: '/mock-address/change-me', 
+                })
