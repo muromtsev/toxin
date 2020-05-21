@@ -114,6 +114,10 @@ module.exports = (env, options) => {
                 template: `${PAGES_DIR}/header_footer/header_footer.pug`,
                 filename: `./header_footer.html`,
             }),
+            new HtmlWebpackPlugin({
+                template: `${PAGES_DIR}/cards/cards.pug`,
+                filename: `./cards.html`,
+            }),
         ],
     };
 };

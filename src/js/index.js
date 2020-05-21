@@ -9,6 +9,7 @@ import Dropdown from '../pug/ui-kit/dropdown/dropdown';
 import FilterDateDropdown from '../pug/ui-kit/filter-date-dropdown/filter-date-dropdown';
 import initialSlider from '../pug/ui-kit/range-slider/range-slider';
 import InfoTable from '../pug/ui-kit/info-table/info-table';
+import RoomPreviewSlider from '../pug/ui-kit/room-preview/room-preview';
 
   
 function importAll(resolve) {
@@ -54,6 +55,12 @@ $(() => {
     });
 
     initialSlider();
+
+    let $previewSliders = $('.js-room-preview');
+
+    $previewSliders.each((i, val) => {
+        new RoomPreviewSlider(val);
+    });
 })
 
 

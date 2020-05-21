@@ -1,0 +1,24 @@
+include ../rate-button/rate-button.pug
+
+mixin room-preview({ sliders=[], orderId=' 888', orderLuxury=' люкс', pricePerDayNumber='9 999', currency = '₽', inDay = ' в сутки', reviewsNumber='145', reviewsText=' Отзывов', reviewsLink='/mock-address/change-me/'}={})
+    .room-preview.js-room-preview
+        .room-preview__slider.js-room-preview__slider
+            each slider in sliders
+                img(src= slider.src alt= slider.alt).room-preview__slider-item
+
+        .room-preview__inner
+            .room-preview__info
+                p.room-preview__order
+                    span.order-No №
+                    span.order-id= orderId
+                    span.order-luxury= orderLuxury
+                p.room-preview__price-in-day 
+                    span.price-in-day-number= pricePerDayNumber
+                    span.price-in-day-number= currency
+                    span.in-day= inDay
+            .room-preview__rating
+                .rating-button
+                    +rate-button({ rating: 6, })
+                a.reviews-text(href= reviewsLink)
+                    span.reviews-number= `${reviewsNumber}`
+                    span= `${reviewsText}`

@@ -36,7 +36,8 @@
     "air-datepicker": "^2.2.3",
     "inputmask": "^5.0.3",
     "ion-rangeslider": "^2.3.1",
-    "material-icons": "^0.3.1"
+    "material-icons": "^0.3.1",
+    "slick-carousel": "^1.8.1"
   },
   "repository": {
     "type": "git",

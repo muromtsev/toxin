@@ -7,6 +7,7 @@ block content
     include ../../ui-kit/registration/registration.pug
     include ../../ui-kit/armor-form/armor-form.pug
     include ../../ui-kit/sign-in/sign-in.pug
+    include ../../ui-kit/room-preview/room-preview.pug
 
 
 
@@ -27,5 +28,26 @@ block content
                 .container-cards-flex__row.sign-in
                     +sign-in
             .container-cards-flex-column
-                .container-cards-flex__row.card-first
-                .container-cards-flex__row.card-second
+                .container-cards-flex__row.card-preview
+                    +room-preview({
+                        sliders: [
+                            {src: './src/img/rooms/room888.jpg', alt: 'room888'},
+                            {src: './src/img/rooms/room888.jpg', alt: 'room888'},
+                            {src: './src/img/rooms/room888.jpg', alt: 'room888'},
+                        ],
+                    })
+                .container-cards-flex__row.card-preview
+                    +room-preview({
+                        sliders: [
+                            {src: './src/img/rooms/room840.jpg', alt: 'room840'},
+                            {src: './src/img/rooms/room840.jpg', alt: 'room840'},
+                            {src: './src/img/rooms/room840.jpg', alt: 'room840'},
+                        ],
+                        orderId: ' 840', 
+                        orderLuxury: '', 
+                        pricePerDayNumber: '9 900', 
+                        currency:  '₽', 
+                        inDay:  ' в сутки', 
+                        reviewsNumber: '65', 
+                        reviewsText: ' Отзывов', 
+                    })
