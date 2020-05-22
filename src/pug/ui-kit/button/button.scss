@@ -17,7 +17,11 @@
         
     }
 
-    .btnBackground {        
+    .btnBackground {     
+        width: 99px;   
+        padding-top: 12px;
+        padding-bottom: 12px;
+        line-height: 20px;
         color: $white;
         background: $main-gradient;
         border-radius: 22px;
@@ -35,6 +39,7 @@
         border-color: $main-gradient;
         border-radius: 22px;
         line-height: 20px;
+        background-color: $white;
         box-sizing: border-box;
 
         &:hover {

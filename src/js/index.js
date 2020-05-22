@@ -4,12 +4,14 @@ import '../pug/ui-kit/checkbox-list/checkbox-list.js';
 import '../pug/ui-kit/like-button/like-button.js';
 import '../pug/ui-kit/date-dropdown/date-dropdown.js';
 
+
 import TextField from '../pug/ui-kit/text-field/text-field';
 import Dropdown from '../pug/ui-kit/dropdown/dropdown';
 import FilterDateDropdown from '../pug/ui-kit/filter-date-dropdown/filter-date-dropdown';
 import initialSlider from '../pug/ui-kit/range-slider/range-slider';
 import InfoTable from '../pug/ui-kit/info-table/info-table';
 import RoomPreviewSlider from '../pug/ui-kit/room-preview/room-preview';
+import RateButton from '../pug/ui-kit/rate-button/rate-button';
 
   
 function importAll(resolve) {
@@ -23,6 +25,11 @@ document.addEventListener('DOMContentLoaded', () => {
     
     dropdowns.forEach(element => {
         const dropdown = new Dropdown(element);
+    });
+
+    const rateButtons = document.querySelectorAll('.js-rate-button');
+    rateButtons.forEach(element => {
+        new RateButton(element);
     });
 
     const values = {

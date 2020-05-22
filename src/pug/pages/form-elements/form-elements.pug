@@ -86,7 +86,15 @@ block content
                 .form-elements__item
                     +header-block({title: 'rate button'})    
                     .d-flex
-                        +rate-button
+                        .d-flex__mr
+                            +rate-button({
+                                dataRating: 4,
+                            })
+                        .d-flex__mr
+                            +rate-button({
+                                dataRating: 5,
+                                dataReadonly: true,
+                            })
             .form-elements__buttons
                 .form-elements__item
                     +header-block({title: 'range slider'})

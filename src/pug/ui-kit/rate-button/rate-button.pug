@@ -1,7 +1,6 @@
-mixin rate-button({ rating = 5,}={})
+mixin rate-button({ dataRating = 3, dataReadonly='', }={})
     - let n = 0;
-    .rate-button
-        .rate-button__group
+    .rate-button.js-rate-button
+        select.js-widget-rate-button(data-rating= `${dataRating}` data-readonly= `${dataReadonly}`)
             while n < 5
-                input.rate-button__star(type="radio" name="star" value=n+=1 checked=rating-1===n)
-            .rate-button__focus
+                option(value=n+=1)= n

@@ -1,6 +1,6 @@
 include ../rate-button/rate-button.pug
 
-mixin room-preview({ sliders=[], orderId=' 888', orderLuxury=' люкс', pricePerDayNumber='9 999', currency = '₽', inDay = ' в сутки', reviewsNumber='145', reviewsText=' Отзывов', reviewsLink='/mock-address/change-me/'}={})
+mixin room-preview({ sliders=[], orderId=' 888', orderLuxury=' люкс', pricePerDayNumber='9 999', currency = '₽', inDay = ' в сутки', dataRating, dataReadonly, reviewsNumber='145', reviewsText=' Отзывов', reviewsLink='/mock-address/change-me/'}={})
     .room-preview.js-room-preview
         .room-preview__slider.js-room-preview__slider
             each slider in sliders
@@ -18,7 +18,7 @@ mixin room-preview({ sliders=[], orderId=' 888', orderLuxury=' люкс', priceP
                     span.in-day= inDay
             .room-preview__rating
                 .rating-button
-                    +rate-button({ rating: 6, })
+                    +rate-button({ dataRating: dataRating, dataReadonly: dataReadonly, })
                 a.reviews-text(href= reviewsLink)
                     span.reviews-number= `${reviewsNumber}`
                     span= `${reviewsText}`
