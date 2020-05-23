@@ -1,0 +1,26 @@
+include ../../ui-kit/logo/logo.pug
+include ../../ui-kit/nav-menu/nav-menu.pug
+include ../../ui-kit/login/login.pug
+
+.container
+    .container__inner
+        header.header
+            .header__logotype
+                +logo        
+            .header__menu    
+                +menu({elements: [
+                    {'name': 'О нас', 'href': '/mock-address/change-me/', 'active': true},
+                    {'name': 'Услуги', 'href': '/mock-address/change-me/', 'submenu': true},
+                    {'name': 'Вакансии', 'href': '/mock-address/change-me/',},
+                    {'name': 'Новости', 'href': '/mock-address/change-me/'},
+                    {'name': 'Соглашения','href': '/mock-address/change-me/', 'submenu': true},
+                ], subelements: [
+                    {'name': 'Occultism', 'href': '/mock-address/change-me/'},
+                    {'name': 'Necromancy', 'href': '/mock-address/change-me/'},
+                    {'name': 'Reincarnation', 'href': '/mock-address/change-me/'},
+                ]})
+            .header__user-manage
+                +login({
+                    btnNameLogin: 'Войти',
+                    btnNameRegister: 'Зарегистрироваться',
+                })

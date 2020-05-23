@@ -1,5 +1,5 @@
-mixin menu({elements=[], subelements=[],}={})
-    nav.header__menu
+mixin menu({ elements=[], subelements=[],}={})
+    nav
         ul.menu
             each elem in elements
                 li.menu__item
@@ -11,8 +11,5 @@ mixin menu({elements=[], subelements=[],}={})
                                 li.submenu__item
                                     a.submenu__item-link(href= subelem.href title= subelem.name) #{subelem.name}
                     else
-                        if elem.active
-                            a.menu__item-link.active(href= elem.href title= elem.name) #{elem.name}
-                        else
-                            a.menu__item-link(href= elem.href title= elem.name) #{elem.name} 
+                        a.menu__item-link(href= elem.href title= elem.name) #{elem.name} 
 
