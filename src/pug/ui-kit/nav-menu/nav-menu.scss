@@ -1,3 +1,5 @@
+
+@import "../material-icons/material-icons.scss";
 nav {
     @media (max-width: 1160px) {
         padding-top: 10px;
@@ -17,8 +19,11 @@ nav {
         }
         &__item {          
             position: relative;
-            margin: 0 10px;   
-
+            margin: 0 10px; 
+        
+        .item-submenu {
+            margin-right: 10px;
+        }
             &-link {
                 display: block;
                 font-size: $font-size--base;          
@@ -68,6 +73,7 @@ nav {
                 margin: 0;
                 padding: 0;
                 background-color: $white;
+                z-index: 99;
                 
                 &__item {
                     padding: 10px 0 10px 20px;

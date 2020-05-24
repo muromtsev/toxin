@@ -3,7 +3,7 @@ mixin material-icons({ type='material icon symbol', color, }={})
 
     case color
         when 'dark-shade'
-            - colorModifer = 'material-icon__color-dark-shade'
+            - colorModifer = 'material-icons__color-dark-shade'
 
-        i.materrial-icons(class=`${colorModifier}`)= type
+    i.material-icons(class=`${colorModifier}`)= type
 

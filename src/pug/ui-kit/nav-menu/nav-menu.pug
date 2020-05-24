@@ -1,11 +1,21 @@
-mixin menu({ elements=[], subelements=[],}={})
+
+include ../material-icons/material-icons.pug
+
+mixin menu({ elements=[], subelements=[], size, }={})
+    - let sizeModifier = ''
+        case size
+            when 'submenu'
+                - sizeModifier = 'item-submenu'
     nav
         ul.menu
             each elem in elements
                 li.menu__item
                     if elem.submenu
-                        a.menu__item-link(href= elem.href title= elem.name) #{elem.name}
-                            span(class="material-icons") keyboard_arrow_down
+                        a.menu__item-link(class=`${sizeModifier}` href= elem.href title= elem.name) #{elem.name}
+                            +material-icons({
+                                type: 'keyboard_arrow_down',
+                                color: 'dark-shade',
+                            })
                         ul.submenu
                             each subelem in subelements
                                 li.submenu__item
