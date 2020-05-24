@@ -28,14 +28,13 @@
     &__slide {
         position: relative;
         min-height: 830px;  
-        // height: min-content;
+        height: min-content;
         background-image: url(../img/landing_bg.jpg);
         background-repeat: no-repeat;
-        background-size: contain;
+        background-size: cover;
 
         .slider-descr {
-            position: absolute;
-            bottom: 0;
+
         }
     }
 
