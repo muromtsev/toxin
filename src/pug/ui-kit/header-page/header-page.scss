@@ -24,8 +24,15 @@
             flex-grow: auto;
         }
     }
+    &__menu {
+        flex-grow: 1;
+    }
     &__user-manage {
         display: flex;
         box-sizing: border-box;
+
+        @media (max-width: 1160px) {
+            padding-top: 10px;
+        }
     }
 }
