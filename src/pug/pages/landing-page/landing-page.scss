@@ -1,6 +1,4 @@
-@import "../../ui-kit/logo/logo.scss";
-@import "../../ui-kit/nav-menu/nav-menu.scss";
-@import "../../ui-kit/login/login.scss";
+@import "../../ui-kit/header-page/header-page.scss";
 
 .container {
     max-width: 1920px;
@@ -18,35 +16,7 @@
         border-right: 1px dashed $dark-shade;
     }
 
-    .header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        // max-width: 1440px;
-        width: 100%;
-        // margin: 0 auto;
-        min-height: 70px;
     
-        @media (max-width: 1160px) {
-            justify-content: center;
-            flex-direction: column;
-            flex-wrap: wrap;
-            height: auto;
-            padding-bottom: 20px;
-        }
-    
-        &__logotype {
-            flex-grow: 1;
-    
-            @media (max-width: 1160px) {
-                flex-grow: auto;
-            }
-        }
-        &__user-manage {
-            display: flex;
-            box-sizing: border-box;
-        }
-    }
 }
 
 

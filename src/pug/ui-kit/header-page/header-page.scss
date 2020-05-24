@@ -1,0 +1,31 @@
+@import "../../ui-kit/logo/logo.scss";
+@import "../../ui-kit/nav-menu/nav-menu.scss";
+@import "../../ui-kit/login/login.scss";
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    min-height: 70px;
+
+    @media (max-width: 1160px) {
+        justify-content: center;
+        flex-direction: column;
+        flex-wrap: wrap;
+        height: auto;
+        padding-bottom: 20px;
+    }
+
+    &__logotype {
+        flex-grow: 1;
+
+        @media (max-width: 1160px) {
+            flex-grow: auto;
+        }
+    }
+    &__user-manage {
+        display: flex;
+        box-sizing: border-box;
+    }
+}
