@@ -1,13 +1,17 @@
 include ../../ui-kit/header-page/header-page.pug
 include ../../ui-kit/footer/footer.pug
 include ../../ui-kit/copyright-bar/copyright-bar.pug
+include ../../ui-kit/selection/selection.pug
 
 .container
     .container__inner.container__wrapper
         +header-page
-    .container__inner
-        .container__slide
-            p.slider-descr Лучшие номера для вашей работы, отдыха и просто вдохновения
+    .container__inner.landing-page(style="background-image: url('./img/landing_bg.jpg')")
+        .landing-page__filter
+            +selection({
+                titleText: 'Найдем номера под ваши пожелания',
+            })
+        p.slider-descr Лучшие номера для вашей работы, отдыха и просто вдохновения
     .container__inner.container__wrapper
         +footer({
             text: 'Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»'

@@ -13,12 +13,10 @@ import InfoTable from '../pug/ui-kit/info-table/info-table';
 import RoomPreviewSlider from '../pug/ui-kit/room-preview/room-preview';
 import RateButton from '../pug/ui-kit/rate-button/rate-button';
 
-  
 function importAll(resolve) {
     resolve.keys().forEach(resolve);
 }
 importAll(require.context('../img', true, /\.(jpg|png|svg|png)$/));
-
 
 document.addEventListener('DOMContentLoaded', () => {
     const dropdowns = document.querySelectorAll('.js-dropdown');

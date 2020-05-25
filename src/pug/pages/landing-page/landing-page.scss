@@ -1,6 +1,7 @@
 @import "../../ui-kit/header-page/header-page.scss";
 @import "../../ui-kit/footer/footer.scss";
 @import "../../ui-kit/copyright-bar/copyright-bar.scss";
+@import "../../ui-kit/selection/selection.scss";
 
 .container {
     max-width: 1920px;
@@ -8,6 +9,18 @@
     margin: 0 auto;
     height: 100%;
 
+    .landing-page {
+        min-height: 830px;
+        height: min-content;
+        width: 100%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position-y: bottom;
+
+        &__filter {
+
+        }
+    }
     &__inner {
         max-width: 1440px;
         width: 100%;
@@ -25,18 +38,12 @@
         }
     }
 
-    &__slide {
-        position: relative;
-        min-height: 830px;  
-        height: min-content;
-        background-image: url(../img/landing_bg.jpg);
-        background-repeat: no-repeat;
-        background-size: cover;
+    
 
-        .slider-descr {
+    .slider-descr {
 
-        }
     }
+   
 
     
 }
