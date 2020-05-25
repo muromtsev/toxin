@@ -7,7 +7,8 @@
     height: 70px;
     margin: 0 auto;
     font-size: $font-size--base;
-    line-height: 17px;    
+    line-height: 17px;
+    color: $dark-shade--light;
 
     @media (max-width: 690px) {
         display: none;

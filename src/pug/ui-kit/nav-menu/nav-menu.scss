@@ -16,7 +16,7 @@ nav {
             justify-content: flex-start;
             align-items: start;
         }
-        @media (max-width: 490px) {
+        @media (max-width: 510px) {
             flex-direction: column;
         }
         &__item {          
@@ -76,12 +76,13 @@ nav {
                 padding: 0;
                 background-color: $white;
                 z-index: 99;
+                border-radius: 3px;
                 
                 &__item {
-                    padding: 10px 0 10px 20px;
+                    padding: 10px 18px;
                     
                     &:first-child {
-                        padding-top: 15px;
+                        padding-top: 18px;
                     }
 
                     &-link {
