@@ -10,6 +10,7 @@
     height: 100%;
 
     .landing-page {
+        position: relative;
         min-height: 830px;
         height: min-content;
         width: 100%;
@@ -18,7 +19,26 @@
         background-position-y: bottom;
 
         &__filter {
-
+            padding-top: 70px;
+            padding-left: 140px;
+        }
+        &__text {
+            // position: absolute;
+            // bottom: 18px;
+            // right: 170px;
+            max-width: 297px;
+            width: 100%;
+            margin-left: auto;
+            margin-right: 170px;
+            margin-top: 320px;
+            height: 48px;            
+            font-family: $mainFont;
+            font-style: normal;
+            font-weight: normal;
+            font-size: $font-size--base;
+            line-height: 24px;
+            text-align: right;
+            color: $dark-shade--light;
         }
     }
     &__inner {
