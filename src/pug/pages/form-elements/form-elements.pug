@@ -1,4 +1,5 @@
-//- extends ../index
+extends ../index.pug
+
 block variables
     - var pageTitle = 'Form Elements'
 
@@ -7,7 +8,7 @@ block content
     include ../../ui-kit/header-block/header-block.pug
     include ../../ui-kit/text-field/text-field.pug
     include ../../ui-kit/dropdown/dropdown.pug
-    //- include ../../ui-kit/date-dropdown/date-dropdown.pug
+    include ../../ui-kit/date-dropdown/date-dropdown.pug
     include ../../ui-kit/filter-date-dropdown/filter-date-dropdown.pug
     include ../../ui-kit/subscription-text-field/subscription-text-field.pug
     include ../../ui-kit/checkbox-list/checkbox-list.pug
@@ -24,7 +25,6 @@ block content
     include ../../ui-kit/pagination/pagination.pug
     include ../../ui-kit/comments/comments.pug
 
-      
     .form-elements
         .form-elements__grid
             .form-elements__text-field

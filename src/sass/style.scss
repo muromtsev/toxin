@@ -24,15 +24,15 @@
 @import "../pug/ui-kit/pagination/pagination.scss";
 @import "../pug/ui-kit/comments/comments.scss";
 
-// @import "../pug/pages/index.scss";
-// @import "../pug/pages/color_type/color_type.scss";
-// @import "../pug/pages/form-elements/form-elements.scss";
-// @import "../pug/pages/header_footer/header_footer.scss";
+@import "../pug/pages/index.scss";
+@import "../pug/pages/color_type/color_type.scss";
+@import "../pug/pages/form-elements/form-elements.scss";
+@import "../pug/pages/header_footer/header_footer.scss";
 @import "../pug/pages/cards/cards.scss";
 @import "../pug/pages/landing-page/landing-page.scss";
 
 
-// @import "../pug/ui-kit/index-menu/index-menu.scss";
+@import "../pug/ui-kit/index-menu/index-menu.scss";
 
 a {text-decoration: none;}
 ul {list-style: none; margin: 0; padding: 0;}

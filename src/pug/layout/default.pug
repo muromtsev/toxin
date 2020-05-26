@@ -1,5 +1,41 @@
+block variables
+  - pageTitle = 'toxic'
+  - keywords = 'frontend, webpack, pug, scss, js'
+  - description = 'toxic hotel website'
+
 doctype html
-html(lang='en')  
-  body
-    include ../includes/header-ui.pug
-    block content
+html(lang='en')
+  head
+    meta(charset="utf-8")
+    meta(name="keywords" content=keywords)
+    meta(name="description" content=description)
+    title=pageTitle
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  body      
+      
+
+      include ../ui-kit/header-page/header-page.pug
+      include ../ui-kit/footer/footer.pug
+
+      .container
+        .container__inner.container__wrapper
+            +header-page
+
+        block content
+
+        .container__inner.container__wrapper
+            +footer({
+                text: 'Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»',
+                elements: [
+                    {name: 'Навигация', list: ['О Нас', 'Новости', 'Служба поддержки', 'Услуги'], },
+                    {name: 'О Нас', list: ['О сервисе', 'Наша команда', 'Вакансии', 'Инвесторы']},
+                    {name: 'Служба поддержки', list: ['Соглашения', 'Сообщества', 'Связь с нами']},
+                ],            
+                subscribeTitle: 'Подписка',
+                subscribeText: 'Получайте специальные предложения и новости сервиса',
+
+            })
+        .container__inner.container__wrapper
+            +copyright-bar({
+                text: 'Copyright © 2018 Toxin отель. Все права зачищены.'
+            })
