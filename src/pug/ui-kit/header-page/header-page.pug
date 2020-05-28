@@ -2,25 +2,20 @@ include ../logo/logo.pug
 include ../nav-menu/nav-menu.pug
 include ../login/login.pug
 
-mixin header-page
+mixin header-page({ elementsMenu, subelementsMenu, size, btnNameLogin, btnNameRegister, register, userName, })
     header.header
         .header__logotype
             +logo        
         .header__menu    
-            +menu({elements: [
-                {'name': 'О нас', 'href': '/mock-address/change-me/',},
-                {'name': 'Услуги', 'href': '/mock-address/change-me/', 'submenu': true},
-                {'name': 'Вакансии', 'href': '/mock-address/change-me/',},
-                {'name': 'Новости', 'href': '/mock-address/change-me/'},
-                {'name': 'Соглашения','href': '/mock-address/change-me/', 'submenu': true},
-            ], subelements: [
-                {'name': 'Occultism', 'href': '/mock-address/change-me/'},
-                {'name': 'Necromancy', 'href': '/mock-address/change-me/'},
-                {'name': 'Reincarnation', 'href': '/mock-address/change-me/'},
-            ],
-            size: 'submenu', })
+            +menu({
+                elementsMenu: elementsMenu,
+                subelementsMenu: subelementsMenu,
+                size: size,
+            })
         .header__user-manage
             +login({
-                btnNameLogin: 'Войти',
-                btnNameRegister: 'Зарегистрироваться',
+                btnNameLogin,
+                btnNameRegister,
+                register,
+                userName, 
             })

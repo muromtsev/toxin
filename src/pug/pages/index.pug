@@ -13,14 +13,11 @@ html(lang='en')
     meta(name='viewport' content='width=device-width, initial-scale=1.0')
   body
       include ../includes/header-ui.pug
+
       block content
       
       include ../ui-kit/index-menu/index-menu.pug 
-      //- include ./form-elements/form-elements.pug  
-      //- include ./color_type/color_type.pug
-      //- include ./header_footer/header_footer.pug
-      //- include ./cards/cards.pug
-      //- include ./landing-page/landing-page.pug
+
       h3(style='padding-left: 110px; padding-top: 30px;') ui-kit
       .ui-kit
         +index_menu({

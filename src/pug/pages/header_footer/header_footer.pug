@@ -1,58 +1,91 @@
-extends ../index.pug
+extends ../../layout/default.pug
 
 block variables
     - var pageTitle = 'Header & Footer'
 
 block content
+    include ../../includes/header-ui.pug
+    
     include ../../ui-kit/logo/logo.pug
     include ../../ui-kit/nav-menu/nav-menu.pug
     include ../../ui-kit/login/login.pug
     include ../../ui-kit/footer/footer.pug
     include ../../ui-kit/copyright-bar/copyright-bar.pug
     include ../../ui-kit/footer-creative/footer-creative.pug
+    include ../../ui-kit/header-page/header-page.pug
+
 
     .container.container-header.container-shadow
         .container-inner
-            header.header
-                .header__logotype
-                    +logo            
-                +menu({elements: [
-                    {'name': 'Home', 'href': '#home', 'active': true},
-                    {'name': 'About Us', 'href': '#about'},
-                    {'name': 'Services', 'href': '#services', 'submenu': true},
-                    {'name': 'Careers', 'href': '#careers'},
-                    {'name': 'News','href': '#news'},
-                    {'name': 'Documentation', 'href': '#documentation'},
-                ], subelements: [
-                    {'name': 'Occultism', 'href': '#occultism'},
-                    {'name': 'Necromancy', 'href': '#necromancy'},
-                    {'name': 'Reincarnation', 'href': '#reincarnation'},
-                ]})
-                .header__user-manage
-                    +login
-                
+            +header-page({
+                elementsMenu: [
+                    { name: 'Home', href: '/mock-address/change-me/', },
+                    { name: 'About Us', href: '/mock-address/change-me/', },
+                    { name: 'Services', href: '/mock-address/change-me/', 'submenu': true, },
+                    { name: 'Careers', href: '/mock-address/change-me/', },
+                    { name: 'News', href: '/mock-address/change-me/', },
+                    { name: 'Documentation', href: '/mock-address/change-me/', },
+                ],
+                subelementsMenu: [
+                    { name: 'Occultism', href: '/mock-address/change-me/'},
+                    { name: 'Necromancy', href: '/mock-address/change-me/'},
+                    { name: 'Reincarnation', href: '/mock-address/change-me/'},
+                ],
+                size: 'submenu',
+                btnNameLogin: 'Login',
+                btnNameRegister: 'Register',
+            })
     .container.container-header.container-shadow
         .container-inner
-            header.header
-                .header__logotype
-                    +logo           
-                +menu({elements: [
-                    {'name': 'Home', 'href': '#home', 'active': true},
-                    {'name': 'About Us', 'href': '#about'},
-                    {'name': 'Services', 'href': '#services', 'submenu': true},
-                    {'name': 'Careers', 'href': '#careers'},
-                    {'name': 'News','href': '#news'},
-                    {'name': 'Documentation', 'href': '#documentation'},
-                ], subelements: [
-                    {'name': 'Occultism', 'href': '#occultism'},
-                    {'name': 'Necromancy', 'href': '#necromancy'},
-                    {'name': 'Reincarnation', 'href': '#reincarnation'},
-                ]})
-                .header__user-manage
-                    +login({register: true,})
+            +header-page({
+                elementsMenu: [
+                    { name: 'Home', href: '/mock-address/change-me/', },
+                    { name: 'About Us', href: '/mock-address/change-me/', },
+                    { name: 'Services', href: '/mock-address/change-me/', 'submenu': true, },
+                    { name: 'Careers', href: '/mock-address/change-me/', },
+                    { name: 'News', href: '/mock-address/change-me/', },
+                    { name: 'Documentation', href: '/mock-address/change-me/', },
+                ],
+                subelementsMenu: [
+                    { name: 'Occultism', href: '/mock-address/change-me/'},
+                    { name: 'Necromancy', href: '/mock-address/change-me/'},
+                    { name: 'Reincarnation', href: '/mock-address/change-me/'},
+                ],
+                size: 'submenu',
+                register: true,
+                userName: 'Cosmin Negoita',
+            })            
+    //- .container.container-header.container-shadow
+    //-     .container-inner
+    //-         header.header
+    //-             .header__logotype
+    //-                 +logo           
+    //-             +menu({elements: [
+    //-                 {'name': 'Home', 'href': '#home',},
+    //-                 {'name': 'About Us', 'href': '#about'},
+    //-                 {'name': 'Services', 'href': '#services', 'submenu': true},
+    //-                 {'name': 'Careers', 'href': '#careers'},
+    //-                 {'name': 'News','href': '#news'},
+    //-                 {'name': 'Documentation', 'href': '#documentation'},
+    //-             ], subelements: [
+    //-                 {'name': 'Occultism', 'href': '#occultism'},
+    //-                 {'name': 'Necromancy', 'href': '#necromancy'},
+    //-                 {'name': 'Reincarnation', 'href': '#reincarnation'},
+    //-             ]})
+    //-             .header__user-manage
+    //-                 +login({register: true,})
     .container
         .container-inner
-            +footer({text: 'Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.'})
+            +footer({
+                elementsFooter: [
+                    {name: 'Navigation', list: ['About us', 'News', 'Support', 'Products']},
+                    {name: 'About us', list: ['Who we are', 'Our team', 'Careers', 'Investors']},
+                    {name: 'Support', list: ['Documentation', 'Community', 'Get in Touch']},
+                ],
+                text: 'Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.',
+                subscribeTitle: 'Subscribe to our newsletter',
+                subscribeText: 'Receive our latest news and promotions in your inbox!',
+            })
             
     .container.container-header.container-shadow
         .container-border

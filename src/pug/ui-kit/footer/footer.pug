@@ -3,7 +3,7 @@ include ../footer-menu/footer-menu.pug
 include ../subscription-text-field/subscription-text-field.pug
 
 
-mixin footer({text, elements, subscribeTitle, subscribeText, }={})
+mixin footer({ elementsFooter, text, subscribeTitle, subscribeText, }={})
     footer.footer
         .footer-flex
             .footer-flex__col
@@ -11,7 +11,7 @@ mixin footer({text, elements, subscribeTitle, subscribeText, }={})
                 .footer__text 
                     div= text
             +footerMenu({
-                elements: elements,
+                elementsFooter: elementsFooter,
             })
             .footer-flex__col
                 .footer__title= subscribeTitle

@@ -1,5 +1,5 @@
-mixin footerMenu({elements=[], href='/mock-address/change-me/'}={})
-    each el in elements
+mixin footerMenu({ elementsFooter=[], href='/mock-address/change-me/', }={})
+    each el in elementsFooter
         .footer-flex__col
             .footer__title #{el.name}
             nav
