@@ -5,7 +5,7 @@
 @import "../../ui-kit/copyright-bar/copyright-bar.scss";
 @import "../../ui-kit/footer-creative/footer-creative.scss";
 
-.container {
+.header-footer {
     max-width: 1920px;    
     margin: 0 auto;
 
@@ -27,7 +27,7 @@
     &-header {
         height: 70px;
 
-        .container-inner {
+        .header-footer-inner {
             margin-top: 40px;
         }
         @media (max-width: 1160px) {

@@ -1,4 +1,4 @@
-extends ../../layout/default.pug
+extends ../../layout/default-ui-kit.pug
 
 block variables
     - var pageTitle = 'Header & Footer'
@@ -15,8 +15,8 @@ block content
     include ../../ui-kit/header-page/header-page.pug
 
 
-    .container.container-header.container-shadow
-        .container-inner
+    .header-footer.header-footer-header.header-footer-shadow
+        .header-footer-inner
             +header-page({
                 elementsMenu: [
                     { name: 'Home', href: '/mock-address/change-me/', },
@@ -35,8 +35,8 @@ block content
                 btnNameLogin: 'Login',
                 btnNameRegister: 'Register',
             })
-    .container.container-header.container-shadow
-        .container-inner
+    .header-footer.header-footer-header.header-footer-shadow
+        .header-footer-inner
             +header-page({
                 elementsMenu: [
                     { name: 'Home', href: '/mock-address/change-me/', },
@@ -55,8 +55,8 @@ block content
                 register: true,
                 userName: 'Cosmin Negoita',
             })
-    .container
-        .container-inner
+    .header-footer
+        .header-footer-inner
             +footer({
                 elementsFooter: [
                     {name: 'Navigation', list: ['About us', 'News', 'Support', 'Products']},
@@ -68,12 +68,12 @@ block content
                 subscribeText: 'Receive our latest news and promotions in your inbox!',
             })
             
-    .container.container-header.container-shadow
-        .container-border
-            .container-inner    
+    .header-footer.header-footer-header.header-footer-shadow
+        .header-footer-border
+            .header-footer-inner    
                 +copyright-bar({text: 'Copyright © 2018 Toxin UI Kit. All rights reserved.'})
-    .container.container-shadow
-        .container-inner     
+    .header-footer.header-footer-shadow
+        .header-footer-inner     
             +footer-creative({
                 text: 'Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.'
             })
