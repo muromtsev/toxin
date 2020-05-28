@@ -1,29 +1,10 @@
 extends ../../layout/default.pug
 
-include ../../ui-kit/header-page/header-page.pug
 include ../../ui-kit/footer/footer.pug
 include ../../ui-kit/copyright-bar/copyright-bar.pug
 include ../../ui-kit/selection/selection.pug
 
-block header
-    .container__inner
-        +header-page({
-                    elementsMenu: [
-                        { name: 'О нас', href: '/mock-address/change-me/',},
-                        { name: 'Услуги', href: '/mock-address/change-me/', 'submenu': true},
-                        { name: 'Вакансии', href: '/mock-address/change-me/',},
-                        { name: 'Новости', href: '/mock-address/change-me/'},
-                        { name: 'Соглашения', href: '/mock-address/change-me/', 'submenu': true},
-                    ],
-                    subelementsMenu: [
-                        { name: 'Occultism', href: '/mock-address/change-me/'},
-                        { name: 'Necromancy', href: '/mock-address/change-me/'},
-                        { name: 'Reincarnation', href: '/mock-address/change-me/'},
-                    ],
-                    size: 'submenu',
-                    btnNameLogin: 'Войти',
-                    btnNameRegister: 'Зарегистрироваться',
-                })
+        
 block content
     .container__inner.landing-page(style="background-image: url('./img/landing_bg.jpg')")
         .landing-page__filter

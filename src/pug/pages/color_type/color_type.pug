@@ -4,6 +4,8 @@ block variables
     - var pageTitle = 'Color & Type'
 
 block content
+    include ../../includes/header-ui.pug
+    
     mixin colorBlock({className, text, hex}={})
         .flex-left__item
             .colorItem(class=className)
