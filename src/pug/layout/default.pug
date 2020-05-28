@@ -14,8 +14,8 @@ html(lang='en')
   body
     include ../ui-kit/header-page/header-page.pug
     include ../ui-kit/footer/footer.pug
-    block header
-      .container
+    .container
+      block header
         .container__inner.container__wrapper
           +header-page({
             elementsMenu: [
@@ -34,5 +34,16 @@ html(lang='en')
             btnNameLogin: 'Войти',
             btnNameRegister: 'Зарегистрироваться',
         })
-    block content
-    block footer
+      block content
+      block footer
+        .container-inner
+          +footer({
+              elementsFooter: [
+                  {name: 'навигация', list: ['О нас', 'Новости', 'Служба поддержки', 'Услуги'], },
+                  {name: 'о нас', list: ['О сервисе', 'Наша команда', 'Вакансии', 'Инвесторы'], },
+                  {name: 'Служба поддержки', list: ['Соглашения', 'Сообщества', 'Связь с нами'], },
+              ],
+              text: 'Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»',
+              subscribeTitle: 'Подписка',
+              subscribeText: 'Получайте специальные предложения и новости сервиса',
+          })
