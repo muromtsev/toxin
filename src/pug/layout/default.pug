@@ -38,7 +38,7 @@ html(lang='en')
         })
       block content
       block footer
-        .container__inner
+        .container__inner.container__wrapper
           +footer({
               elementsFooter: [
                   {name: 'навигация', list: ['О нас', 'Новости', 'Служба поддержки', 'Услуги'], },
@@ -49,5 +49,7 @@ html(lang='en')
               subscribeTitle: 'Подписка',
               subscribeText: 'Получайте специальные предложения и новости сервиса',
           })
-          .container__border
+        
+        .container__inner.container__border
+          .container__wrapper
             +copyright-bar({text: 'Copyright © 2018 Toxin UI Kit. All rights reserved.'})
