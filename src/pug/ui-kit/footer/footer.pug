@@ -2,18 +2,18 @@ include ../logo/logo.pug
 include ../footer-menu/footer-menu.pug
 include ../subscription-text-field/subscription-text-field.pug
 
-
 mixin footer({ elementsFooter, text, subscribeTitle, subscribeText, }={})
     footer.footer
         .footer-flex
-            .footer-flex__col
+            .footer-flex__col.footer-flex__logo
                 +logo
                 .footer__text 
-                    div= text
-            +footerMenu({
-                elementsFooter: elementsFooter,
-            })
-            .footer-flex__col
+                    p= text
+            .footer-flex__col.footer-flex__menu
+                +footerMenu({
+                    elementsFooter: elementsFooter,
+                })
+            .footer-flex__col.footer-flex__subscribe
                 .footer__title= subscribeTitle
                 .footer__text= subscribeText                    
                 form.footer__form(action="" method="get")
