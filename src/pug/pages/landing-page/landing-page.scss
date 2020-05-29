@@ -12,6 +12,12 @@
     &__filter {
         padding-top: 70px;
         padding-left: 140px;
+        
+        @media (max-width: 665px) {
+            padding-top: 20px;
+            padding-left: 20px;
+            margin: auto;
+        }
     }
     &__text {
         max-width: 297px;
