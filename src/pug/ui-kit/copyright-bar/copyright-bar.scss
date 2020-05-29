@@ -4,13 +4,16 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
     height: 70px;
     margin: 0 auto;
     font-size: $font-size--base;
     line-height: 17px;
     color: $dark-shade--light;
 
-    @media (max-width: 690px) {
-        display: none;
+    @media (max-width: 460px) {
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
     }
 }
