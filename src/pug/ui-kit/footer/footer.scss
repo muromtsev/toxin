@@ -4,7 +4,8 @@
 .footer {    
     min-height: 372px;
     margin: 0 auto;
-    padding-top: 100px; 
+    padding-top: 105px; 
+    box-sizing: border-box;
 
     .footer-flex {
         display: flex;
@@ -27,6 +28,12 @@
                     margin: auto;
                 }
             }
+            &-text {
+                padding-top: 6px;
+                line-height: 24px;
+                color: $dark-shade--light;
+            }
+            
         }
         &__menu {
             max-width: 640px;
@@ -76,7 +83,7 @@
         }
     }   
     .footer__text {
-        padding-top: 21px;
+        padding-top: 16px;
         line-height: 24px;
         color: $dark-shade--light;
     }
