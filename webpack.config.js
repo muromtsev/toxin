@@ -3,6 +3,8 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const Autoprefixer = require('autoprefixer');
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = (env, options) => {
 
@@ -100,7 +102,23 @@ module.exports = (env, options) => {
         },
         plugins: [
             Autoprefixer,
-
+            new CleanWebpackPlugin(),
+            new FaviconsWebpackPlugin({
+                logo: './src/favicon.png',                
+                favicons: {
+                    appName: 'Toxic',
+                    appDescription: 'Отель с божественными номерами.',
+                    developerName: 'muromtsev',
+                    icons: {
+                        android: false,
+                        appleIcon: false,
+                        appleStartup: false,
+                        coast: false,
+                        yandex: false
+                    }
+                }
+                
+            }),
             new MiniCssExtractPlugin({
                 filename: 'css/[name].[hash].css',
             }),
