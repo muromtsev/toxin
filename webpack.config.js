@@ -2,6 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const Autoprefixer = require('autoprefixer');
 
 module.exports = (env, options) => {
 
@@ -64,6 +65,14 @@ module.exports = (env, options) => {
                         }, {
                             loader: 'sass-loader',
                         },
+                        {
+                            loader: 'webpack-px-to-rem',
+                            query: {
+                                basePx: 14,
+                                min: 1,
+                                floatWidth: 3,
+                            },
+                        },
                     ],
                 },{
                     test: /\.(eot|svg|ttf|woff|woff2)$/,
@@ -90,6 +99,8 @@ module.exports = (env, options) => {
             extensions: ['.js', '.scss'],            
         },
         plugins: [
+            Autoprefixer,
+
             new MiniCssExtractPlugin({
                 filename: 'css/[name].[hash].css',
             }),
