@@ -15,6 +15,7 @@ import InfoTable from '../pug/ui-kit/info-table/info-table';
 import RoomPreviewSlider from '../pug/ui-kit/room-preview/room-preview';
 import RateButton from '../pug/ui-kit/rate-button/rate-button';
 import LikeButton from '../pug/ui-kit/like-button/like-button';
+import CheckboxList from '../pug/ui-kit/checkbox-list/checkbox-list';
 
 function importAll(resolve) {
     resolve.keys().forEach(resolve);
@@ -22,6 +23,10 @@ function importAll(resolve) {
 importAll(require.context('../img', true, /\.(jpg|png|svg|png)$/));
 
 document.addEventListener('DOMContentLoaded', () => {
+    const checkbox_list = document.querySelectorAll('.js-checkbox-list');
+
+    checkbox_list.forEach((item) => new CheckboxList(item));
+
     const dropdowns = document.querySelectorAll('.js-dropdown');
     
     dropdowns.forEach(element => {

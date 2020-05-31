@@ -1,9 +1,15 @@
-mixin checkbox-list({menuList=[]}={})
-    .checkbox-list
-        span.checkbox-list__title expandable checkbox list
-        a.checkbox-list__arrow.checkbox__arrow(href="#")
-            span(class="material-icons") keyboard_arrow_down
-        div.checkbox-list__menu
+include ../material-icons/material-icons.pug
+
+mixin checkbox-list({ menuList=[], }={})
+    .checkbox-list.js-checkbox-list
+        p.checkbox-list__title expandable checkbox list
+        p.checkbox-list__arrow.js-checkbox-list__arrow
+            +material-icons({
+                type: 'keyboard_arrow_down',
+                color: 'dark-shade-lighten',
+                size: 'base',
+            })
+        div.checkbox-list__menu.js-checkbox-list__menu
             each item in menuList
                 label.check.check-style
                     input.check__input(type="checkbox" checked= item.check)
