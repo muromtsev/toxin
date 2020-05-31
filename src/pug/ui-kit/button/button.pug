@@ -1,16 +1,20 @@
-mixin button({headerTitle, className = 'btnDefault', text = 'click me', buttonType = 'submit', arrow}={})
+include ../material-icons/material-icons.pug
+
+mixin button({  className = 'btnDefault', text = 'click me', buttonType = 'submit', icon=false, }={})
     -   let btnClass   
-    .button-link    
-        if headerTitle
-            +header-block({title: headerTitle})
+    .button-link
         case className
             when 'btnBackground'
                 - btnClass = className
             when 'btnBorder'
                 - btnClass = className            
-        if arrow
+        if icon
             button.button-link__elem(class='btnLong' type=buttonType) #{text}
-                span.material-icons arrow_forward
+                +material-icons({
+                    type: 'arrow_forward',
+                    color: 'white',
+                    size: 'base',
+                })
         else    
             button.button-link__elem(class=className type=buttonType) #{text}
 
