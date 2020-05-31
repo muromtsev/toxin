@@ -10,6 +10,7 @@ block content
     
     include ../../ui-kit/header-block/header-block.pug
     include ../../ui-kit/text-field/text-field.pug
+    include ../../ui-kit/material-icons/material-icons.pug
     include ../../ui-kit/dropdown/dropdown.pug
     include ../../ui-kit/date-dropdown/date-dropdown.pug
     include ../../ui-kit/filter-date-dropdown/filter-date-dropdown.pug
@@ -84,8 +85,13 @@ block content
                 .form-elements__item
                     +header-block({title: 'like button'})
                     .d-flex
-                        +like-button                    
-                        +like-button({isCheck: true, count: 12, icon: 'favorite'})
+                        .d-flex__mr
+                            +like-button       
+                        .d-flex__mr
+                            +like-button({
+                                isChecked: true,
+                                count: 12,
+                            })
                 .form-elements__item
                     +header-block({title: 'rate button'})    
                     .d-flex

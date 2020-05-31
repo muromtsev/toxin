@@ -1,29 +1,58 @@
-function likeButton() {
-    let btns = document.querySelectorAll('.js-like-button');
+import MaterialIcons from '../material-icons/material-icons';
+
+class LikeButton {
+    constructor(element) {
+        this.button = element;
     
-    btns.forEach(btn => {
-        btn.addEventListener('click', () => { 
-            changeClass(btn);
-        })
-    });      
-    function changeClass(elem) {
-        let icon = elem.querySelector('.js-like-button__heart').firstElementChild,
-            count = elem.querySelector('.js-like-button__count'),
-            idx = Number(count.innerHTML),
-            txt = '';
-        
-        if(elem.classList.contains('js-like-button__active')) {
-            elem.classList.remove('js-like-button__active');
-            txt = 'favorite_border';
-            idx = idx - 1;
+        this.findDomElement();
+        this.bindEventListener();
+        this.setStage();
+    }
+    
+    findDomElement() {
+        this.heartContainer = this.button.querySelector('.js-like-button__heart');
+        this.countLikes = this.button.querySelector('.js-like-button__count');
+        this.stageData = this.button.dataset.stage;
+        this.heart = new MaterialIcons(this.heartContainer);
+    }
+    bindEventListener() {
+        this.button.addEventListener('click', this.handleButtonClick.bind(this));
+    }
+    handleButtonClick() {
+        this.button.classList.toggle('like-button_active');
+    
+        if(this.button.className.includes('like-button_active')) {
+            this.setActive();
+            this.countLikes.textContent = Number(this.countLikes.textContent) + 1;
         }
         else {
-            elem.classList.add('js-like-button__active');
-            txt = 'favorite';
-            idx = idx + 1;
+            this.setUnActive();
+            if(this.countLikes.textContent >= 0) {
+            this.countLikes.textContent = Number(this.countLikes.textContent) - 1;
+            }
         }
-        icon.innerHTML = txt;
-        count.innerHTML = idx;
+        
+    }
+    setStage() {
+        if(this.stageData === 'true') {
+            this.setActive();
+        }
+        else if(this.stageData === 'false') {
+            this.setUnActive();
+        }
+    }
+    setActive() {
+        this.button.classList.add('like-button_active');
+        this.heart.setColor('purple');
+        this.heart.setTextContent('favorite');
+        this.countLikes.classList.add('like-button__count-active');
+    }
+    setUnActive() {
+        this.button.classList.remove('like-button_active');
+        this.heart.setColor('dark-shade-lighten');
+        this.heart.setTextContent('favorite_border');
+        this.countLikes.classList.remove('like-button__count-active');
     }
 }
-likeButton();
+
+export default LikeButton;

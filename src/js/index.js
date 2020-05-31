@@ -1,7 +1,9 @@
 import $ from 'jquery';
 import '../sass/style.scss';
+
+// import '../pug/ui-kit/material-icons/material-icons.js';
+
 import '../pug/ui-kit/checkbox-list/checkbox-list.js';
-import '../pug/ui-kit/like-button/like-button.js';
 import '../pug/ui-kit/date-dropdown/date-dropdown.js';
 
 
@@ -12,6 +14,7 @@ import initialSlider from '../pug/ui-kit/range-slider/range-slider';
 import InfoTable from '../pug/ui-kit/info-table/info-table';
 import RoomPreviewSlider from '../pug/ui-kit/room-preview/room-preview';
 import RateButton from '../pug/ui-kit/rate-button/rate-button';
+import LikeButton from '../pug/ui-kit/like-button/like-button';
 
 function importAll(resolve) {
     resolve.keys().forEach(resolve);
@@ -44,6 +47,10 @@ document.addEventListener('DOMContentLoaded', () => {
     infoTables.forEach((val) => {
         new InfoTable(val, values);
     })
+
+    const likeButtons = document.querySelectorAll('.js-like-button');
+
+    likeButtons.forEach((item) => new LikeButton(item));
 
 })
 $(() => {
