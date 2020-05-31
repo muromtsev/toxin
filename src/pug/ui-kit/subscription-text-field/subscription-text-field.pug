@@ -1,5 +1,11 @@
-mixin subscription-text-field({type='text', name='input-email', placeholder='Email', href='/mock-address/change-me/'}={})
+include ../material-icons/material-icons.pug
+
+mixin subscription-text-field({ type='text', name='input-email', placeholder='Email', href='/mock-address/change-me/', }={})
     .subscription-text
         input.subscription-text__input(type=type name=name placeholder=placeholder)                
         a.subscription-text__btn(href=href)
-            span.material-icons arrow_forward
+            +material-icons({
+                type: 'arrow_forward',
+                color: 'purple',
+                size: 'base',
+            })
