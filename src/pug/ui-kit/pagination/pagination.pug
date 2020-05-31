@@ -1,4 +1,6 @@
-mixin pagination({numFrom = 1, numTo = 12, numMax = '100+', text = ' вариантов аренды', links = []}={})
+include ../material-icons/material-icons.pug
+
+mixin pagination({ numFrom = 1, numTo = 12, numMax = '100+', text = ' вариантов аренды', links = []}={})
     ul.pagination-list
         each link, i in links
             - let { href, isActive, number } = link
@@ -9,7 +11,9 @@ mixin pagination({numFrom = 1, numTo = 12, numMax = '100+', text = ' вариа�
                 a.pagination-list__link(href=href, class= isActive ? 'pagination-list__link-active' : null)=number
         li.pagination-list__item
             a.pagination-list__link-next(href='/mock-address/change-me')
-                span.material-icons arrow_forward
+                +material-icons({
+                    type: 'arrow_forward',
+                })
         li.pagination-text
             span.pagination-text__numFrom=numFrom
             span=' - '
