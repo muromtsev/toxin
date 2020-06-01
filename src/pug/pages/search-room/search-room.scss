@@ -1,5 +1,43 @@
 
 
 .search-room {
+    &__inner {
+        display: grid;
+        grid-template-columns: 326px auto;
+        grid-template-rows: auto auto;
+        grid-template-areas:    'side-bar header'
+                                'side-bar elements'
+                                'side-bar pagination';
+        padding-top: 30px;
+    }
+
+    &__side-bar {
+        grid-area: 'side-bar';
+    }
+
+    &__form {
+        max-width: 266px;
+    }
+    &__filter-date-container {
+        
+    }
+    &__dropdown-container {
+        padding-top: 20px;
+    }
+
+    // ROOMS
+
+    &__rooms-list {
+
+        &__title {
+            grid-area: 'header';
+        }
+        &__elements {
+            grid-area: 'elements';
+        }
+    }
+    &__pagination {
+        grid-area: 'pagination';
+    }
 
 }

@@ -1,6 +1,52 @@
 extends ../../layout/default.pug
 
-//-includes
+include ../../ui-kit/header-block/header-block.pug
+include ../../ui-kit/filter-date-dropdown/filter-date-dropdown.pug
+include ../../ui-kit/dropdown/dropdown.pug
+include ../../ui-kit/range-slider/range-slider.pug
 
 block content
-    .container__inner.search-room
+    main.search-room
+        .search-room__inner
+            article.search-room__side-bar
+                form.search-room__form(action="")
+                    section.search-room__filter-date-container
+                        .search-room__filter-date
+                            +filter-date-dropdown({
+                                firstHeaderTitle: 'даты пребывания в отеле',
+                            })
+                    section.search-room__dropdown-container
+                        .search-room__dropdown-header
+                            +header-block({
+                                title: 'гости',
+                            })
+                        .search-room__dropdown
+                            +dropdown({
+                                elems: [
+                                    {name: 'Взрослые', value: 0},
+                                    {name: 'Дети', value: 0},
+                                    {name: 'Младенцы', value: 0},
+
+                                ],
+                                classItem: 'dropdown-number-of-guests',
+                                dataName: 'guests',
+                                buttonsShow: true
+                            })   
+                    section.search-room__range-slider-container
+                        .search-room__range-slider
+                            +range-slider({  
+                                type: 'double', 
+                                min: 1000, 
+                                max: 15000, 
+                                step: 1, 
+                                from: 5000, 
+                                to: 10000, 
+                            })
+            article.search-room__rooms-list
+                header.search-room__title
+                    |HEADER
+                article.search-room__elements
+                    |ELEMENTS
+            section.search-room__pagination
+                |PAGINATION
+        

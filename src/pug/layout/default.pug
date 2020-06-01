@@ -36,7 +36,9 @@ html(lang='en')
             btnNameLogin: 'Войти',
             btnNameRegister: 'Зарегистрироваться',
         })
-      block content
+        .container__inner.container__wrapper
+          block content
+        
       block footer
         .container__inner.container__wrapper
           +footer({
