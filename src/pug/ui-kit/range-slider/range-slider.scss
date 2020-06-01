@@ -4,6 +4,10 @@
     .r-title {
       display: flex;
       justify-content: space-between;
+
+      .header-block {
+        padding: 0;
+      }
     }
     &__price {
       width: 100%;
