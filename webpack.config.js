@@ -151,6 +151,10 @@ module.exports = (env, options) => {
                 template: `${PAGES_DIR}/landing-page/landing-page.pug`,
                 filename: `./landing-page.html`,
             }),
+            new HtmlWebpackPlugin({
+                template: `${PAGES_DIR}/search-room/search-room.pug`,
+                filename: `./search-room.html`,
+            }),
         ],
     };
 };
