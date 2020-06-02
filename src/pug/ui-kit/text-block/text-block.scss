@@ -1,0 +1,56 @@
+.title {
+    margin-right: 30px;
+    padding-left: 8px;
+    font-family: $mainFont;
+    font-weight: normal;
+    font-style: normal;
+    font-size: $font-size--big;
+    line-height: 29px;
+    color: $dark-shade--transparent;
+    text-transform: uppercase;
+}
+.title-medium {
+    @extend .title;
+    font-size: $font-size--medium;
+    line-height: 23px;
+    padding-left: 10px;
+}
+.title-small {
+    @extend .title;
+    font-size: $font-size--small;
+    line-height: 15px;
+    padding-left: 20px;
+}
+.title-body {
+    @extend .title;
+    font-size: $font-size--base;
+    line-height: 24px;
+    text-transform: none;
+    padding-left: 0;
+}
+.text-large {
+    font-family: $titleFont;
+    font-weight: bold;
+    font-size: $font-size--big;
+    line-height: 30px;
+    color: $dark-shade;
+}
+.text-medium {
+    @extend .text-large;
+    font-size: $font-size--medium;
+    line-height: 24px;
+}
+.text-small {
+    font-family: $mainFont;
+    font-weight: bold;
+    font-size: $font-size--small;
+    line-height: 15px;
+    text-transform: uppercase;                    
+    color: $dark-shade;
+}
+.text-body {
+    font-family: $mainFont;
+    font-size: $font-size--base;
+    line-height: 24px;
+    color: $dark-shade--translucent;
+}

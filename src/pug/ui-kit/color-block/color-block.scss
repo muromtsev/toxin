@@ -1,0 +1,17 @@
+@mixin colorItem {
+    width: 70px;
+    height: 70px;
+    border-radius: 6px;   
+}
+
+.colorItem {                    
+    margin-right: 40px;
+    @include colorItem;
+    
+}
+.textItem {
+    align-self: center;
+    span {
+        display: block;                        
+    }
+}

@@ -1,4 +1,5 @@
-@import "../sass/mixins";
+@import "../../ui-kit/color-block/color-block.scss";
+@import "../../ui-kit/text-block/text-block.scss";
 
 .content-flex {
     display: flex;
@@ -23,11 +24,7 @@
                 margin-top: 20px;    
             }
 
-            .colorItem {                    
-                margin-right: 40px;
-                @include colorItem;
-                
-            }
+            
             .dark-shade {
                 background-color: $dark-shade;
             }
@@ -50,73 +47,14 @@
                 background-color: $green;
             }
             
-            .textItem {
-                align-self: center;
-                span {
-                    display: block;                        
-                }
-            }
+            
         }
     }//flex-left end
     .flex-right {
         width: 403px;
         &__item {
             display: flex;
-            margin-bottom: 50px;
-            .title {
-                margin-right: 30px;
-                padding-left: 8px;
-                font-family: $mainFont;
-                font-size: $font-size--big;
-                line-height: 29px;
-                color: $dark-shade--transparent;
-                text-transform: uppercase;
-            }
-            .title-medium {
-                @extend .title;
-                font-size: $font-size--medium;
-                line-height: 23px;
-                padding-left: 10px;
-            }
-            .title-small {
-                @extend .title;
-                font-size: $font-size--small;
-                line-height: 15px;
-                padding-left: 20px;
-            }
-            .title-body {
-                @extend .title;
-                font-size: $font-size--base;
-                line-height: 24px;
-                text-transform: none;
-                padding-left: 0;
-            }
-            .text-large {
-                font-family: $titleFont;
-                font-weight: bold;
-                font-size: $font-size--big;
-                line-height: 30px;
-                color: $dark-shade;
-            }
-            .text-medium {
-                @extend .text-large;
-                font-size: $font-size--medium;
-                line-height: 24px;
-            }
-            .text-small {
-                font-family: $mainFont;
-                font-weight: bold;
-                font-size: $font-size--small;
-                line-height: 15px;
-                text-transform: uppercase;                    
-                color: $dark-shade;
-            }
-            .text-body {
-                font-family: $mainFont;
-                font-size: $font-size--base;
-                line-height: 24px;
-                color: $dark-shade--translucent;
-            }
+            margin-bottom: 50px;            
         }
     }//flex-right end
 }//container-flex end
