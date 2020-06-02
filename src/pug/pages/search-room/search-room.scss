@@ -14,7 +14,6 @@
     &__side-bar {
         grid-area: 'side-bar';
     }
-
     &__form {
         max-width: 266px;
     }
@@ -26,6 +25,23 @@
     }
     &__range-slider-container {
         margin-top: 20px;
+    }
+    &__range-slider-description {
+        font-size: $font-size--small;
+        line-height: 14px;
+        color: $dark-shade--lighten;
+    }
+    &__checkbox-buttons-container {
+        margin-top: 30px;
+    }
+    &__rich-checkbox-button-container {
+        margin-top: 30px;
+    }
+    &__dropdown-comfort-container {
+        margin-top: 30px;
+    }
+    &__checkbox-list-container {
+        margin-top: 30px;
     }
 
     // ROOMS

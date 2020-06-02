@@ -4,6 +4,9 @@ include ../../ui-kit/header-block/header-block.pug
 include ../../ui-kit/filter-date-dropdown/filter-date-dropdown.pug
 include ../../ui-kit/dropdown/dropdown.pug
 include ../../ui-kit/range-slider/range-slider.pug
+include ../../ui-kit/checkbox-buttons/checkbox-buttons.pug
+include ../../ui-kit/rich-checkbox-button/rich-checkbox-button.pug
+include ../../ui-kit/checkbox-list/checkbox-list.pug
 
 block content
     main.search-room
@@ -42,6 +45,66 @@ block content
                                 from: 5000, 
                                 to: 10000,
                                 headerTitle: 'диапазон цены',
+                            })
+                        p.search-room__range-slider-description
+                            | Стоимость за сутки пребывания в номере
+                    section.search-room__checkbox-buttons-container
+                        .search-room__checkbox-buttons-header
+                            +header-block({
+                                title: 'Checkbox Buttons',
+                            })
+                        .search-room__checkbox-buttons
+                            +checkbox-buttons({
+                                listButtons: [
+                                    {name: 'Можно курить', check: false},
+                                    {name: 'Можно с питомцами', check: true},
+                                    {name: 'Можно пригласить гостей (до 10 человек)', check: true}
+                                ]
+                            })
+                    section.search-room__rich-checkbox-button-container
+                        .search-room__rich-checkbox-button-header
+                            +header-block({
+                                title: 'доступность',
+                            })
+                        .search-room__rich-checkbox-button
+                            +rich-checkbox-button({
+                                richCheckboxButton: [
+                                    {richTitle: 'Широкий коридор', richText: 'Ширина коридоров в номере не менее 91 см.'},
+                                    {richTitle: 'Помощник для инвалидов', richText: 'На 1 этаже вас встретит специалист  и проводит до номера.'}
+                                ]
+                            })
+                    section.search-room__dropdown-comfort-container
+                        .search-room__dropdown-comfort-header
+                            +header-block({
+                                title: 'удобства номера',
+                            })
+                        .search-room__dropdown-comfort
+                            +dropdown({
+                                titleText: '2 спальни, 2 кровати...',
+                                elems: [
+                                    {name: 'Спальни', value: 2, classActive: 'js-minus-active'},
+                                    {name: 'Комнаты', value: 2, classActive: 'js-minus-active'},
+                                    {name: 'Ванные комнаты', value: 0},
+
+                                ],
+                                classItem: 'dropdown-room-amenities',
+                                dataName: 'rooms',
+                                buttonsShow: false
+                            })
+                    section.search-room__checkbox-list-container
+                        .search-room__checkbox-list
+                            +checkbox-list({
+                                title: 'дополнительные удобства',
+                                menuList: [
+                                    {name: 'Завтрак', check: false},
+                                    {name: 'Письменный стол', check: true},
+                                    {name: 'Стул для кормления', check: true},
+                                    {name: 'Кроватка', check: true},
+                                    {name: 'Телевизор', check: false},
+                                    {name: 'Шампунь', check: false},
+                                    {name: 'Телевизор', check: false},
+                                    {name: 'Шампунь', check: false},
+                                ],
                             })
             article.search-room__rooms-list
                 header.search-room__title
