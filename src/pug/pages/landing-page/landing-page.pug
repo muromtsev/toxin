@@ -3,13 +3,11 @@ block variables
     - var pageTitle = 'Landing page'
     - var keywords = 'Landing page Toxic'
 
-include ../../ui-kit/footer/footer.pug
-include ../../ui-kit/copyright-bar/copyright-bar.pug
 include ../../ui-kit/selection/selection.pug
 
         
 block content
-    .container__inner.landing-page(style="background-image: url('./img/landing_bg.jpg')")
+    .container__inner.landing-page
         .landing-page__filter
             +selection({
                 titleText: 'Найдем номера под ваши пожелания',
