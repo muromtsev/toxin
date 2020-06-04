@@ -15,43 +15,34 @@ html(lang='en')
     include ../ui-kit/header-page/header-page.pug
     include ../ui-kit/footer/footer.pug
     include ../ui-kit/copyright-bar/copyright-bar.pug
-
-    .container
-      block header
-        .container__inner.container__wrapper
-          +header-page({
-            elementsMenu: [
-                { name: 'О нас', href: '/mock-address/change-me/',},
-                { name: 'Услуги', href: '/mock-address/change-me/', 'submenu': true},
-                { name: 'Вакансии', href: '/mock-address/change-me/',},
-                { name: 'Новости', href: '/mock-address/change-me/'},
-                { name: 'Соглашения', href: '/mock-address/change-me/', 'submenu': true},
-            ],
-            subelementsMenu: [
-                { name: 'Occultism', href: '/mock-address/change-me/'},
-                { name: 'Necromancy', href: '/mock-address/change-me/'},
-                { name: 'Reincarnation', href: '/mock-address/change-me/'},
-            ],
-            size: 'submenu',
-            btnNameLogin: 'Войти',
-            btnNameRegister: 'Зарегистрироваться',
-        })
-        .container__inner.container__wrapper
-          block content
-        
-      block footer
-        .container__inner.container__wrapper
-          +footer({
-              elementsFooter: [
-                  {name: 'навигация', list: ['О нас', 'Новости', 'Служба поддержки', 'Услуги'], },
-                  {name: 'о нас', list: ['О сервисе', 'Наша команда', 'Вакансии', 'Инвесторы'], },
-                  {name: 'Служба поддержки', list: ['Соглашения', 'Сообщества', 'Связь с нами'], },
-              ],
-              text: 'Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»',
-              subscribeTitle: 'Подписка',
-              subscribeText: 'Получайте специальные предложения и новости сервиса',
-          })
-        
-        .container__inner.container__border
-          .container__wrapper
-            +copyright-bar({text: 'Copyright © 2018 Toxin UI Kit. All rights reserved.'})
+    +header-page({
+      elementsMenu: [
+          { name: 'О нас', href: '/mock-address/change-me/',},
+          { name: 'Услуги', href: '/mock-address/change-me/', 'submenu': true},
+          { name: 'Вакансии', href: '/mock-address/change-me/',},
+          { name: 'Новости', href: '/mock-address/change-me/'},
+          { name: 'Соглашения', href: '/mock-address/change-me/', 'submenu': true},
+      ],
+      subelementsMenu: [
+          { name: 'Occultism', href: '/mock-address/change-me/'},
+          { name: 'Necromancy', href: '/mock-address/change-me/'},
+          { name: 'Reincarnation', href: '/mock-address/change-me/'},
+      ],
+      size: 'submenu',
+      btnNameLogin: 'Войти',
+        btnNameRegister: 'Зарегистрироваться',
+    })
+      
+    block content
+              
+    +footer({
+        elementsFooter: [
+            {name: 'навигация', list: ['О нас', 'Новости', 'Служба поддержки', 'Услуги'], },
+            {name: 'о нас', list: ['О сервисе', 'Наша команда', 'Вакансии', 'Инвесторы'], },
+            {name: 'Служба поддержки', list: ['Соглашения', 'Сообщества', 'Связь с нами'], },
+        ],
+        text: 'Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»',
+        subscribeTitle: 'Подписка',
+        subscribeText: 'Получайте специальные предложения и новости сервиса',
+    })
+    +copyright-bar({text: 'Copyright © 2018 Toxin UI Kit. All rights reserved.'})

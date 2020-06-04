@@ -4,18 +4,19 @@ include ../login/login.pug
 
 mixin header-page({ elementsMenu, subelementsMenu, size, btnNameLogin, btnNameRegister, register, userName, })
     header.header
-        .header__logotype
-            +logo        
-        .header__menu    
-            +menu({
-                elementsMenu: elementsMenu,
-                subelementsMenu: subelementsMenu,
-                size: size,
-            })
-        .header__user-manage
-            +login({
-                btnNameLogin,
-                btnNameRegister,
-                register,
-                userName, 
-            })
+        .header__inner
+            .header__logotype
+                +logo        
+            .header__menu    
+                +menu({
+                    elementsMenu: elementsMenu,
+                    subelementsMenu: subelementsMenu,
+                    size: size,
+                })
+            .header__user-manage
+                +login({
+                    btnNameLogin,
+                    btnNameRegister,
+                    register,
+                    userName, 
+                })

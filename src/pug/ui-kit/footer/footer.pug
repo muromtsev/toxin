@@ -4,17 +4,18 @@ include ../subscription-text-field/subscription-text-field.pug
 
 mixin footer({ elementsFooter, text, subscribeTitle, subscribeText, }={})
     footer.footer
-        .footer-flex
-            .footer-flex__col.footer-flex__logo
-                +logo
-                .footer-flex__logo-text 
-                    p= text
-            .footer-flex__col.footer-flex__menu
-                +footerMenu({
-                    elementsFooter: elementsFooter,
-                })
-            .footer-flex__col.footer-flex__subscribe
-                .footer__title= subscribeTitle
-                .footer__text= subscribeText                    
-                form.footer__form(action="" method="get")
-                    +subscription-text-field({type: 'email', name: 'subscribe-email', placeholder: 'Email',})
+        .footer__inner
+            .footer-flex
+                .footer-flex__col.footer-flex__logo
+                    +logo
+                    .footer-flex__logo-text 
+                        p= text
+                .footer-flex__col.footer-flex__menu
+                    +footerMenu({
+                        elementsFooter: elementsFooter,
+                    })
+                .footer-flex__col.footer-flex__subscribe
+                    .footer__title= subscribeTitle
+                    .footer__text= subscribeText                    
+                    form.footer__form(action="" method="get")
+                        +subscription-text-field({type: 'email', name: 'subscribe-email', placeholder: 'Email',})

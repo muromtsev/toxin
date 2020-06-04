@@ -1,4 +1,7 @@
 @import "../../ui-kit/text-block/text-block.scss";
+@import "../../ui-kit/header-page/header-page.scss";
+@import "../../ui-kit/footer/footer.scss";
+@import "../../ui-kit/copyright-bar/copyright-bar.scss";
 
 .search-room {
     width: 100%;
@@ -6,6 +9,7 @@
 
     &__inner {
         max-width: 1160px;
+        margin: 0 auto;
         display: grid;
         grid-template-columns: 326px auto;
         grid-template-rows: repeat(3, auto);
@@ -31,9 +35,6 @@
     }
     &__form {
         max-width: 266px;
-    }
-    &__filter-date-container {
-        
     }
     &__dropdown-container {
         margin-top: 20px;

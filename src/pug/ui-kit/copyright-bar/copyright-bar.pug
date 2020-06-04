@@ -2,9 +2,10 @@ include ../social-icon/social-icon.pug
 
 mixin copyright-bar({ text, }={})
     .copyright-bar
-        .copy= text 
-        +social-icon({images: [
-            {'name': 'twitter', 'src': 'img/twitter.svg', href: '/mock-address/change-me',},
-            {'name': 'facebook', 'src': 'img/facebook.svg', href: '/mock-address/change-me',},
-            {'name': 'instagramm', 'src': 'img/instagramm.svg', href: '/mock-address/change-me',},
-        ]})
+        .copyright-bar__inner
+            .copy= text 
+            +social-icon({images: [
+                {'name': 'twitter', 'src': 'img/twitter.svg', href: '/mock-address/change-me',},
+                {'name': 'facebook', 'src': 'img/facebook.svg', href: '/mock-address/change-me',},
+                {'name': 'instagramm', 'src': 'img/instagramm.svg', href: '/mock-address/change-me',},
+            ]})

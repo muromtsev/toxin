@@ -3,24 +3,31 @@
 @import "../../ui-kit/login/login.scss";
 
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    min-height: 70px;
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1160px;
+        width: 100%;
+        min-height: 70px;
+        margin: 0 auto;
+        background-color: $white;
 
-    @media (max-width: 1160px) {
-        justify-content: center;
-        flex-direction: column;
-        flex-wrap: wrap;
-        height: auto;
-        padding-bottom: 20px;
+        @media (max-width: 960px) {
+            justify-content: center;
+            flex-direction: column;
+            flex-wrap: wrap;
+            height: auto;
+            padding-bottom: 20px;
+        }
     }
+
+    
 
     &__logotype {
         flex-grow: 1;
 
-        @media (max-width: 1160px) {
+        @media (max-width: 960px) {
             flex-grow: auto;
         }
     }
@@ -31,7 +38,7 @@
         display: flex;
         box-sizing: border-box;
 
-        @media (max-width: 1160px) {
+        @media (max-width: 960px) {
             padding-top: 10px;
         }
     }
