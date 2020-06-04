@@ -38,16 +38,16 @@ module.exports = (env, options) => {
         },
         optimization: {
             splitChunks: {
-              cacheGroups: {
-                vendor: {
-                  name: 'vendors',
-                  test: /node_modules/,
-                  chunks: 'all',
-                  enforce: true,
+                cacheGroups: {
+                    vendor: {
+                    name: 'vendors',
+                    test: /node_modules/,
+                    chunks: 'all',
+                    enforce: true,
+                    },
                 },
-              },
             },
-          },
+        },
         module: {
             rules: [{
                     test: /\.pug$/,
@@ -70,6 +70,7 @@ module.exports = (env, options) => {
                         {
                             loader: 'webpack-px-to-rem',
                             query: {
+                                // 1rem=npx default 10
                                 basePx: 14,
                                 min: 1,
                                 floatWidth: 3,
@@ -78,7 +79,7 @@ module.exports = (env, options) => {
                     ],
                 },{
                     test: /\.(eot|svg|ttf|woff|woff2)$/,
-                    exclude: [/pug/, /img/],
+                    exclude: [/pug/],
                     use: {
                         loader: 'file-loader',
                         options: {
@@ -89,7 +90,7 @@ module.exports = (env, options) => {
                 },{
                     test: /\.(png|jpg|gif|svg)$/,
                     loader: 'file-loader',
-                    exclude: [/fonts/],
+                    exclude: [/img/],
                     options: {
                         name: './img/[name].[ext]',
                         publicPath: '../',
