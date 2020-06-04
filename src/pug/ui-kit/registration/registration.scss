@@ -1,0 +1,60 @@
+.registration-form {
+    max-width: 380px;
+    width: 100%;
+    min-height: 646px;
+    
+    &__wrapper {
+        padding: 40px 30px 30px 30px;
+    }
+    &__title {
+        padding-bottom: 20px;
+
+        h1 {
+            font-family: $titleFont;
+            font-style: normal;
+            font-weight: bold;
+            font-size: $font-size--big;
+            line-height: 30px;
+            color: $dark-shade;
+            
+        }
+    }
+    &__user-name {
+        padding-bottom: 10px;
+    }
+    &__user-last-name {
+        padding-bottom: 10px;
+    }
+    &__sex {
+        padding-bottom: 23px;
+    }
+    &__bithday {
+        padding-bottom: 20px;
+    }
+    &__user-data {
+        .user-data-email {
+            padding-bottom: 10px;
+        }
+        .user-data-password {
+            padding-bottom: 10px;
+        }
+    }
+    &__button {
+        padding-top: 24px;
+        padding-bottom: 30px;
+    }
+    &__login {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &-text {
+            font-family: $mainFont;
+            font-style: normal;
+            font-weight: normal;
+            font-size: $font-size--base;
+            line-height: 18px;
+            color: #000000;
+        }
+    }
+}
