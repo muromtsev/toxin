@@ -59,27 +59,29 @@ module.exports = (env, options) => {
                 },{
                     test: /\.(sa|sc|c)ss$/,
                     use: [
+                        'style-loader',
+                        'css-loader',
+                        'postcss-loader',
+                        'sass-loader',
                         {
-                            loader: MiniCssExtractPlugin.loader,
+                            loader: 'sass-resources-loader',
+                            options: {
+                                resources: './src/sass/_var.scss',
+                            }
                         },
-                        {
-                            loader: 'css-loader',
-                        }, {
-                            loader: 'sass-loader',
-                        },
-                        {
-                            loader: 'webpack-px-to-rem',
-                            query: {
-                                // 1rem=npx default 10
-                                basePx: 14,
-                                min: 1,
-                                floatWidth: 3,
-                            },
-                        },
+                        // {
+                        //     loader: 'webpack-px-to-rem',
+                        //     query: {
+                        //         // 1rem=npx default 10
+                        //         basePx: 14,
+                        //         min: 1,
+                        //         floatWidth: 3,
+                        //     },
+                        // },
                     ],
+                    // include: path.join(__dirname, 'src'),
                 },{
                     test: /\.(eot|svg|ttf|woff|woff2)$/,
-                    exclude: [/pug/],
                     use: {
                         loader: 'file-loader',
                         options: {
