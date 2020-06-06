@@ -36,7 +36,7 @@
     &__input:checked + &__box {
         border-color: $purple;
         background-color: $white;
-        background-image: url(../img/check.svg);
+        background-image: url(./check.svg);
     }
 
     &__title {

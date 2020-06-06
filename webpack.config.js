@@ -59,15 +59,13 @@ module.exports = (env, options) => {
                 },{
                     test: /\.(sa|sc|c)ss$/,
                     use: [
-                        'style-loader',
-                        'css-loader',
-                        'postcss-loader',
-                        'sass-loader',
-                        {
-                            loader: 'sass-resources-loader',
+                        {loader: MiniCssExtractPlugin.loader},
+                        {loader: 'css-loader'},
+                        {loader: 'sass-loader'},
+                        {loader: 'sass-resources-loader',
                             options: {
-                                resources: './src/sass/_var.scss',
-                            }
+                                resources: `${PATHS.src}/sass/_var.scss`,
+                            },
                         },
                         // {
                         //     loader: 'webpack-px-to-rem',
@@ -79,9 +77,9 @@ module.exports = (env, options) => {
                         //     },
                         // },
                     ],
-                    // include: path.join(__dirname, 'src'),
                 },{
                     test: /\.(eot|svg|ttf|woff|woff2)$/,
+                    exclude: [/pug/, /img/],
                     use: {
                         loader: 'file-loader',
                         options: {
@@ -92,7 +90,7 @@ module.exports = (env, options) => {
                 },{
                     test: /\.(png|jpg|gif|svg)$/,
                     loader: 'file-loader',
-                    exclude: [/img/],
+                    exclude: [/fonts/],
                     options: {
                         name: './img/[name].[ext]',
                         publicPath: '../',

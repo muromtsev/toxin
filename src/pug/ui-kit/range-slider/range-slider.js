@@ -10,25 +10,26 @@ class RangeSlider {
   }
 
   findDomElement() {
-    this.$slider = $container.find('.js-range-slider__slider');
-    this.$price = $container.find('.js-range-slider__price');
+    this.$slider = this.$container.find('.js-range-slider__slider');
+    this.$price = this.$container.find('.js-range-slider__price');
   }
 
   initSlider() {
+    const { $price } = this;
     this.$slider.ionRangeSlider({
       onStart(data) {
         const {from, to} = data;
-        this.$price.val(`${from}₽ - ${to}₽`);
+        $price.val(`${from}₽ - ${to}₽`);
       },
       onChange(data) {
         const {from, to} = data;
-        this.$price.val(`${from}₽ - ${to}₽`);
+        $price.val(`${from}₽ - ${to}₽`);
       }
     })
   } 
 };
 
-export default initialSlider
+export default RangeSlider
 
 
 
