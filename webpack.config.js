@@ -67,15 +67,15 @@ module.exports = (env, options) => {
                                 resources: `${PATHS.src}/sass/_var.scss`,
                             },
                         },
-                        // {
-                        //     loader: 'webpack-px-to-rem',
-                        //     query: {
-                        //         // 1rem=npx default 10
-                        //         basePx: 14,
-                        //         min: 1,
-                        //         floatWidth: 3,
-                        //     },
-                        // },
+                        {
+                            loader: 'webpack-px-to-rem',
+                            query: {
+                                // 1rem=npx default 10
+                                basePx: 14,
+                                min: 1,
+                                floatWidth: 3,
+                            },
+                        },
                     ],
                 },{
                     test: /\.(eot|svg|ttf|woff|woff2)$/,

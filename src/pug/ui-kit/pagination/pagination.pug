@@ -13,6 +13,8 @@ mixin pagination({ numFrom = 1, numTo = 12, numMax = '100+', text = ' вариа
             a.pagination-list__link-next(href='/mock-address/change-me')
                 +material-icons({
                     type: 'arrow_forward',
+                    color: 'dark-shade',
+                    size: 'base',
                 })
         li.pagination-text
             span.pagination-text__numFrom=numFrom
