@@ -38,16 +38,16 @@ module.exports = (env, options) => {
         },
         optimization: {
             splitChunks: {
-              cacheGroups: {
-                vendor: {
-                  name: 'vendors',
-                  test: /node_modules/,
-                  chunks: 'all',
-                  enforce: true,
+                cacheGroups: {
+                    vendor: {
+                    name: 'vendors',
+                    test: /node_modules/,
+                    chunks: 'all',
+                    enforce: true,
+                    },
                 },
-              },
             },
-          },
+        },
         module: {
             rules: [{
                     test: /\.pug$/,
@@ -59,22 +59,23 @@ module.exports = (env, options) => {
                 },{
                     test: /\.(sa|sc|c)ss$/,
                     use: [
-                        {
-                            loader: MiniCssExtractPlugin.loader,
-                        },
-                        {
-                            loader: 'css-loader',
-                        }, {
-                            loader: 'sass-loader',
-                        },
-                        {
-                            loader: 'webpack-px-to-rem',
-                            query: {
-                                basePx: 14,
-                                min: 1,
-                                floatWidth: 3,
+                        {loader: MiniCssExtractPlugin.loader},
+                        {loader: 'css-loader'},
+                        {loader: 'sass-loader'},
+                        {loader: 'sass-resources-loader',
+                            options: {
+                                resources: `${PATHS.src}/sass/_var.scss`,
                             },
                         },
+                        // {
+                        //     loader: 'webpack-px-to-rem',
+                        //     query: {
+                        //         // 1rem=npx default 10
+                        //         basePx: 14,
+                        //         min: 1,
+                        //         floatWidth: 3,
+                        //     },
+                        // },
                     ],
                 },{
                     test: /\.(eot|svg|ttf|woff|woff2)$/,

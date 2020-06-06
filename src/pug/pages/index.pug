@@ -12,18 +12,18 @@ html(lang='en')
     title=pageTitle
     meta(name='viewport' content='width=device-width, initial-scale=1.0')
   body
-      //- include ../includes/header-ui.pug
+      include ../includes/header-ui.pug
 
       block content
       
       //- include ./landing-page/landing-page.pug
-      include ./search-room/search-room.pug
+      //- include ./search-room/search-room.pug
 
-      //- include ../ui-kit/index-menu/index-menu.pug 
+      include ../ui-kit/index-menu/index-menu.pug 
 
 
-      //- h3(style='padding-left: 110px; padding-top: 30px;') ui-kit
-      //- .ui-kit
+      h3(style='padding-left: 110px; padding-top: 30px;') ui-kit
+      .ui-kit
         +index_menu({
           menu: [
             {link: './color_type.html', name: 'Color & Type'},

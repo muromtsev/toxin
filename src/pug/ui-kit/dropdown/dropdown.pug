@@ -1,8 +1,14 @@
-mixin dropdown({titleText = 'Сколько гостей', elems = [], classItem, dataName, buttonsShow,} = {})
+include ../material-icons/material-icons.pug
+
+mixin dropdown({ titleText = 'Сколько гостей', elems = [], classItem, dataName, buttonsShow, } = {})
     .dropdown.js-dropdown(class= classItem, data-dropdown-name= dataName)     
         span.dropdown__text.js-dropdown__text=titleText
         span.dropdown__link.js-dropdown__link
-            span(class="material-icons") keyboard_arrow_down   
+            +material-icons({
+                type: 'keyboard_arrow_down',
+                color: 'dark-shade-lighten',
+                size: 'base',
+            })   
         .dropdown__menu.js-dropdown__menu
             each elem in elems
                 .dropdown__menu-item

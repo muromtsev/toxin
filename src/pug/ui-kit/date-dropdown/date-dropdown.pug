@@ -1,7 +1,8 @@
 include ../header-block/header-block.pug
 include ../text-field/text-field.pug
+include ../material-icons/material-icons.pug
 
-mixin date-dropdown({title='date-dropdown', type='start', placeholder, width,}={})
+mixin date-dropdown({ title='date-dropdown', type='start', placeholder, width, }={})
     - let widthModifier
     case width
         when 'large'
@@ -11,7 +12,11 @@ mixin date-dropdown({title='date-dropdown', type='start', placeholder, width,}={
         +header-block({title: title,})
         .date-dropdown__input(class= widthModifier)
             span.date-dropdown__link
-                span(class="material-icons") keyboard_arrow_down
+                +material-icons({
+                    type: 'keyboard_arrow_down',
+                    color: 'dark-shade-lighten',
+                    size: 'base',
+                })
             div(class= `date-dropdown__input-${type}-date js-date-dropdown__input-${type}-date`)
                 +text-field({
                     type: 'text',

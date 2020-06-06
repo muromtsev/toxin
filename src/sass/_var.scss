@@ -1,4 +1,4 @@
-@import "fonts.scss";
+
 //colors
 $dark-shade:                #1F2041;
 $dark-shade--light:         rgba(31, 32, 65, 0.75);
@@ -22,13 +22,7 @@ $font-size--base:           14px;
 $mainFont:                  'Montserrat', OpenSans, sans-serif;
 $titleFont:                 'Quicksand', OpenSans, sans-serif;
 $MaterialIcons:             'Material Icons', sans-serif;
-//material icons
-$material-icons-font-path: '~material-icons/iconfont/';
-$material-icons-codepoints: () !default; /* Sass map of icon names and codepoints */
-$material-icons-font-path: '' !default;
-$material-icons-font-name: 'MaterialIcons-Regular' !default;
-$material-icons-font-size: 24px !default;
-$material-icons-font-family: 'Material Icons' !default;
+
 
 
 

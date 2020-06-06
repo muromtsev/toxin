@@ -7,9 +7,20 @@
         color: $dark-shade--lighten;
         line-height: 24px;
         margin-left: 17px;
-        list-style-image: url(../img/bullet.svg);
     }
     &__item {
+        position: relative;
         padding: 3px 0 5px 3px;
+
+        &::before {
+            position: absolute;
+            top: 10px;
+            left: -15px;
+            content: '';
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: $dark-shade--lightest;
+        }
     }
 }
