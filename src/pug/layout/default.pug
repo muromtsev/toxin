@@ -16,6 +16,7 @@ html(lang='en')
     include ../ui-kit/footer/footer.pug
     include ../ui-kit/copyright-bar/copyright-bar.pug
     +header-page({
+      hrefLogo: './landing-page.html',
       elementsMenu: [
           { name: 'О нас', href: '/mock-address/change-me/',},
           { name: 'Услуги', href: '/mock-address/change-me/', 'submenu': true},
@@ -29,13 +30,16 @@ html(lang='en')
           { name: 'Reincarnation', href: '/mock-address/change-me/'},
       ],
       size: 'submenu',
+      hrefLogin: './sign-in.html',
+      hrefRegister: './register-in.html',
       btnNameLogin: 'Войти',
-        btnNameRegister: 'Зарегистрироваться',
+      btnNameRegister: 'Зарегистрироваться',
     })
       
     block content
               
     +footer({
+      hrefLogo: './landing-page.html',
         elementsFooter: [
             {name: 'навигация', list: ['О нас', 'Новости', 'Служба поддержки', 'Услуги'], },
             {name: 'о нас', list: ['О сервисе', 'Наша команда', 'Вакансии', 'Инвесторы'], },

@@ -2,12 +2,12 @@ include ../logo/logo.pug
 include ../footer-menu/footer-menu.pug
 include ../subscription-text-field/subscription-text-field.pug
 
-mixin footer({ elementsFooter, text, subscribeTitle, subscribeText, }={})
+mixin footer({ hrefLogo, elementsFooter, text, subscribeTitle, subscribeText, }={})
     footer.footer
         .footer__inner
             .footer-flex
                 .footer-flex__col.footer-flex__logo
-                    +logo
+                    +logo({ hrefLogo, })
                     .footer-flex__logo-text 
                         p= text
                 .footer-flex__col.footer-flex__menu

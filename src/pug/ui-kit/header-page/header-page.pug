@@ -2,11 +2,11 @@ include ../logo/logo.pug
 include ../nav-menu/nav-menu.pug
 include ../login/login.pug
 
-mixin header-page({ elementsMenu, subelementsMenu, size, btnNameLogin, btnNameRegister, register, userName, })
+mixin header-page({ hrefLogo, elementsMenu, subelementsMenu, size, hrefLogin, hrefRegister, btnNameLogin, btnNameRegister, register, userName, })
     header.header
         .header__inner
             .header__logotype
-                +logo        
+                +logo({ hrefLogo, })
             .header__menu    
                 +menu({
                     elementsMenu: elementsMenu,
@@ -15,6 +15,8 @@ mixin header-page({ elementsMenu, subelementsMenu, size, btnNameLogin, btnNameRe
                 })
             .header__user-manage
                 +login({
+                    hrefLogin,
+                    hrefRegister,
                     btnNameLogin,
                     btnNameRegister,
                     register,

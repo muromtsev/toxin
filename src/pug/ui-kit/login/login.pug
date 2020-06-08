@@ -1,7 +1,7 @@
-mixin login({ register=false, href='/mock-address/change-me/', btnNameLogin='Login', btnNameRegister='Register', userName='Cosmin Negoita', }={})
+mixin login({ register=false, hrefLogin='/mock-address/change-me/', hrefRegister='/mock-address/change-me/', btnNameLogin='Login', btnNameRegister='Register', userName='Cosmin Negoita', }={})
     if register
         a.user-name= userName
     else
-        a.login(href=href)= btnNameLogin
-        a.register(href=href)= btnNameRegister
+        a.login(href=hrefLogin)= btnNameLogin
+        a.register(href=hrefRegister)= btnNameRegister
 
