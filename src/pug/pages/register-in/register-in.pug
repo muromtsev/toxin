@@ -1,0 +1,13 @@
+extends ../../layout/default.pug
+block variables
+    - var pageTitle = 'Registration'
+    - var keywords = 'Registration Toxic'
+
+include ../../ui-kit/registration/registration.pug
+
+block content
+    main.register-in(style="background-image: url('./img/register-bg.jpg')")
+        section.register-in__registration-form
+            +registration-form({ 
+                titleText: 'Регистрация аккаунта',
+            })
