@@ -1,7 +1,13 @@
-mixin comments({avatarSrc, avatarAlt, userName, date, date_text, text,}={})
+include ../like-button/like-button.pug
+
+mixin comments({ avatarSrc, avatarAlt, userName, date, date_text, text,}={})
     .post
         .post__user-avatar
             img.post__avatar(src=avatarSrc, alt=avatarAlt)
+            +like-button({ 
+                isChecked: true,
+                count: 12,
+            })
         .post__description
             .post__user-name=userName
             .post__date=date
