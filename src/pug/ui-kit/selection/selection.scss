@@ -9,6 +9,11 @@
     border-radius: 4px;
     &__wrapper {
         padding: 40px 30px 30px 30px;
+
+        @media (max-width: 480px) {
+            padding: 20px;
+
+        }
     }
     &-title {
         padding-bottom: 20px;
