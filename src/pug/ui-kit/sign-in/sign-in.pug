@@ -2,7 +2,7 @@ include ../text-field/text-field.pug
 include ../button/button.pug
 
 mixin sign-in({ action='/mock-address/change-me/', name='sign-in-form', method='post', titleText='Войти', }={}) 
-    form.sign-in(action=action name=name method=method)
+    form.sign-in-form(action=action name=name method=method)
         .sign-in-form__wrapper
             .sign-in-form__title
                 h1= titleText

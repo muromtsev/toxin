@@ -1,0 +1,11 @@
+extends ../../layout/default.pug
+block variables
+    - var pageTitle = 'Sign in'
+    - var keywords = 'Sign in Toxic'
+
+include ../../ui-kit/sign-in/sign-in.pug
+
+block content
+    main.sign-in(style="background-image: url('./img/register-bg.jpg')")
+        section.sign-in__container
+            +sign-in({ titleText: 'Войти', }) 
