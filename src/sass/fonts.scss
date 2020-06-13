@@ -6,6 +6,7 @@
          url('./../fonts/Montserrat-Regular.ttf')  format('truetype'); /* Safari, Android, iOS */
     font-weight: normal;
     font-style: normal;
+    font-display: fallback;
 }
 @font-face {
     font-family: "Quicksand";
@@ -15,6 +16,7 @@
          url('./../fonts/Quicksand-Regular.ttf')  format('truetype'); /* Safari, Android, iOS */
     font-weight: normal;
     font-style: normal;
+    font-display: fallback;
 }
 @font-face {
     font-family: "Montserrat";
@@ -24,6 +26,7 @@
          url('./../fonts/Montserrat-Bold.ttf')  format('truetype'); /* Safari, Android, iOS */
     font-weight: bold;
     font-style: normal;
+    font-display: fallback;
 }
 @font-face {
     font-family: "Quicksand";
@@ -33,6 +36,7 @@
          url('./../fonts/Quicksand-Bold.ttf')  format('truetype'); /* Safari, Android, iOS */
     font-weight: bold;
     font-style: normal;
+    font-display: fallback;
 }
 @font-face {
     font-family: "OpenSans";
@@ -43,6 +47,7 @@
         url('./../fonts/opensans-regular-webfont.svg') format('svg');
     font-weight: normal;
     font-style: normal;
+    font-display: fallback;
     }
 
 @font-face {
@@ -54,6 +59,7 @@
             url('./../fonts/opensans-bold-webfont.svg') format('svg');
     font-weight: bold;
     font-style: normal;
+    font-display: fallback;
 }
 @font-face {
     font-family: 'Material Icons';
