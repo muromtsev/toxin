@@ -38,5 +38,7 @@ _Запуск production build_
 
 ### [Landing page](https://muromtsev.github.io/toxic/landing-page.html)
 ### [Search room](https://muromtsev.github.io/toxic/search-room.html)
+### [Registration](https://muromtsev.github.io/toxic/register-in.html)
+### [Sign in](https://muromtsev.github.io/toxic/sign-in.html)
 
 
