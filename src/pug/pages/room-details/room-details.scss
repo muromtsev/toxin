@@ -1,0 +1,32 @@
+.room-details {
+
+    &-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 243px 243px;
+        max-width: 1440px;
+        width: 100%;
+        margin: 0 auto;
+        box-sizing: border-box;
+
+        @media (max-width: 1440px) {
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(3, auto);
+        }
+        &__item:first-child {
+            grid-column: 1;
+            grid-row: 1/2;
+            
+        }
+        &__item:nth-child(2) {
+            grid-column: 2;
+            grid-row: 1;
+        }
+        &__item:last-child {
+            grid-column: 2;
+            grid-row: 2;
+        }
+        
+    }
+
+}
