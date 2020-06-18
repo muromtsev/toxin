@@ -1,9 +1,9 @@
-mixin header-block({title, text, headerWidth,}={})
+mixin header-block({ tag='h3', title, text, headerWidth, }={})
     - let headerModifier = ''
     case headerWidth
         when 'small'
             - headerModifier = 'header-block__small'
     .header-block(class= `${headerModifier}`)
-        h3.header-block__title #{title}
+        #{tag}.header-block__title #{title}
         if(text) 
             .header-block__text #{text}

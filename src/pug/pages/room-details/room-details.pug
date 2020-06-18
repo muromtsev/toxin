@@ -3,14 +3,64 @@ block variables
     - var pageTitle = 'Room details'
     - var keywords = 'Room details Toxic'
 
-//- include ../../ui-kit/registration/registration.pug
+include ../../ui-kit/header-block/header-block.pug
+include ../../ui-kit/room-information/room-information.pug
+include ../../ui-kit/armor-form/armor-form.pug
+include ../../ui-kit/comments/comments.pug
 
 block content
     main.room-details
-        section.room-details-grid
-            .room-details-grid__item
-                img(src="./img/room-details-1.jpg" alt="room details")
-            .room-details-grid__item
-                img(src="./img/room-details-2.jpg" alt="room details")
-            .room-details-grid__item
-                img(src="./img/room-details-3.jpg" alt="room details")
+        section.room-details-flex
+            .room-details-flex__column
+                img.room-details__photo(src="./img/room-details-1.jpg" alt="room details")
+            .room-details-flex__column
+                img.room-details__photo(src="./img/room-details-2.jpg" alt="room details")
+                img.room-details__photo(src="./img/room-details-3.jpg" alt="room details")
+        secition.room-details__content
+            .room-details__content-container
+                .room-details__content-info
+                    +header-block({
+                        tag: 'h2',
+                        title: 'Сведения о номере',
+                    })
+                    +room_information({ 
+                        iconName: 'mood',
+                        titleRoom: 'Комфорт',
+                        textRoom: 'Шумопоглащающие стены', 
+                    })
+                    +room_information({iconName: 'location_city', titleRoom: 'Удобство', textRoom: 'Окно в каждой из спален'})
+                    +room_information({iconName: 'whatshot', titleRoom: 'Уют', textRoom: 'Номер оснащен камином'})
+                .room-details__content-diagram
+                    +header-block({
+                        tag: 'h2', 
+                        title: 'Впечатления от номера',
+                    })
+                .room-details__armor
+                    +armor-form
+                .room-details__review
+                    .room-details__review-header
+                        +header-block({
+                            tag: 'h2',
+                            title: 'Отзывы посетителей номера',
+                        })
+                    .room-details__review-comment
+                        +comments({
+                            avatarSrc: './img/avatar.png',
+                            avatarAlt: 'Avatar',
+                            userName: 'Мурад Сарафанов',
+                            date: '5 дней назад',
+                            text: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.'
+                        })
+                    .room-details__review-comment
+                        +comments({
+                            avatarSrc: './img/avatar2.png',
+                            avatarAlt: 'Avatar',
+                            userName: 'Патрисия Стёклышкова',
+                            date: 'Неделю назад',
+                            text: 'Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент.',
+                            likeIsChecked: false,
+                            likeCount: 2,
+                        })
+
+
+
