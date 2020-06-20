@@ -30,36 +30,147 @@
         height: auto;
     }
     &__content {
-
+        max-width: 1162px;
+        padding-top: 70px;
+        padding-bottom: 72px;
+        
+        @media (max-width: 1200px) {
+            margin-right: 10px;
+            margin-left: 10px;
+        }
     }
     &__content-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: auto 1fr auto;
+        grid-template-areas: 'info diagram armor' 'review review armor' 'list cancel armor';
 
+        @media (max-width: 876px) {
+            grid-template-columns: repaet(2, auto);
+            grid-template-rows: repeat(4, auto);
+            grid-template-areas: 'info diagram' 'review review' 'list cancel' 'armor armor';
+        }
+        @media (max-width: 545px) {
+            grid-template-columns: auto;
+            grid-template-rows: repeat(6, auto);
+            grid-template-areas: 'info' 'diagram' 'review' 'list' 'cancel' 'armor';
+        }
+        @media (max-wdith: 380px) {
+            grid-template-columns: 300px;
+        }
     }
     &__content-info {
+        grid-area: 'info';
+
         .header-block__title {
             font-size: $font-size--medium;
             font-family: $titleFont;
             line-height: 24px;
         }
+
+        @media (max-wdith: 545px) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+    &__room-info {
+        min-width: 300px;
+        margin-top: 20px;
     }
     &__content-diagram {
+        grid-area: 'diagram';
+
         .header-block__title {
             font-size: $font-size--medium;
             font-family: $titleFont;
             line-height: 24px;
+        }
+
+        @media (max-wdith: 545px) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+    }
+    &__list {
+        grid-area: 'list';
+        padding-top: 10px;
+
+        @media (max-wdith: 545px) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
         }
     }
     &__review {
+        grid-area: 'review';
+
         &-header {
+            width: 710px;
+            margin-top: 33px;    
+            margin-bottom: 20px;
+
             .header-block__title {
                 font-size: $font-size--medium;
                 font-family: $titleFont;
                 line-height: 24px;
-            }        
+            }
+            .header-block__text {
+                font-size: $font-size--base;
+                font-style: normal;
+                text-transform: none;
+            }    
         }
         
         &-comment {
+            margin-bottom: 23px;
+        }
+    }
+    &__list {
+        position: relative;
+        display: inline-block;
+        max-width: 266px;
+        margin-left: 30px;
 
+        @media (max-wdith: 400px) {
+            margin-left: 10px;
+        }
+    }
+    &__armor {
+        grid-area: 'armor';
+
+        @media (max-wdith: 876px) {
+            display: flex;
+            justify-content: center;
+        }
+    }
+    &__cancel {
+        grid-area: 'cancel';
+        padding-top: 10px;
+
+        @media (max-wdith: 545px) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+    }
+    &__cancel-text {
+        max-width: 341px;
+        max-height: 96px;
+        margin-top: 17px;
+        font-family: $titleFont;
+        font-style: normal;
+        font-weight: normal;
+        font-size: $font-size--base;
+        line-height: 24px;
+        color: $dark-shade--light;
+
+        @media (max-wdith: 876px) {
+            margin-bottom: 50px;
         }
     }
 

@@ -6,4 +6,4 @@ mixin header-block({ tag='h3', title, text, headerWidth, }={})
     .header-block(class= `${headerModifier}`)
         #{tag}.header-block__title #{title}
         if(text) 
-            .header-block__text #{text}
+            p.header-block__text #{text}

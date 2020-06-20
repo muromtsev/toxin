@@ -7,6 +7,7 @@ include ../../ui-kit/header-block/header-block.pug
 include ../../ui-kit/room-information/room-information.pug
 include ../../ui-kit/armor-form/armor-form.pug
 include ../../ui-kit/comments/comments.pug
+include ../../ui-kit/bullet-list/bullet-list.pug
 
 block content
     main.room-details
@@ -23,13 +24,16 @@ block content
                         tag: 'h2',
                         title: 'Сведения о номере',
                     })
-                    +room_information({ 
-                        iconName: 'mood',
-                        titleRoom: 'Комфорт',
-                        textRoom: 'Шумопоглащающие стены', 
-                    })
-                    +room_information({iconName: 'location_city', titleRoom: 'Удобство', textRoom: 'Окно в каждой из спален'})
-                    +room_information({iconName: 'whatshot', titleRoom: 'Уют', textRoom: 'Номер оснащен камином'})
+                    .room-details__room-info
+                        +room_information({ 
+                            iconName: 'mood',
+                            titleRoom: 'Комфорт',
+                            textRoom: 'Шумопоглащающие стены', 
+                        })
+                    .room-details__room-info
+                        +room_information({iconName: 'location_city', titleRoom: 'Удобство', textRoom: 'Окно в каждой из спален'})
+                    .room-details__room-info
+                        +room_information({iconName: 'whatshot', titleRoom: 'Уют', textRoom: 'Номер оснащен камином'})
                 .room-details__content-diagram
                     +header-block({
                         tag: 'h2', 
@@ -42,6 +46,7 @@ block content
                         +header-block({
                             tag: 'h2',
                             title: 'Отзывы посетителей номера',
+                            text: '2 отзыва'
                         })
                     .room-details__review-comment
                         +comments({
@@ -61,6 +66,24 @@ block content
                             likeIsChecked: false,
                             likeCount: 2,
                         })
+                .room-details__list
+                    .room-details__review-header
+                        +header-block({
+                            tag: 'h2',
+                            title: 'Правила',
+                        })
+                    +bullet-list({
+                        headerTitle: 'bullet-list',
+                        bulletList: ['Нельзя с питомцами', 'Без вечеринок и мероприятий', 'Время прибытия — после 13:00, а выезд до 12:00'],
+                    })
+                .room-details__cancel
+                    .room-details__review-header
+                        +header-block({
+                            tag: 'h2',
+                            title: 'Отмена',
+                        })
+                    p.room-details__cancel-text Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
+
 
 
 
