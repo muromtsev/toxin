@@ -4,10 +4,11 @@ mixin comments({ avatarSrc, avatarAlt, userName, date, date_text, text, likeCoun
     .post
         .post__user-avatar
             img.post__avatar(src=avatarSrc, alt=avatarAlt)
-            +like-button({ 
-                isChecked: likeIsChecked,
-                count: likeCount,
-            })
+            .post__like-button
+                +like-button({ 
+                    isChecked: likeIsChecked,
+                    count: likeCount,
+                })
         .post__description
             .post__user-name=userName
             .post__date=date
