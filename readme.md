@@ -22,6 +22,7 @@ _Запуск production build_
 [ion-rangeslider](https://github.com/IonDen/ion.rangeSlider),
 [air-datepicker](https://github.com/t1m0n/air-datepicker),
 [jquery-bar-rating](https://github.com/antennaio/jquery-bar-rating)
+[apexcharts](https://github.com/apexcharts/apexcharts.js)
 
 ---
 
@@ -40,5 +41,6 @@ _Запуск production build_
 ### [Search room](https://muromtsev.github.io/toxic/search-room.html)
 ### [Registration](https://muromtsev.github.io/toxic/register-in.html)
 ### [Sign in](https://muromtsev.github.io/toxic/sign-in.html)
+### [Room details](https://muromtsev.github.io/toxic/room-details.html)
 
 
