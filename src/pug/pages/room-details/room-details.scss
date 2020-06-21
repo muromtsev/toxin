@@ -4,12 +4,6 @@
     align-items: center;
     border-bottom: 1px solid rgba(31, 32, 65,0.1);
     
-    .header-block__title {
-        font-size: $font-size--medium;
-        font-family: $mainFont;
-        line-height: 24px;
-        text-transform: none;
-    }
     &-flex {
         display: flex;
         justify-content: center;
@@ -37,6 +31,7 @@
     }
     &__content {
         max-width: 1162px;
+        width: 100%;
         padding-top: 70px;
         padding-bottom: 72px;
         
@@ -47,10 +42,14 @@
     }
     &__content-container {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: 0.9fr 1.08r 1fr;
         grid-template-rows: auto 1fr auto;
         grid-template-areas: 'info diagram armor' 'review review armor' 'list cancel armor';
-
+        grid-column-gap: 10px;
+        
+        .header-block {
+            padding-bottom: 0;
+        }
         @media (max-width: 876px) {
             grid-template-columns: auto auto;
             grid-template-rows: repeat(4, auto);
@@ -88,24 +87,13 @@
             margin-top: 20px;
         }
     }
-    &__list {
-        grid-area: list;
-        padding-top: 10px;
-
-        @media (max-width: 545px) {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-top: 20px;
-        }
-    }
     &__review {
         grid-area: review;
 
         &-header {
             max-width: 710px;
             width: 100%;
-            margin-top: 33px;    
+            margin-top: 10px;    
             margin-bottom: 20px;
 
             .header-block__text {
@@ -124,17 +112,32 @@
         }
     }
     &__list {
-        position: relative;
         display: inline-block;
         max-width: 266px;
-        margin-left: 30px;
+        grid-area: list;
+        margin-top: 7px;
+
+        @media (max-width: 545px) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
 
         @media (max-width: 400px) {
             margin-left: 10px;
         }
+
+        &-header {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
     }
     &__armor {
         grid-area: armor;
+        .header-block {
+            padding-bottom: 5px;
+        }
 
         @media (max-width: 876px) {
             display: flex;
@@ -143,7 +146,7 @@
     }
     &__cancel {
         grid-area: cancel;
-        padding-top: 10px;
+        margin-top: 7px;
 
         @media (max-width: 545px) {
             display: flex;

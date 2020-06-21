@@ -24,6 +24,7 @@ block content
                     +header-block({
                         tag: 'h2',
                         title: 'Сведения о номере',
+                        fontPage: 'medium',
                     })
                     .room-details__room-info
                         +room_information({ 
@@ -39,6 +40,7 @@ block content
                     +header-block({
                         tag: 'h2', 
                         title: 'Впечатления от номера',
+                        fontPage: 'medium',
                     })
                     .room-details__donut-chart
                         +donut-chart
@@ -49,7 +51,8 @@ block content
                         +header-block({
                             tag: 'h2',
                             title: 'Отзывы посетителей номера',
-                            text: '2 отзыва'
+                            text: '2 отзыва',
+                            fontPage: 'medium',
                         })
                     .room-details__review-comment
                         +comments({
@@ -70,20 +73,22 @@ block content
                             likeCount: 2,
                         })
                 .room-details__list
-                    .room-details__review-header
+                    .room-details__list-header
                         +header-block({
                             tag: 'h2',
                             title: 'Правила',
+                            fontPage: 'medium',
                         })
                     +bullet-list({
                         headerTitle: 'bullet-list',
                         bulletList: ['Нельзя с питомцами', 'Без вечеринок и мероприятий', 'Время прибытия — после 13:00, а выезд до 12:00'],
                     })
                 .room-details__cancel
-                    .room-details__review-header
+                    .room-details__header
                         +header-block({
                             tag: 'h2',
                             title: 'Отмена',
+                            fontPage: 'medium',
                         })
                     p.room-details__cancel-text Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
 

@@ -1,9 +1,16 @@
-mixin header-block({ tag='h3', title, text, headerWidth, }={})
-    - let headerModifier = ''
+mixin header-block({ tag='h3', title, text, headerWidth, fontPage, }={})
+    - var headerModifier = ''
+    - var fontModifier = ''
+
     case headerWidth
         when 'small'
             - headerModifier = 'header-block__small'
+
+    case fontPage
+        when 'medium'
+            - fontModifier = 'header-block__title-font-page-medium'
+
     .header-block(class= `${headerModifier}`)
-        #{tag}.header-block__title #{title}
+        #{tag}.header-block__title(class= `${fontModifier}`) #{title}
         if(text) 
             p.header-block__text #{text}

@@ -41,7 +41,7 @@ let options = {
             offsetY: -65,
             offsetX: -100,
             customScale: 0.45,
-            startAngle: -180,
+            startAngle: 180,
             donut: {
                 size: "90%",
                 labels: {
