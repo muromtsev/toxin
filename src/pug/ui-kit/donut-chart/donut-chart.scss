@@ -1,0 +1,14 @@
+.donut-chart {
+    max-width: 340px;
+    width: 100%;
+    // margin: 10px;
+    // box-sizing: border-box;
+}
+.apexcharts-legend {
+    
+    &-text {
+        padding-left: 5px;
+        line-height: 20px;
+        color: rgba(31, 32, 65, 0.75);
+    }
+}

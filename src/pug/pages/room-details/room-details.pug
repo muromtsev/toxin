@@ -5,6 +5,7 @@ block variables
 
 include ../../ui-kit/header-block/header-block.pug
 include ../../ui-kit/room-information/room-information.pug
+include ../../ui-kit/donut-chart/donut-chart.pug
 include ../../ui-kit/armor-form/armor-form.pug
 include ../../ui-kit/comments/comments.pug
 include ../../ui-kit/bullet-list/bullet-list.pug
@@ -39,6 +40,8 @@ block content
                         tag: 'h2', 
                         title: 'Впечатления от номера',
                     })
+                    .room-details__donut-chart
+                        +donut-chart
                 .room-details__armor
                     +armor-form
                 .room-details__review
