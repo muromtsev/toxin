@@ -17,25 +17,22 @@ html(lang='en')
 
       block content
 
-
-      h3(style='padding-left: 110px; padding-top: 30px;') ui-kit
-      .ui-kit
-        +index_menu({
-          menu: [
-            {link: './color_type.html', name: 'Color & Type'},
-            {link: './form-elements.html', name: 'Form Elements'},
-            {link: './header_footer.html', name: 'Header & Footer'},
-            {link: './cards.html',  name: 'Cards'},
-          ]
-        })
-      h3(style='padding-left: 60px; padding-top: 30px;') toxin pages
-      .toxin-pages
-        +index_menu({
-          menu: [
-            {link: './landing-page.html', name: 'Landing page'},
-            {link: './search-room.html', name: 'Search room'},
-            {link: './register-in.html', name: 'Registration'},
-            {link: './sign-in.html', name: 'Sign in'},
-            {link: './room-details.html', name: 'Room details'},
-          ],
-        })
+      +index_menu({
+        title: 'UI-kit',
+        menu: [
+          {link: './color_type.html', name: 'Color & Type'},
+          {link: './form-elements.html', name: 'Form Elements'},
+          {link: './header_footer.html', name: 'Header & Footer'},
+          {link: './cards.html',  name: 'Cards'},
+        ]
+      })
+      +index_menu({
+        title: 'Toxin pages',
+        menu: [
+          {link: './landing-page.html', name: 'Landing page'},
+          {link: './search-room.html', name: 'Search room'},
+          {link: './register-in.html', name: 'Registration'},
+          {link: './sign-in.html', name: 'Sign in'},
+          {link: './room-details.html', name: 'Room details'},
+        ],
+      })
