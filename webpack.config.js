@@ -15,7 +15,7 @@ module.exports = (env, options) => {
 
     const PAGES_DIR = `${PATHS.src}/pug/pages/`;
     const production = options.mode === 'production';
-    const publicDir = production ? 'https://muromtsev.github.io/toxic/' : '/';
+    const publicDir = production ? 'https://muromtsev.github.io/toxin/' : '/';
 
     return {
         entry: {
