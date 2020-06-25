@@ -1,10 +1,10 @@
 # FSD practice 
-## Task 2 TOXIC
+## Task 2 TOXIN
 
 ### Установка
 
 _Клонировать_
-> ```git clone https://github.com/muromtsev/toxic.git```
+> ```git clone https://github.com/muromtsev/toxin.git```
 
 _Установка_
 > ```npm i```
@@ -28,19 +28,19 @@ _Запуск production build_
 
 ## UI-kit
 
-### [Colors & type](https://muromtsev.github.io/toxic/color_type.html)
-### [Form elements](https://muromtsev.github.io/toxic/form-elements.html)
-### [Headers and footers](https://muromtsev.github.io/toxic/header_footer.html)
-### [Cards](https://muromtsev.github.io/toxic/cards.html)
+### [Colors & type](https://muromtsev.github.io/toxin/color_type.html)
+### [Form elements](https://muromtsev.github.io/toxin/form-elements.html)
+### [Headers and footers](https://muromtsev.github.io/toxin/header_footer.html)
+### [Cards](https://muromtsev.github.io/toxin/cards.html)
 
 ---
 
-## Toxic
+## Toxin
 
-### [Landing page](https://muromtsev.github.io/toxic/landing-page.html)
-### [Search room](https://muromtsev.github.io/toxic/search-room.html)
-### [Registration](https://muromtsev.github.io/toxic/register-in.html)
-### [Sign in](https://muromtsev.github.io/toxic/sign-in.html)
-### [Room details](https://muromtsev.github.io/toxic/room-details.html)
+### [Landing page](https://muromtsev.github.io/toxin/landing-page.html)
+### [Search room](https://muromtsev.github.io/toxin/search-room.html)
+### [Registration](https://muromtsev.github.io/toxin/register-in.html)
+### [Sign in](https://muromtsev.github.io/toxin/sign-in.html)
+### [Room details](https://muromtsev.github.io/toxin/room-details.html)
 
 
