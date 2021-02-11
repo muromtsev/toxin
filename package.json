@@ -41,7 +41,7 @@
   },
   "dependencies": {
     "air-datepicker": "^2.2.3",
-    "apexcharts": "^3.19.2",
+    "apexcharts": "^3.24.0",
     "inputmask": "^5.0.3",
     "ion-rangeslider": "^2.3.1",
     "jquery-bar-rating": "^1.2.2",
