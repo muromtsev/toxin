@@ -46,7 +46,7 @@
     "ion-rangeslider": "^2.3.1",
     "jquery-bar-rating": "^1.2.2",
     "material-icons": "^0.3.1",
-    "sharp": "^0.25.3",
+    "sharp": "^0.30.5",
     "slick-carousel": "^1.8.1",
     "webpack-px-to-rem": "^0.1.1"
   },
